@@ -35,6 +35,14 @@ function isVisible(settings: Record<string, string>, key: string) {
   return settings[key] !== 'false'
 }
 
+// DB hata toleranslı çağrı — hata olursa boş döndür
+async function safe<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
+  try { return await fn() } catch (e) {
+    console.warn('[homepage] DB error:', (e as Error).message)
+    return fallback
+  }
+}
+
 export default async function HomePage() {
   const settings = await getSettings()
 
@@ -50,32 +58,24 @@ export default async function HomePage() {
     chatbotConfig,
     chatbotFaqs,
   ] = await Promise.all([
-    prisma.product.findMany({
+    safe(() => prisma.product.findMany({
       where: { status: 'ACTIVE' },
       orderBy: { order: 'asc' },
       take: 6,
       select: {
-        id: true,
-        name: true,
-        slug: true,
-        tagline: true,
-        description: true,
-        features: true,
-        screenshots: true,
-        icon: true,
-        badge: true,
-        videoUrl: true,
+        id: true, name: true, slug: true, tagline: true, description: true,
+        features: true, screenshots: true, icon: true, badge: true, videoUrl: true,
       },
-    }),
-    prisma.siteModule.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.sector.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.testimonial.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.client.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.heroTicker.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.heroStat.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
-    prisma.siteFaq.findMany({ where: { isActive: true }, orderBy: { order: 'asc' }, take: 8 }),
-    prisma.chatbotSettings.findFirst(),
-    prisma.chatbotFAQ.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }),
+    }), [] as any[]),
+    safe(() => prisma.siteModule.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.sector.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.testimonial.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.client.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.heroTicker.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.heroStat.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
+    safe(() => prisma.siteFaq.findMany({ where: { isActive: true }, orderBy: { order: 'asc' }, take: 8 }), []),
+    safe(() => prisma.chatbotSettings.findFirst(), null),
+    safe(() => prisma.chatbotFAQ.findMany({ where: { isActive: true }, orderBy: { order: 'asc' } }), []),
   ])
 
   return (
