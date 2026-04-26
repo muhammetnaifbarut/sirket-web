@@ -1,15 +1,29 @@
 import prisma from './db'
 
-export async function getSettings(group?: string) {
-  const settings = await prisma.setting.findMany({
-    where: group ? { group } : undefined,
-  })
-  return Object.fromEntries(settings.map((s) => [s.key, s.value]))
+/**
+ * Tüm fonksiyonlar DB hatalarına karşı dayanıklı —
+ * build sırasında veya geçici DB sorunlarında boş/varsayılan döndürür.
+ */
+
+export async function getSettings(group?: string): Promise<Record<string, string>> {
+  try {
+    const settings = await prisma.setting.findMany({
+      where: group ? { group } : undefined,
+    })
+    return Object.fromEntries(settings.map((s) => [s.key, s.value]))
+  } catch (e) {
+    console.warn('[getSettings] DB error, returning empty:', (e as Error).message)
+    return {}
+  }
 }
 
-export async function getSetting(key: string, fallback = '') {
-  const setting = await prisma.setting.findUnique({ where: { key } })
-  return setting?.value ?? fallback
+export async function getSetting(key: string, fallback = ''): Promise<string> {
+  try {
+    const setting = await prisma.setting.findUnique({ where: { key } })
+    return setting?.value ?? fallback
+  } catch {
+    return fallback
+  }
 }
 
 export async function updateSetting(key: string, value: string, group = 'general') {
@@ -21,19 +35,26 @@ export async function updateSetting(key: string, value: string, group = 'general
 }
 
 export async function getTheme() {
-  const theme = await prisma.themeSettings.findFirst({ where: { isActive: true } })
-  return theme
+  try {
+    return await prisma.themeSettings.findFirst({ where: { isActive: true } })
+  } catch {
+    return null
+  }
 }
 
 export async function getMenuItems(location = 'header') {
-  return prisma.menuItem.findMany({
-    where: { location, parentId: null, isActive: true },
-    include: {
-      children: {
-        where: { isActive: true },
-        orderBy: { order: 'asc' },
+  try {
+    return await prisma.menuItem.findMany({
+      where: { location, parentId: null, isActive: true },
+      include: {
+        children: {
+          where: { isActive: true },
+          orderBy: { order: 'asc' },
+        },
       },
-    },
-    orderBy: { order: 'asc' },
-  })
+      orderBy: { order: 'asc' },
+    })
+  } catch {
+    return []
+  }
 }

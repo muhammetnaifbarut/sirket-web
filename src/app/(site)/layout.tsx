@@ -7,6 +7,10 @@ import CookieConsent from '@/components/site/CookieConsent'
 import StructuredData from '@/components/site/StructuredData'
 import { getSettings, getMenuItems } from '@/lib/settings'
 
+// Tüm site rotalarını dinamik render — build sırasında DB'ye gitme
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSettings()
   const menuItems = await getMenuItems('header')
