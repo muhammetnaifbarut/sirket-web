@@ -7,6 +7,9 @@ import ReadingProgress from '@/components/site/ReadingProgress'
 import { ArrowLeft, Calendar, Eye, Share2, BookOpen } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 interface Props { params: { slug: string } }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

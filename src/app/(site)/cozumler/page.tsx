@@ -4,6 +4,9 @@ import * as Lucide from 'lucide-react'
 import { ArrowRight, Sparkles } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Sektör Çözümleri',
   description: 'Klinik, restoran, market, eğitim, İK, e-ticaret — kooza\'nın sektöre özel dijital çözümleri.',

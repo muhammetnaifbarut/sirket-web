@@ -2,6 +2,9 @@ import ContactForm from '@/components/site/ContactForm'
 import { getSettings } from '@/lib/settings'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'İletişim',
   description: 'Bizimle iletişime geçin',

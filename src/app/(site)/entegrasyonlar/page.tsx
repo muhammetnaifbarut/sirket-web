@@ -4,6 +4,9 @@ import EmptyState from '@/components/site/EmptyState'
 import { Plug, Sparkles } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Entegrasyonlar',
   description: 'kooza ile çalışan banka, ödeme, pazaryeri ve diğer servisler.',

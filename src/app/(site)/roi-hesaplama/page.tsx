@@ -1,6 +1,9 @@
 import RoiCalculator from '@/components/site/RoiCalculator'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'ROI Hesaplama — kooza ile Ne Kazanırsınız?',
   description: 'Sektörünüze ve şirket büyüklüğünüze göre kooza\'nın yıllık tasarruf ve ROI tahminini 30 saniyede hesaplayın.',

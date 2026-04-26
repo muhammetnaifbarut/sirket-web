@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { Heart, Compass, Sparkles, Users, Award, Target, ArrowRight, Building2 } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Hakkımızda',
   description: 'kooza — Türkiye\'nin yeni nesil işletme platformu. Web sitesinden sektörel otomasyona, İK\'dan dijital dönüşüm danışmanlığına tek partner.',

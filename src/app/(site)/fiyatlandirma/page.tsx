@@ -2,6 +2,9 @@ import prisma from '@/lib/db'
 import PricingSection from '@/components/site/sections/PricingSection'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Fiyatlandırma',
   description: 'Bütçenize uygun yazılım ve danışmanlık planları',

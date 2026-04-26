@@ -3,6 +3,9 @@ import EmptyState from '@/components/site/EmptyState'
 import FAQSection from '@/components/site/sections/FAQSection'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Sıkça Sorulan Sorular',
   description: 'kooza hakkında akıllarda kalan tüm sorular ve detaylı cevaplar.',

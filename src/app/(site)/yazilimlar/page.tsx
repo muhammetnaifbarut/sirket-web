@@ -4,6 +4,9 @@ import ProductIcon from '@/components/site/ProductIcon'
 import EmptyState from '@/components/site/EmptyState'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Yazılım Çözümleri',
   description: 'İşletmeniz için geliştirilmiş kurumsal yazılım çözümleri',

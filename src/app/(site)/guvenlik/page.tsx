@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { Shield, Lock, Server, FileCheck, Users, Award } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Güvenlik & Uyumluluk',
   description: 'kooza\'da verilerin nasıl korunuyor: KVKK, ISO 27001, şifreleme ve daha fazlası.',

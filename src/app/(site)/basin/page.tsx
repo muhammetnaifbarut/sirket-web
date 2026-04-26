@@ -4,6 +4,9 @@ import EmptyState from '@/components/site/EmptyState'
 import { Download, ExternalLink, Calendar, Mail } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Basın & Medya',
   description: 'kooza basın bültenleri, medya kit ve gazete haberleri.',

@@ -4,6 +4,9 @@ import EmptyState from '@/components/site/EmptyState'
 import { Briefcase, MapPin, Clock, Sparkles, Heart, Globe2 } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Kariyer',
   description: 'kooza ekibine katıl. Açık pozisyonlar ve şirket kültürü.',

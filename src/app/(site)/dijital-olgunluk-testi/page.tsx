@@ -1,6 +1,9 @@
 import MaturityTest from '@/components/site/MaturityTest'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Dijital Olgunluk Testi — Ücretsiz Skor + Yol Haritası',
   description: 'Şirketinizin dijital olgunluğunu 2 dakikada ölçün. 10 sorudan oluşan testi tamamlayın, kişiselleştirilmiş skor ve yol haritası alın.',

@@ -4,6 +4,9 @@ import prisma from '@/lib/db'
 import ProductIcon from '@/components/site/ProductIcon'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 interface Props { params: { slug: string } }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

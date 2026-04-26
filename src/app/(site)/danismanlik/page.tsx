@@ -3,6 +3,9 @@ import prisma from '@/lib/db'
 import ProductIcon from '@/components/site/ProductIcon'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Danışmanlık Hizmetleri',
   description: 'Dijital dönüşüm ve işletme danışmanlığı hizmetleri',

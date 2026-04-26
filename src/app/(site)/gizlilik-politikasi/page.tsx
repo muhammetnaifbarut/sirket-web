@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Gizlilik Politikası',
   description: 'kooza gizlilik politikası ve kişisel veri işleme aydınlatma metni.',

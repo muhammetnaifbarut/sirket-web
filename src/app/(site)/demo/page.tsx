@@ -2,6 +2,9 @@ import DemoForm from '@/components/site/DemoForm'
 import prisma from '@/lib/db'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Demo Talep Et',
   description: 'Ücretsiz demo talep edin ve ürünlerimizi deneyin',

@@ -2,6 +2,9 @@ import Link from 'next/link'
 import { getSettings } from '@/lib/settings'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Talep Alındı',
   description: 'Demo talebiniz için teşekkürler. Yakında sizinle iletişime geçeceğiz.',

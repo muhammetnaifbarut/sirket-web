@@ -5,6 +5,9 @@ import ProductIcon from '@/components/site/ProductIcon'
 import { ArrowRight, Quote } from 'lucide-react'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Vaka Çalışmaları',
   description: 'kooza ile gerçek KOBİ\'lerin gerçek dönüşüm hikayeleri.',

@@ -2,6 +2,9 @@ import prisma from '@/lib/db'
 import BlogList from '@/components/site/BlogList'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
+
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Dijital dönüşüm, yazılım ve danışmanlık hakkında güncel yazılar',
