@@ -69,10 +69,10 @@ const SETTINGS: Array<{ key: string; value: string; group: string }> = [
   { key: 'cta_btn1_url',   value: '/demo', group: 'cta' },
   { key: 'cta_btn2_label', value: 'Demo Görüşmesi Planla', group: 'cta' },
   { key: 'cta_btn2_url',   value: '/iletisim', group: 'cta' },
-  { key: 'cta_trust1', value: '14 gün ücretsiz' },
-  { key: 'cta_trust2', value: 'Kredi kartı yok' },
-  { key: 'cta_trust3', value: 'İlk ay para iadesi' },
-  { key: 'cta_trust4', value: '5 dakikada kurulum' },
+  { key: 'cta_trust1', value: '14 gün ücretsiz', group: 'cta' },
+  { key: 'cta_trust2', value: 'Kredi kartı yok', group: 'cta' },
+  { key: 'cta_trust3', value: 'İlk ay para iadesi', group: 'cta' },
+  { key: 'cta_trust4', value: '5 dakikada kurulum', group: 'cta' },
 ]
 
 const SETTINGS_DEFAULT_GROUP = 'general'

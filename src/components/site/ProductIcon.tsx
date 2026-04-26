@@ -81,7 +81,7 @@ const ICONS: Record<string, React.ComponentType<any>> = {
   'help-circle': Lucide.HelpCircle,
 
   // Sectors
-  hospital: Lucide.Hospital,
+  hospital: Lucide.Stethoscope,
   graduation: Lucide.GraduationCap,
   factory: Lucide.Factory,
   building: Lucide.Building2,

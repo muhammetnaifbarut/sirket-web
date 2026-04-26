@@ -34,9 +34,9 @@ export function rateLimit(key: string, opts: RateLimitOptions): RateLimitResult 
 
 function cleanup(now: number) {
   if (store.size < 5000) return
-  for (const [k, v] of store.entries()) {
+  store.forEach((v, k) => {
     if (v.resetAt < now) store.delete(k)
-  }
+  })
 }
 
 export function getClientIp(req: Request): string {
