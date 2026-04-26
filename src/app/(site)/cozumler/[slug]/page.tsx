@@ -19,9 +19,17 @@ function Icon({ name, className, style }: { name?: string; className?: string; s
   return <Cmp className={className} style={style} strokeWidth={1.75} />
 }
 
+// Dynamic rendering — build sırasında DB'ye sorma, runtime'da yap
+export const dynamic = 'force-dynamic'
+
 export async function generateStaticParams() {
-  const items = await prisma.sectorSolution.findMany({ where: { isActive: true }, select: { slug: true } })
-  return items.map((i) => ({ slug: i.slug }))
+  // Build sırasında DB yoksa boş döndür — runtime'da dinamik üretilecek
+  try {
+    const items = await prisma.sectorSolution.findMany({ where: { isActive: true }, select: { slug: true } })
+    return items.map((i) => ({ slug: i.slug }))
+  } catch {
+    return []
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
