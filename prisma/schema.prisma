@@ -1,0 +1,797 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ─── AUTH ────────────────────────────────────────────────────────────────────
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?
+  role          UserRole  @default(VIEWER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map("users")
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  EDITOR
+  VIEWER
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// ─── SETTINGS ────────────────────────────────────────────────────────────────
+
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  group     String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("settings")
+}
+
+model ThemeSettings {
+  id              String  @id @default(cuid())
+  primaryColor    String  @default("#3B82F6")
+  secondaryColor  String  @default("#8B5CF6")
+  accentColor     String  @default("#10B981")
+  fontSans        String  @default("Inter")
+  fontHeading     String  @default("Inter")
+  darkMode        Boolean @default(false)
+  borderRadius    String  @default("rounded-lg")
+  buttonStyle     String  @default("filled")
+  layout          String  @default("default")
+  headerStyle     String  @default("default")
+  footerStyle     String  @default("default")
+  isActive        Boolean @default(true)
+
+  @@map("theme_settings")
+}
+
+// ─── PAGES ───────────────────────────────────────────────────────────────────
+
+model Page {
+  id          String      @id @default(cuid())
+  title       String
+  slug        String      @unique
+  description String?     @db.Text
+  content     String?     @db.Text
+  metaTitle   String?
+  metaDesc    String?
+  ogImage     String?
+  status      PageStatus  @default(PUBLISHED)
+  isSystem    Boolean     @default(false)
+  order       Int         @default(0)
+  sections    Section[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@map("pages")
+}
+
+enum PageStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model Section {
+  id        String      @id @default(cuid())
+  pageId    String
+  page      Page        @relation(fields: [pageId], references: [id], onDelete: Cascade)
+  type      SectionType
+  title     String?
+  content   Json?
+  order     Int         @default(0)
+  isVisible Boolean     @default(true)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@map("sections")
+}
+
+enum SectionType {
+  HERO
+  FEATURES
+  PRODUCTS
+  SERVICES
+  PRICING
+  TESTIMONIALS
+  CTA
+  VIDEO
+  SLIDER
+  STATS
+  TEAM
+  FAQ
+  CONTACT
+  BLOG_GRID
+  CUSTOM
+}
+
+// ─── MENU ─────────────────────────────────────────────────────────────────────
+
+model MenuItem {
+  id        String     @id @default(cuid())
+  label     String
+  url       String
+  target    String     @default("_self")
+  icon      String?
+  parentId  String?
+  parent    MenuItem?  @relation("MenuItemChildren", fields: [parentId], references: [id])
+  children  MenuItem[] @relation("MenuItemChildren")
+  order     Int        @default(0)
+  isActive  Boolean    @default(true)
+  location  String     @default("header")
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("menu_items")
+}
+
+// ─── PRODUCTS ────────────────────────────────────────────────────────────────
+
+model Product {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  tagline     String?
+  description String?       @db.Text
+  features    String[]
+  screenshots String[]
+  icon        String?
+  badge       String?
+  demoUrl     String?
+  videoUrl    String?
+  price       Decimal?      @db.Decimal(10,2)
+  currency    String        @default("TRY")
+  billingType String        @default("monthly")
+  status      ProductStatus @default(ACTIVE)
+  order       Int           @default(0)
+  pricing     ProductPricing[]
+  leads       Lead[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("products")
+}
+
+enum ProductStatus {
+  ACTIVE
+  COMING_SOON
+  ARCHIVED
+}
+
+model ProductPricing {
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  name        String
+  monthlyPrice Decimal @db.Decimal(10,2)
+  yearlyPrice  Decimal @db.Decimal(10,2)
+  features    String[]
+  isPopular   Boolean  @default(false)
+  isActive    Boolean  @default(true)
+
+  @@map("product_pricing")
+}
+
+// ─── SERVICES ────────────────────────────────────────────────────────────────
+
+model Service {
+  id          String        @id @default(cuid())
+  name        String
+  slug        String        @unique
+  description String?       @db.Text
+  longDesc    String?       @db.Text
+  icon        String?
+  image       String?
+  features    String[]
+  status      ServiceStatus @default(ACTIVE)
+  order       Int           @default(0)
+  packages    ServicePackage[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("services")
+}
+
+enum ServiceStatus {
+  ACTIVE
+  ARCHIVED
+}
+
+model ServicePackage {
+  id          String   @id @default(cuid())
+  serviceId   String
+  service     Service  @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+  name        String
+  price       Decimal? @db.Decimal(10,2)
+  duration    String?
+  features    String[]
+  isPopular   Boolean  @default(false)
+  isActive    Boolean  @default(true)
+
+  @@map("service_packages")
+}
+
+// ─── PRICING PLANS ───────────────────────────────────────────────────────────
+
+model PricingPlan {
+  id           String   @id @default(cuid())
+  name         String
+  description  String?
+  monthlyPrice Decimal  @db.Decimal(10,2)
+  yearlyPrice  Decimal  @db.Decimal(10,2)
+  features     String[]
+  limitations  String[]
+  isPopular    Boolean  @default(false)
+  isActive     Boolean  @default(true)
+  ctaLabel     String   @default("Başlayın")
+  ctaUrl       String   @default("/demo")
+  order        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@map("pricing_plans")
+}
+
+// ─── LEADS / FORMS ───────────────────────────────────────────────────────────
+
+model Lead {
+  id          String     @id @default(cuid())
+  type        LeadType   @default(DEMO)
+  name        String
+  email       String
+  phone       String?
+  company     String?
+  message     String?    @db.Text
+  productId   String?
+  product     Product?   @relation(fields: [productId], references: [id])
+  status      LeadStatus @default(NEW)
+  notes       String?    @db.Text
+  assignedTo  String?
+  source      String?
+  score       Int        @default(0)
+  tags        String[]
+  metadata    Json?
+  leadNotes   LeadNote[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("leads")
+}
+
+model LeadNote {
+  id        String   @id @default(cuid())
+  leadId    String
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  content   String   @db.Text
+  authorId  String?
+  createdAt DateTime @default(now())
+
+  @@map("lead_notes")
+}
+
+enum LeadType {
+  DEMO
+  CONTACT
+  QUOTE
+  NEWSLETTER
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL
+  NEGOTIATION
+  WON
+  LOST
+}
+
+// ─── BLOG ─────────────────────────────────────────────────────────────────────
+
+model BlogPost {
+  id          String       @id @default(cuid())
+  title       String
+  slug        String       @unique
+  excerpt     String?      @db.Text
+  content     String?      @db.Text
+  coverImage  String?
+  metaTitle   String?
+  metaDesc    String?
+  ogImage     String?
+  status      BlogStatus   @default(DRAFT)
+  featured    Boolean      @default(false)
+  views       Int          @default(0)
+  authorId    String?
+  categoryId  String?
+  category    BlogCategory? @relation(fields: [categoryId], references: [id])
+  tags        BlogTag[]
+  publishedAt DateTime?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("blog_posts")
+}
+
+enum BlogStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+model BlogCategory {
+  id          String     @id @default(cuid())
+  name        String
+  slug        String     @unique
+  description String?
+  color       String?
+  posts       BlogPost[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@map("blog_categories")
+}
+
+model BlogTag {
+  id        String     @id @default(cuid())
+  name      String
+  slug      String     @unique
+  posts     BlogPost[]
+  createdAt DateTime   @default(now())
+
+  @@map("blog_tags")
+}
+
+// ─── TESTIMONIALS ────────────────────────────────────────────────────────────
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  role      String?
+  company   String?
+  avatar    String?
+  content   String   @db.Text
+  rating    Int      @default(5)
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+// ─── CLIENTS / SECTORS ───────────────────────────────────────────────────────
+
+model Client {
+  id       String  @id @default(cuid())
+  name     String
+  logo     String?
+  url      String?
+  isActive Boolean @default(true)
+  order    Int     @default(0)
+
+  @@map("clients")
+}
+
+model Sector {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  icon        String?
+  image       String?
+  isActive    Boolean @default(true)
+  order       Int     @default(0)
+
+  @@map("sectors")
+}
+
+// ─── MEDIA ────────────────────────────────────────────────────────────────────
+
+model Media {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  mimeType  String
+  size      Int
+  alt       String?
+  folder    String?
+  createdAt DateTime @default(now())
+
+  @@map("media")
+}
+
+// ─── CHAT SESSIONS ────────────────────────────────────────────────────────────
+
+model ChatSession {
+  id           String        @id @default(cuid())
+  customerName String?
+  email        String?
+  phone        String?
+  status       String        @default("active")
+  messages     ChatMessage[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  @@map("chat_sessions")
+}
+
+model ChatMessage {
+  id        String      @id @default(cuid())
+  sessionId String
+  session   ChatSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  role      String
+  content   String      @db.Text
+  createdAt DateTime    @default(now())
+
+  @@map("chat_messages")
+}
+
+// ─── CHATBOT ──────────────────────────────────────────────────────────────────
+
+model ChatbotSettings {
+  id               String   @id @default(cuid())
+  isEnabled        Boolean  @default(true)
+  welcomeMessage   String   @default("Merhaba! Size nasıl yardımcı olabilirim?") @db.Text
+  botName          String   @default("Asistan")
+  botAvatar        String?
+  primaryColor     String   @default("#3B82F6")
+  position         String   @default("bottom-right")
+  apiEnabled       Boolean  @default(false)
+  apiEndpoint      String?
+  apiKey           String?
+  typingDelay      Int      @default(1000)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@map("chatbot_settings")
+}
+
+model ChatbotFAQ {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String   @db.Text
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("chatbot_faqs")
+}
+
+// ─── PROCESS STEPS ────────────────────────────────────────────────────────────
+
+model ProcessStep {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  icon        String   @default("CheckCircle")
+  step        Int
+  color       String   @default("#3B82F6")
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("process_steps")
+}
+
+// ─── WHY US ───────────────────────────────────────────────────────────────────
+
+model WhyUsItem {
+  id          String   @id @default(cuid())
+  title       String
+  description String   @db.Text
+  icon        String   @default("Star")
+  color       String   @default("#3B82F6")
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("why_us_items")
+}
+
+// ─── POPUP & BANNER ───────────────────────────────────────────────────────────
+
+model Popup {
+  id          String    @id @default(cuid())
+  title       String
+  content     String    @db.Text
+  buttonText  String?
+  buttonUrl   String?
+  image       String?
+  bgColor     String    @default("#ffffff")
+  isActive    Boolean   @default(true)
+  delay       Int       @default(3)
+  frequency   String    @default("once")
+  startDate   DateTime?
+  endDate     DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@map("popups")
+}
+
+model Banner {
+  id          String   @id @default(cuid())
+  text        String
+  link        String?
+  linkText    String?
+  bgColor     String   @default("#3B82F6")
+  textColor   String   @default("#ffffff")
+  isActive    Boolean  @default(true)
+  dismissible Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("banners")
+}
+
+// ─── SITE FAQ ─────────────────────────────────────────────────────────────────
+
+model SiteFaq {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String   @db.Text
+  category  String?
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("site_faqs")
+}
+
+// ─── ACTIVITY LOGS ────────────────────────────────────────────────────────────
+
+model ActivityLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  userEmail String?
+  action    String
+  entity    String?
+  entityId  String?
+  details   String?  @db.Text
+  ipAddress String?
+  createdAt DateTime @default(now())
+
+  @@map("activity_logs")
+}
+
+// ─── NOTIFICATIONS ────────────────────────────────────────────────────────────
+
+model SiteNotification {
+  id        String   @id @default(cuid())
+  title     String
+  message   String   @db.Text
+  type      String   @default("info")
+  isRead    Boolean  @default(false)
+  link      String?
+  createdAt DateTime @default(now())
+
+  @@map("site_notifications")
+}
+
+// ─── MODULES (homepage showcase tiles) ────────────────────────────────────────
+
+model SiteModule {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  href        String   @default("/yazilimlar")
+  icon        String   @default("box")
+  iconColor   String   @default("#714B67")
+  bgColor     String   @default("#f7f2f5")
+  description String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("site_modules")
+}
+
+// ─── HERO TICKER (homepage live activity strip) ───────────────────────────────
+
+model HeroTicker {
+  id        String   @id @default(cuid())
+  emoji     String   @default("✨")
+  text      String
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("hero_ticker")
+}
+
+// ─── HERO STATS (homepage 4 number cards) ─────────────────────────────────────
+
+model HeroStat {
+  id        String   @id @default(cuid())
+  value     String
+  label     String
+  color     String   @default("#714B67")
+  order     Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+
+  @@map("hero_stats")
+}
+
+// ─── MATURITY TEST RESULTS (lead magnet) ────────────────────────────────────
+
+model MaturityTestResult {
+  id            String   @id @default(cuid())
+  name          String
+  email         String
+  company       String?
+  phone         String?
+  sector        String?
+  employeeCount String?
+  answers       Json     // [{questionId, answer, score}]
+  totalScore    Int
+  level         String   // "Başlangıç", "Gelişen", "Dijital", "Lider"
+  reportSent    Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@index([email])
+  @@map("maturity_test_results")
+}
+
+// ─── SECTOR SOLUTIONS (landing pages /cozumler/[slug]) ──────────────────────
+
+model SectorSolution {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  name            String
+  tagline         String   @db.Text
+  heroBadge       String   @default("Sektörel Çözüm")
+  heroTitle       String   @db.Text
+  heroSubtitle    String   @db.Text
+  icon            String   @default("Building2")
+  iconColor       String   @default("#714B67")
+  bgColor         String   @default("#f7f2f5")
+  problems        Json     // [{title, description, icon}]
+  features        Json     // [{title, description, icon}]
+  benefits        Json     // [{label, value, description}]  e.g. "Aylık tasarruf" / "%40"
+  modules         Json     // [{name, description}]  parts of the system
+  faqs            Json     // [{question, answer}]
+  ctaTitle        String   @default("Hemen başlayın")
+  ctaSubtitle     String   @db.Text @default("Ücretsiz keşif görüşmesi alın.")
+  seoTitle        String?
+  seoDescription  String?
+  order           Int      @default(0)
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("sector_solutions")
+}
+
+// ─── CASE STUDIES ────────────────────────────────────────────────────────────
+
+model CaseStudy {
+  id            String   @id @default(cuid())
+  company       String
+  slug          String   @unique
+  sector        String
+  sectorColor   String   @default("bg-purple-50 text-purple-700 border-purple-100")
+  challenge     String   @db.Text
+  solution      String   @db.Text
+  quote         String   @db.Text
+  person        String
+  role          String
+  timeframe     String
+  results       Json     // [{label, from, to, icon}]
+  order         Int      @default(0)
+  isActive      Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("case_studies")
+}
+
+// ─── JOB POSTINGS ────────────────────────────────────────────────────────────
+
+model JobPosting {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  department  String
+  location    String   @default("İstanbul / Uzaktan")
+  type        String   @default("Tam zamanlı")
+  description String   @db.Text
+  requirements Json    // string[]
+  isRemote    Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("job_postings")
+}
+
+// ─── PRESS ITEMS ─────────────────────────────────────────────────────────────
+
+model PressItem {
+  id          String   @id @default(cuid())
+  title       String
+  outlet      String   // "Webrazzi", "Hürriyet" vb.
+  url         String?
+  date        DateTime
+  excerpt     String?  @db.Text
+  logoUrl     String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+
+  @@map("press_items")
+}
+
+// ─── INTEGRATIONS ────────────────────────────────────────────────────────────
+
+model Integration {
+  id          String   @id @default(cuid())
+  name        String
+  slug        String   @unique
+  category    String   // "Ödeme", "Pazaryeri", "Banka", "İletişim"
+  description String?  @db.Text
+  logo        String?  // emoji veya icon adı
+  color       String   @default("#714B67")
+  url         String?
+  order       Int      @default(0)
+  isActive    Boolean  @default(true)
+  isPopular   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("integrations")
+}
