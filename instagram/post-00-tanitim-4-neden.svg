@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#714B67"/>
+      <stop offset="100%" stop-color="#3a2436"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="0.85" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg4)"/>
+  <rect width="1080" height="1080" fill="url(#glow4)"/>
+
+  <!-- Mini logo top (white) -->
+  <g transform="translate(80, 80)">
+    <circle cx="30" cy="30" r="28" fill="#ffffff"/>
+    <circle cx="30" cy="30" r="11" fill="#714B67"/>
+    <circle cx="80" cy="30" r="28" fill="none" stroke="#ffffff" stroke-width="11"/>
+    <circle cx="113" cy="2" r="6" fill="#FFC0CB"/>
+    <text x="135" y="48" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ffffff">kooza</text>
+  </g>
+
+  <!-- Step number -->
+  <text x="80" y="240" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#FFC0CB" letter-spacing="3">4 / 5</text>
+
+  <!-- Big title -->
+  <text x="80" y="330" font-family="Arial, sans-serif" font-weight="900" font-size="80" fill="#ffffff" letter-spacing="-2">Neden kooza?</text>
+
+  <!-- 4 reasons with checkmarks -->
+  <g transform="translate(80, 430)" font-family="Arial, sans-serif">
+    <!-- Reason 1 -->
+    <g transform="translate(0, 0)">
+      <circle cx="35" cy="35" r="35" fill="#FFC0CB"/>
+      <text x="35" y="50" font-weight="900" font-size="40" fill="#714B67" text-anchor="middle">1</text>
+      <text x="100" y="35" font-weight="800" font-size="32" fill="#ffffff">Tek partner, tek fatura</text>
+      <text x="100" y="68" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">5 farklı yazılım yerine 1 platform</text>
+    </g>
+
+    <!-- Reason 2 -->
+    <g transform="translate(0, 130)">
+      <circle cx="35" cy="35" r="35" fill="#FFC0CB"/>
+      <text x="35" y="50" font-weight="900" font-size="40" fill="#714B67" text-anchor="middle">2</text>
+      <text x="100" y="35" font-weight="800" font-size="32" fill="#ffffff">Sektörünüze özel kurgulanmış</text>
+      <text x="100" y="68" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">Generic değil — gerçek ihtiyaçlara göre</text>
+    </g>
+
+    <!-- Reason 3 -->
+    <g transform="translate(0, 260)">
+      <circle cx="35" cy="35" r="35" fill="#FFC0CB"/>
+      <text x="35" y="50" font-weight="900" font-size="40" fill="#714B67" text-anchor="middle">3</text>
+      <text x="100" y="35" font-weight="800" font-size="32" fill="#ffffff">Türkiye için, KVKK uyumlu</text>
+      <text x="100" y="68" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">e-Fatura, GİB, vergi mevzuatı entegre</text>
+    </g>
+
+    <!-- Reason 4 -->
+    <g transform="translate(0, 390)">
+      <circle cx="35" cy="35" r="35" fill="#FFC0CB"/>
+      <text x="35" y="50" font-weight="900" font-size="40" fill="#714B67" text-anchor="middle">4</text>
+      <text x="100" y="35" font-weight="800" font-size="32" fill="#ffffff">Yıllık ~36.000 TL tasarruf</text>
+      <text x="100" y="68" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">Tek paket, sürpriz fatura yok</text>
+    </g>
+  </g>
+
+  <!-- Quote box -->
+  <g transform="translate(80, 920)">
+    <rect width="920" height="80" rx="16" fill="#ffffff" fill-opacity="0.1"/>
+    <text x="460" y="50" font-family="Arial, sans-serif" font-weight="600" font-size="26" fill="#FFC0CB" text-anchor="middle" font-style="italic">"Bir yazılım tedarikçisi gibi değil, bir iş ortağı gibi."</text>
+  </g>
+
+  <!-- Swipe -->
+  <text x="540" y="1050" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#FFC0CB" text-anchor="middle">Kaydır →</text>
+</svg>

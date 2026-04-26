@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <defs>
+      <radialGradient id="g" cx="0.5" cy="0.5" r="0.5">
+        <stop offset="0%" stop-color="#714B67" stop-opacity="0.05"/>
+        <stop offset="100%" stop-color="#714B67" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1080" height="1080" fill="#faf8f9"/>
+    <rect width="1080" height="1080" fill="url(#g)"/>
+    
+    <g transform="translate(80, 80)">
+      <circle cx="30" cy="30" r="28" fill="#0f0a0d"/>
+      <circle cx="30" cy="30" r="11" fill="#faf8f9"/>
+      <circle cx="80" cy="30" r="28" fill="none" stroke="#0f0a0d" stroke-width="11"/>
+      <circle cx="113" cy="2" r="6" fill="#714B67"/>
+      <text x="135" y="48" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#0f0a0d">kooza</text>
+    </g>
+  
+    
+    <text x="80" y="470"
+          font-family="Arial Black, sans-serif" font-weight="900" font-size="130"
+          fill="#0f0a0d" text-anchor="start" letter-spacing="-3">Türkiye için,</text>
+  
+    <text x="80" y="606.5"
+          font-family="Arial Black, sans-serif" font-weight="900" font-size="130"
+          fill="#0f0a0d" text-anchor="start" letter-spacing="-3">Türk'ten.</text>
+  
+    <line x1="80" y1="900" x2="200" y2="900" stroke="#714B67" stroke-width="3"/>
+    <text x="80" y="950" font-family="Arial, sans-serif" font-weight="500" font-size="26" fill="#9ca3af">KVKK · e-Fatura · 24/7 destek</text>
+    <text x="80" y="1020" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#714B67">kooza.tr · @kooza</text>
+  </svg>

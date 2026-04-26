@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f5f0f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg2)"/>
+
+  <!-- Mini logo top -->
+  <g transform="translate(80, 80)">
+    <circle cx="30" cy="30" r="28" fill="#714B67"/>
+    <circle cx="30" cy="30" r="11" fill="#fafafa"/>
+    <circle cx="80" cy="30" r="28" fill="none" stroke="#714B67" stroke-width="11"/>
+    <circle cx="113" cy="2" r="6" fill="#FFC0CB"/>
+    <text x="135" y="48" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#1f2937">kooza</text>
+  </g>
+
+  <!-- Step number -->
+  <text x="80" y="240" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" letter-spacing="3">2 / 5</text>
+
+  <!-- Big title -->
+  <text x="80" y="330" font-family="Arial, sans-serif" font-weight="900" font-size="80" fill="#1f2937" letter-spacing="-2">Biz kimiz?</text>
+
+  <!-- Description blocks -->
+  <g transform="translate(80, 410)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-weight="500" font-size="32" fill="#374151">kooza, İşletmelerin yazılım kaosuna</text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-weight="500" font-size="32" fill="#374151">son vermek için doğdu.</text>
+  </g>
+
+  <!-- Highlight box -->
+  <g transform="translate(80, 540)">
+    <rect width="920" height="280" rx="24" fill="#714B67"/>
+    <text x="460" y="80" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#FFC0CB" text-anchor="middle" letter-spacing="2">YAPTIĞIMIZ İŞ</text>
+    <text x="460" y="160" font-family="Arial, sans-serif" font-weight="900" font-size="48" fill="#ffffff" text-anchor="middle">Web sitesi · Sektörel Otomasyon</text>
+    <text x="460" y="220" font-family="Arial, sans-serif" font-weight="900" font-size="48" fill="#ffffff" text-anchor="middle">İK · CRM · Muhasebe · Danışmanlık</text>
+  </g>
+
+  <!-- 3 stats row -->
+  <g transform="translate(540, 920)">
+    <g transform="translate(-340, 0)">
+      <text x="0" y="0" font-family="Arial Black, sans-serif" font-weight="900" font-size="56" fill="#714B67" text-anchor="middle">500+</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="#6b7280" text-anchor="middle">Aktif İşletme</text>
+    </g>
+    <g transform="translate(0, 0)">
+      <text x="0" y="0" font-family="Arial Black, sans-serif" font-weight="900" font-size="56" fill="#714B67" text-anchor="middle">12</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="#6b7280" text-anchor="middle">Sektörel Modül</text>
+    </g>
+    <g transform="translate(340, 0)">
+      <text x="0" y="0" font-family="Arial Black, sans-serif" font-weight="900" font-size="56" fill="#714B67" text-anchor="middle">24/7</text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="#6b7280" text-anchor="middle">Türkçe Destek</text>
+    </g>
+  </g>
+
+  <!-- Swipe -->
+  <text x="540" y="1040" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" text-anchor="middle">Kaydır →</text>
+</svg>

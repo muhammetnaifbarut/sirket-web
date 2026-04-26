@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="leftBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef2f2"/>
+      <stop offset="100%" stop-color="#fee2e2"/>
+    </linearGradient>
+    <linearGradient id="rightBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0fdf4"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sol panel: Eski usul -->
+  <rect width="540" height="1080" fill="url(#leftBg)"/>
+  <!-- Sağ panel: kooza -->
+  <rect x="540" width="540" height="1080" fill="url(#rightBg)"/>
+
+  <!-- KOOZA logo (top center, on the divider) -->
+  <g transform="translate(540, 110)">
+    <g transform="translate(-130, -50) scale(0.85)">
+      <circle cx="40" cy="40" r="36" fill="#714B67"/>
+      <circle cx="40" cy="40" r="14" fill="#ffffff"/>
+      <circle cx="100" cy="40" r="36" fill="none" stroke="#714B67" stroke-width="14"/>
+      <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+      <text x="170" y="62" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#1f2937">kooza</text>
+    </g>
+  </g>
+
+  <!-- Üst başlıklar -->
+  <g transform="translate(270, 230)">
+    <rect x="-130" y="-30" width="260" height="60" rx="30" fill="#dc2626"/>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">❌ ESKİ USUL</text>
+  </g>
+  <g transform="translate(810, 230)">
+    <rect x="-130" y="-30" width="260" height="60" rx="30" fill="#16a34a"/>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">✅ KOOZA İLE</text>
+  </g>
+
+  <!-- Sol liste -->
+  <g font-family="Arial, sans-serif" fill="#7f1d1d">
+    <text x="60" y="340" font-weight="700" font-size="26">5 farklı yazılım</text>
+    <text x="60" y="420" font-weight="700" font-size="26">3 ayrı abonelik</text>
+    <text x="60" y="500" font-weight="700" font-size="26">Excel'de stok</text>
+    <text x="60" y="580" font-weight="700" font-size="26">WhatsApp form</text>
+    <text x="60" y="660" font-weight="700" font-size="26">5 ayrı destek hattı</text>
+    <text x="60" y="740" font-weight="700" font-size="26">Veriler dağınık</text>
+    <text x="60" y="820" font-weight="700" font-size="26">Sürpriz fatura</text>
+  </g>
+
+  <!-- Sağ liste -->
+  <g font-family="Arial, sans-serif" fill="#14532d">
+    <text x="600" y="340" font-weight="700" font-size="26">1 platform</text>
+    <text x="600" y="420" font-weight="700" font-size="26">Tek ücret</text>
+    <text x="600" y="500" font-weight="700" font-size="26">Otomatik takip</text>
+    <text x="600" y="580" font-weight="700" font-size="26">CRM'e otomatik</text>
+    <text x="600" y="660" font-weight="700" font-size="26">Tek partner</text>
+    <text x="600" y="740" font-weight="700" font-size="26">Veriler bağlantılı</text>
+    <text x="600" y="820" font-weight="700" font-size="26">Şeffaf fiyat</text>
+  </g>
+
+  <!-- Big saving banner -->
+  <g transform="translate(540, 920)">
+    <rect x="-460" y="-50" width="920" height="100" rx="20" fill="#714B67"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle" letter-spacing="2">YILLIK TASARRUF</text>
+    <text x="0" y="35" font-family="Arial, sans-serif" font-weight="900" font-size="44" fill="#FFC0CB" text-anchor="middle">~36.000 TL'ye kadar</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="22" fill="#714B67" text-anchor="middle">kooza.tr · Yazılım ve Danışmanlık</text>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#714B67"/>
+        <stop offset="100%" stop-color="#251722"/>
+      </linearGradient>
+    </defs>
+  
+    <rect width="1080" height="1080" fill="url(#g)"/>
+    
+    <defs>
+      <radialGradient id="glow_0otqnmnnfhqe" cx="0.85" cy="0.15" r="0.55">
+        <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1080" height="1080" fill="url(#glow_0otqnmnnfhqe)"/>
+  
+    
+    <defs>
+      <radialGradient id="glow_7tyec5vvv0c" cx="0.15" cy="0.85" r="0.5">
+        <stop offset="0%" stop-color="#fde2e6" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="#fde2e6" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1080" height="1080" fill="url(#glow_7tyec5vvv0c)"/>
+  
+    
+    <g transform="translate(80, 80)">
+      
+    <g transform="translate(30, 9)">
+      <circle cx="-18" cy="0" r="18" fill="#ffffff"/>
+      <circle cx="-18" cy="0" r="7.2" fill="#714B67"/>
+      <circle cx="26" cy="0" r="18" fill="none" stroke="#ffffff" stroke-width="6.4799999999999995"/>
+      <circle cx="52" cy="-15.299999999999999" r="3.6" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="105" y="16.5" font-family="Arial Black, sans-serif" font-weight="900" font-size="31.5" fill="#ffffff" letter-spacing="-1">kooza</text>
+    </g>
+  
+    <foreignObject x="80" y="380" width="920" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Arial Black',sans-serif;font-weight:900;font-size:130px;color:#ffffff;line-height:0.98;letter-spacing:-5px;text-align:left">
+        İşinize<br/>odaklanın.
+      </div>
+    </foreignObject>
+    <line x1="80" y1="900" x2="200" y2="900" stroke="#FFC0CB" stroke-width="3"/>
+    <text x="80" y="950" font-family="Arial, sans-serif" font-weight="500" font-size="26" fill="#ffffff" opacity="0.85">Gerisini biz halledelim.</text>
+    <text x="80" y="1020" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#FFC0CB">kooza.tr · @kooza</text>
+  </svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#714B67"/>
+      <stop offset="100%" stop-color="#3a2436"/>
+    </linearGradient>
+    <radialGradient id="glow5" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg5)"/>
+  <rect width="1080" height="1080" fill="url(#glow5)"/>
+
+  <!-- KOOZA logo (top-left, white) -->
+  <g transform="translate(80, 80) scale(1.2)">
+    <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+    <circle cx="40" cy="40" r="14" fill="#714B67"/>
+    <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+    <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    <text x="170" y="62" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#ffffff">kooza</text>
+  </g>
+
+  <!-- Top label -->
+  <g transform="translate(540, 280)">
+    <rect x="-200" y="-30" width="400" height="60" rx="30" fill="#ffffff"/>
+    <text x="0" y="10" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#714B67" text-anchor="middle" letter-spacing="2">🎯 ÜCRETSİZ TEST</text>
+  </g>
+
+  <!-- Big question -->
+  <text x="540" y="420" font-family="Arial, sans-serif" font-weight="900" font-size="58" fill="#ffffff" text-anchor="middle">Şirketiniz dijital olarak</text>
+  <text x="540" y="495" font-family="Arial, sans-serif" font-weight="900" font-size="58" fill="#FFC0CB" text-anchor="middle">ne kadar hazır?</text>
+
+  <!-- 4 levels -->
+  <g transform="translate(540, 620)">
+    <g transform="translate(-380, 0)">
+      <rect x="-90" y="-10" width="180" height="180" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="0" y="60" font-size="60" text-anchor="middle">🌱</text>
+      <text x="0" y="120" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">BAŞLANGIÇ</text>
+      <text x="0" y="150" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">0-25 puan</text>
+    </g>
+    <g transform="translate(-130, 0)">
+      <rect x="-90" y="-10" width="180" height="180" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="0" y="60" font-size="60" text-anchor="middle">🌿</text>
+      <text x="0" y="120" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">GELİŞEN</text>
+      <text x="0" y="150" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">25-50 puan</text>
+    </g>
+    <g transform="translate(120, 0)">
+      <rect x="-90" y="-10" width="180" height="180" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="0" y="60" font-size="60" text-anchor="middle">🌳</text>
+      <text x="0" y="120" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">DİJİTAL</text>
+      <text x="0" y="150" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">50-75 puan</text>
+    </g>
+    <g transform="translate(370, 0)">
+      <rect x="-90" y="-10" width="180" height="180" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <text x="0" y="60" font-size="60" text-anchor="middle">🏆</text>
+      <text x="0" y="120" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle">LİDER</text>
+      <text x="0" y="150" font-family="Arial, sans-serif" font-weight="500" font-size="14" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">75-100 puan</text>
+    </g>
+  </g>
+
+  <!-- Steps row -->
+  <g transform="translate(540, 880)" font-family="Arial, sans-serif" fill="#ffffff">
+    <text x="-340" y="0" font-weight="700" font-size="28" text-anchor="middle">📋</text>
+    <text x="-340" y="40" font-weight="700" font-size="22" text-anchor="middle">10 soru</text>
+
+    <text x="-110" y="0" font-weight="700" font-size="28" text-anchor="middle">⏱️</text>
+    <text x="-110" y="40" font-weight="700" font-size="22" text-anchor="middle">2 dakika</text>
+
+    <text x="120" y="0" font-weight="700" font-size="28" text-anchor="middle">📊</text>
+    <text x="120" y="40" font-weight="700" font-size="22" text-anchor="middle">Kişisel skor</text>
+
+    <text x="340" y="0" font-weight="700" font-size="28" text-anchor="middle">🗺️</text>
+    <text x="340" y="40" font-weight="700" font-size="22" text-anchor="middle">Yol haritası</text>
+  </g>
+
+  <!-- CTA -->
+  <g transform="translate(540, 990)">
+    <rect x="-280" y="-40" width="560" height="80" rx="40" fill="#FFC0CB"/>
+    <text x="0" y="13" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#714B67" text-anchor="middle">Şimdi yap → link bio'da</text>
+  </g>
+</svg>

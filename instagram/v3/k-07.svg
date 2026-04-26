@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#faf8f9"/>
+    
+    <defs>
+      <radialGradient id="glow_04y4ll5gwx1o" cx="0.5" cy="0.5" r="0.4">
+        <stop offset="0%" stop-color="#714B67" stop-opacity="0.04"/>
+        <stop offset="100%" stop-color="#714B67" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1080" height="1080" fill="url(#glow_04y4ll5gwx1o)"/>
+  
+    
+    <g transform="translate(80, 80)">
+      
+    <g transform="translate(28, 8.4)">
+      <circle cx="-16.8" cy="0" r="16.8" fill="#0f0a0d"/>
+      <circle cx="-16.8" cy="0" r="6.720000000000001" fill="#faf8f9"/>
+      <circle cx="24.8" cy="0" r="16.8" fill="none" stroke="#0f0a0d" stroke-width="6.048"/>
+      <circle cx="49.6" cy="-14.28" r="3.3600000000000003" fill="#714B67"/>
+    </g>
+  
+      <text x="98" y="15.400000000000002" font-family="Arial Black, sans-serif" font-weight="900" font-size="29.400000000000002" fill="#0f0a0d" letter-spacing="-1">kooza</text>
+    </g>
+  
+    <foreignObject x="80" y="380" width="920" height="500">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Arial Black',sans-serif;font-weight:900;font-size:130px;color:#0f0a0d;line-height:0.98;letter-spacing:-5px;text-align:left">
+        Geleceğiniz<br/>bir tık ötede.
+      </div>
+    </foreignObject>
+    <line x1="80" y1="900" x2="200" y2="900" stroke="#714B67" stroke-width="3"/>
+    <text x="80" y="950" font-family="Arial, sans-serif" font-weight="500" font-size="26" fill="#9ca3af">Ücretsiz dijital olgunluk testi · 2 dakika</text>
+    <text x="80" y="1020" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#714B67">kooza.tr · @kooza</text>
+  </svg>

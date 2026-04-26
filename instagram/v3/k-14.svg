@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="540" fill="#714B67"/>
+    <rect y="540" width="1080" height="540" fill="#faf8f9"/>
+    
+    <g transform="translate(80, 80)">
+      
+    <g transform="translate(30, 9)">
+      <circle cx="-18" cy="0" r="18" fill="#ffffff"/>
+      <circle cx="-18" cy="0" r="7.2" fill="#714B67"/>
+      <circle cx="26" cy="0" r="18" fill="none" stroke="#ffffff" stroke-width="6.4799999999999995"/>
+      <circle cx="52" cy="-15.299999999999999" r="3.6" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="105" y="16.5" font-family="Arial Black, sans-serif" font-weight="900" font-size="31.5" fill="#ffffff" letter-spacing="-1">kooza</text>
+    </g>
+  
+    <foreignObject x="80" y="200" width="920" height="280">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Arial Black',sans-serif;font-weight:900;font-size:88px;color:#ffffff;line-height:1.05;letter-spacing:-3px">
+        Bir yazılım<br/>tedarikçisi gibi değil,<br/>bir iş ortağı gibi.
+      </div>
+    </foreignObject>
+    <foreignObject x="80" y="640" width="920" height="320">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Georgia,serif;font-style:italic;font-weight:500;font-size:42px;color:#3a2436;line-height:1.35">
+        Yazılım veriyoruz, sürecinizi yönetiyoruz, ekibinize eğitim sunuyoruz, sürekli yanınızdayız. Bir tedarikçi mesafesi değil, bir partner yakınlığı.
+      </div>
+    </foreignObject>
+    <text x="80" y="1020" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#714B67">kooza.tr · @kooza</text>
+  </svg>

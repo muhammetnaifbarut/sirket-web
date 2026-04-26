@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#7c3aed"/>
+    
+    <g transform="translate(80, 80) scale(1)">
+      
+    <g transform="translate(0, 0)">
+      <circle cx="-14" cy="0" r="28" fill="#ffffff"/>
+      <circle cx="-14" cy="0" r="11.200000000000001" fill="#7c3aed"/>
+      <circle cx="19" cy="0" r="28" fill="none" stroke="#ffffff" stroke-width="9.799999999999999"/>
+      <circle cx="54" cy="-23.8" r="5.04" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="60" y="20" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ffffff">kooza</text>
+    </g>
+  
+    <text x="540" y="380" font-family="Arial, sans-serif" font-weight="700" font-size="32" fill="#ffffff" fill-opacity="0.7" text-anchor="middle" letter-spacing="3">SORU</text>
+    <foreignObject x="80" y="430" width="920" height="400">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Arial Black,sans-serif;font-weight:900;font-size:88px;color:#ffffff;line-height:1.05;text-align:center;letter-spacing:-3px">
+        Müşteri 2. kez gelmiyor mu?
+      </div>
+    </foreignObject>
+    <text x="540" y="900" font-family="Arial, sans-serif" font-weight="500" font-size="28" fill="#FFC0CB" text-anchor="middle">Sadakat programı + otomatik SMS — geri kazan</text>
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.7">@kooza · kooza.tr</text>
+  </svg>

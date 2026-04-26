@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#714B67"/>
+      <stop offset="100%" stop-color="#3a2436"/>
+    </linearGradient>
+    <radialGradient id="g1a" cx="0.85" cy="0.15" r="0.5">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g1b" cx="0.1" cy="0.9" r="0.5">
+      <stop offset="0%" stop-color="#FFB6C1" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFB6C1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg1)"/>
+  <rect width="1080" height="1080" fill="url(#g1a)"/>
+  <rect width="1080" height="1080" fill="url(#g1b)"/>
+
+  <!-- KOOZA double-O logo (top-left, white version) -->
+  <g transform="translate(80, 80) scale(1.3)">
+    <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+    <circle cx="40" cy="40" r="14" fill="#714B67"/>
+    <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+    <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    <text x="170" y="62" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#ffffff">kooza</text>
+  </g>
+
+  <!-- Main headline -->
+  <text x="80" y="500" font-family="Arial, sans-serif" font-weight="900" font-size="100" fill="#ffffff" letter-spacing="-3">Şirketinizi</text>
+  <text x="80" y="620" font-family="Arial, sans-serif" font-weight="900" font-size="100" fill="#ffffff" letter-spacing="-3">uçtan uca</text>
+  <text x="80" y="740" font-family="Arial, sans-serif" font-weight="900" font-size="100" fill="#FFC0CB" letter-spacing="-3">dijitalleştiriyoruz.</text>
+
+  <!-- Bottom badges -->
+  <g transform="translate(80, 860)">
+    <rect width="200" height="56" rx="28" fill="#ffffff" fill-opacity="0.15"/>
+    <text x="100" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle">🌐 Web</text>
+  </g>
+  <g transform="translate(300, 860)">
+    <rect width="280" height="56" rx="28" fill="#ffffff" fill-opacity="0.15"/>
+    <text x="140" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle">🤖 Otomasyon</text>
+  </g>
+  <g transform="translate(600, 860)">
+    <rect width="160" height="56" rx="28" fill="#ffffff" fill-opacity="0.15"/>
+    <text x="80" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle">👥 İK</text>
+  </g>
+  <g transform="translate(780, 860)">
+    <rect width="220" height="56" rx="28" fill="#ffffff" fill-opacity="0.15"/>
+    <text x="110" y="38" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle">💼 Muhasebe</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="540" y="1010" font-family="Arial, sans-serif" font-weight="600" font-size="28" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">kooza.tr · Yazılım ve Danışmanlık</text>
+</svg>

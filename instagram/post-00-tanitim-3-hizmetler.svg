@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f5f0f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg3)"/>
+
+  <!-- Mini logo top -->
+  <g transform="translate(80, 80)">
+    <circle cx="30" cy="30" r="28" fill="#714B67"/>
+    <circle cx="30" cy="30" r="11" fill="#fafafa"/>
+    <circle cx="80" cy="30" r="28" fill="none" stroke="#714B67" stroke-width="11"/>
+    <circle cx="113" cy="2" r="6" fill="#FFC0CB"/>
+    <text x="135" y="48" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#1f2937">kooza</text>
+  </g>
+
+  <!-- Step number -->
+  <text x="80" y="240" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" letter-spacing="3">3 / 5</text>
+
+  <!-- Big title -->
+  <text x="80" y="330" font-family="Arial, sans-serif" font-weight="900" font-size="80" fill="#1f2937" letter-spacing="-2">Ne yapıyoruz?</text>
+
+  <!-- 6 services grid (2 columns x 3 rows) -->
+  <g transform="translate(80, 410)" font-family="Arial, sans-serif">
+    <!-- Row 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="440" height="120" rx="20" fill="#714B67"/>
+      <text x="30" y="55" font-size="42">🌐</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">Web Sitesi</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#FFC0CB">Kurumsal site, e-ticaret, blog</text>
+    </g>
+    <g transform="translate(480, 0)">
+      <rect width="440" height="120" rx="20" fill="#dc2626"/>
+      <text x="30" y="55" font-size="42">🏥</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">Klinik Sistemi</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#fecaca">Hasta dosyası, e-Reçete, MHRS</text>
+    </g>
+
+    <!-- Row 2 -->
+    <g transform="translate(0, 145)">
+      <rect width="440" height="120" rx="20" fill="#ea580c"/>
+      <text x="30" y="55" font-size="42">🍽️</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">Restoran-Kafe</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#fed7aa">Adisyon, kasa, kurye, mutfak</text>
+    </g>
+    <g transform="translate(480, 145)">
+      <rect width="440" height="120" rx="20" fill="#16a34a"/>
+      <text x="30" y="55" font-size="42">🛒</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">Market-Perakende</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#bbf7d0">Barkod, kasa, stok, sadakat</text>
+    </g>
+
+    <!-- Row 3 -->
+    <g transform="translate(0, 290)">
+      <rect width="440" height="120" rx="20" fill="#4f46e5"/>
+      <text x="30" y="55" font-size="42">🎓</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">Eğitim Sistemi</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#c7d2fe">Öğrenci, sınav, veli portalı</text>
+    </g>
+    <g transform="translate(480, 290)">
+      <rect width="440" height="120" rx="20" fill="#0891b2"/>
+      <text x="30" y="55" font-size="42">👥</text>
+      <text x="90" y="50" font-weight="800" font-size="26" fill="#ffffff">İnsan Kaynakları</text>
+      <text x="90" y="80" font-weight="500" font-size="18" fill="#cffafe">Bordro, izin, performans</text>
+    </g>
+  </g>
+
+  <!-- Bottom line -->
+  <text x="540" y="900" font-family="Arial, sans-serif" font-weight="700" font-size="28" fill="#374151" text-anchor="middle">+ CRM · Muhasebe · Pazarlama · Danışmanlık</text>
+  <text x="540" y="950" font-family="Arial, sans-serif" font-weight="900" font-size="36" fill="#714B67" text-anchor="middle">12 sektörel modül, tek platform.</text>
+
+  <!-- Swipe -->
+  <text x="540" y="1040" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" text-anchor="middle">Kaydır →</text>
+</svg>

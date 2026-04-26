@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#0f0a0d"/>
+    
+    <defs>
+      <radialGradient id="glow_ipozzbag7fo" cx="0.5" cy="0.5" r="0.6">
+        <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1080" height="1080" fill="url(#glow_ipozzbag7fo)"/>
+  
+    
+    <g transform="translate(380, 130)">
+      
+    <g transform="translate(30, 9)">
+      <circle cx="-18" cy="0" r="18" fill="#ffffff"/>
+      <circle cx="-18" cy="0" r="7.2" fill="#0f0a0d"/>
+      <circle cx="26" cy="0" r="18" fill="none" stroke="#ffffff" stroke-width="6.4799999999999995"/>
+      <circle cx="52" cy="-15.299999999999999" r="3.6" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="105" y="16.5" font-family="Arial Black, sans-serif" font-weight="900" font-size="31.5" fill="#ffffff" letter-spacing="-1">kooza</text>
+    </g>
+  
+    <foreignObject x="60" y="420" width="960" height="400">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:'Arial Black',sans-serif;font-weight:900;font-size:120px;color:#ffffff;line-height:1.0;letter-spacing:-4px;text-align:center">
+        Şirketiniz<br/>büyüsün.
+      </div>
+    </foreignObject>
+    <line x1="450" y1="870" x2="630" y2="870" stroke="#FFC0CB" stroke-width="3"/>
+    <text x="540" y="930" font-family="Arial, sans-serif" font-weight="500" font-size="26" fill="#ffffff" opacity="0.85" text-anchor="middle">Sistem otomatik yetişsin — kooza ile.</text>
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="#FFC0CB" text-anchor="middle">kooza.tr · Yazılım ve Danışmanlık</text>
+  </svg>

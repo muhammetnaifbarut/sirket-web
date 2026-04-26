@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#0f172a"/>
+    <radialGradient id="g" cx="0.5" cy="0.3" r="0.7"><stop offset="0%" stop-color="#714B67" stop-opacity="0.35"/><stop offset="100%" stop-color="#714B67" stop-opacity="0"/></radialGradient>
+    <rect width="1080" height="1080" fill="url(#g)"/>
+    
+    <g transform="translate(80, 80) scale(1)">
+      
+    <g transform="translate(0, 0)">
+      <circle cx="-14" cy="0" r="28" fill="#ffffff"/>
+      <circle cx="-14" cy="0" r="11.200000000000001" fill="#0f172a"/>
+      <circle cx="19" cy="0" r="28" fill="none" stroke="#ffffff" stroke-width="9.799999999999999"/>
+      <circle cx="54" cy="-23.8" r="5.04" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="60" y="20" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ffffff">kooza</text>
+    </g>
+  
+    <text x="540" y="500" font-family="Arial Black, sans-serif" font-weight="900" font-size="100" fill="#ffffff" text-anchor="middle" letter-spacing="-3">Şirketinizi</text>
+    <text x="540" y="610" font-family="Arial Black, sans-serif" font-weight="900" font-size="100" fill="#FFC0CB" text-anchor="middle" letter-spacing="-3">uçtan uca</text>
+    <text x="540" y="720" font-family="Arial Black, sans-serif" font-weight="900" font-size="100" fill="#ffffff" text-anchor="middle" letter-spacing="-3">dijitalleştiriyoruz.</text>
+    <line x1="450" y1="820" x2="630" y2="820" stroke="#FFC0CB" stroke-width="2"/>
+    <text x="540" y="880" font-family="Arial, sans-serif" font-weight="500" font-size="26" fill="#ffffff" text-anchor="middle" opacity="0.7">Türk KOBİ'lerinin tek dijital partneri</text>
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.7">kooza.tr · Yazılım ve Danışmanlık</text>
+  </svg>

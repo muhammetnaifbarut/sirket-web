@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#0f172a"/>
+    <radialGradient id="g" cx="0.5" cy="0.5" r="0.6"><stop offset="0%" stop-color="#714B67" stop-opacity="0.3"/><stop offset="100%" stop-color="#714B67" stop-opacity="0"/></radialGradient>
+    <rect width="1080" height="1080" fill="url(#g)"/>
+    <text x="540" y="370" font-family="Georgia, serif" font-weight="900" font-size="280" fill="#714B67" text-anchor="middle" opacity="0.5">"</text>
+    <foreignObject x="80" y="450" width="920" height="350">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family:Georgia,serif;font-style:italic;font-weight:600;font-size:60px;color:#ffffff;line-height:1.25;text-align:center">
+        Siz işinize odaklanın,<br/>gerisini biz halledelim.
+      </div>
+    </foreignObject>
+    <line x1="450" y1="850" x2="630" y2="850" stroke="#FFC0CB" stroke-width="2"/>
+    <text x="540" y="900" font-family="Arial, sans-serif" font-weight="600" font-size="22" fill="#FFC0CB" text-anchor="middle">— kooza Manifestomuz</text>
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.7">kooza.tr</text>
+  </svg>

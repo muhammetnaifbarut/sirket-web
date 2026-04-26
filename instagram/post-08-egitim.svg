@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <radialGradient id="glow8" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#eef2ff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#eef2ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg8)"/>
+  <rect width="1080" height="1080" fill="url(#glow8)"/>
+
+  <!-- KOOZA logo (top-left, white) -->
+  <g transform="translate(80, 80) scale(1.2)">
+    <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+    <circle cx="40" cy="40" r="14" fill="#4f46e5"/>
+    <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+    <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    <text x="170" y="62" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#ffffff">kooza</text>
+  </g>
+
+  <!-- Top icon + label -->
+  <text x="80" y="280" font-family="Arial, sans-serif" font-size="100">🎓</text>
+  <text x="220" y="255" font-family="Arial, sans-serif" font-weight="800" font-size="32" fill="#ffffff">EĞİTİM KURUMLARI İÇİN</text>
+
+  <!-- Main message -->
+  <text x="80" y="430" font-family="Arial, sans-serif" font-weight="900" font-size="76" fill="#ffffff" letter-spacing="-2">Veliler hâlâ</text>
+  <text x="80" y="510" font-family="Arial, sans-serif" font-weight="900" font-size="76" fill="#ffffff" letter-spacing="-2">WhatsApp grubunda</text>
+  <text x="80" y="590" font-family="Arial, sans-serif" font-weight="900" font-size="76" fill="#c7d2fe" letter-spacing="-2">mi takip ediyor?</text>
+
+  <!-- Feature tags -->
+  <g transform="translate(80, 660)">
+    <rect width="270" height="68" rx="34" fill="#ffffff"/>
+    <text x="135" y="46" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#4f46e5" text-anchor="middle">📋 Online Sınav</text>
+  </g>
+  <g transform="translate(370, 660)">
+    <rect width="240" height="68" rx="34" fill="#ffffff"/>
+    <text x="120" y="46" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#4f46e5" text-anchor="middle">📱 Veli Portal</text>
+  </g>
+  <g transform="translate(630, 660)">
+    <rect width="200" height="68" rx="34" fill="#ffffff"/>
+    <text x="100" y="46" font-family="Arial, sans-serif" font-weight="800" font-size="22" fill="#4f46e5" text-anchor="middle">💳 Taksit</text>
+  </g>
+
+  <!-- Solution -->
+  <text x="80" y="820" font-family="Arial, sans-serif" font-weight="700" font-size="40" fill="#ffffff">kooza ile:</text>
+  <text x="80" y="900" font-family="Arial, sans-serif" font-weight="900" font-size="58" fill="#c7d2fe" letter-spacing="-2">→ Veli tek panelde takip eder.</text>
+
+  <!-- Bottom tag -->
+  <g transform="translate(80, 970)">
+    <rect width="920" height="74" rx="37" fill="#ffffff" fill-opacity="0.18"/>
+    <text x="460" y="48" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" text-anchor="middle">Öğrenci · Sınav · Devam · Veli Portalı · Tahsilat · SMS</text>
+  </g>
+</svg>

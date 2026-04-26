@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#714B67"/>
+      <stop offset="100%" stop-color="#3a2436"/>
+    </linearGradient>
+    <radialGradient id="glow5" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg5)"/>
+  <rect width="1080" height="1080" fill="url(#glow5)"/>
+
+  <!-- Big logo top -->
+  <g transform="translate(540, 220)">
+    <g transform="translate(-160, -60)">
+      <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+      <circle cx="40" cy="40" r="14" fill="#714B67"/>
+      <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+      <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    </g>
+    <text x="0" y="120" font-family="Arial Black, sans-serif" font-weight="900" font-size="120" fill="#ffffff" text-anchor="middle" letter-spacing="-4">kooza</text>
+    <text x="0" y="170" font-family="Arial, sans-serif" font-weight="600" font-size="26" fill="#FFC0CB" text-anchor="middle" letter-spacing="2">Yazılım ve Danışmanlık</text>
+  </g>
+
+  <!-- Step number -->
+  <text x="540" y="490" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#FFC0CB" text-anchor="middle" letter-spacing="3">5 / 5</text>
+
+  <!-- Big CTA title -->
+  <text x="540" y="580" font-family="Arial, sans-serif" font-weight="900" font-size="64" fill="#ffffff" text-anchor="middle" letter-spacing="-2">Bugün başla,</text>
+  <text x="540" y="650" font-family="Arial, sans-serif" font-weight="900" font-size="64" fill="#FFC0CB" text-anchor="middle" letter-spacing="-2">yarın fark yarat.</text>
+
+  <!-- 3 action items -->
+  <g transform="translate(540, 740)" font-family="Arial, sans-serif">
+    <g transform="translate(-300, 0)">
+      <circle cx="0" cy="0" r="40" fill="#ffffff" fill-opacity="0.15"/>
+      <text x="0" y="13" font-size="40" text-anchor="middle">🎯</text>
+      <text x="0" y="80" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">Olgunluk</text>
+      <text x="0" y="105" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">Testi</text>
+    </g>
+    <g transform="translate(0, 0)">
+      <circle cx="0" cy="0" r="40" fill="#ffffff" fill-opacity="0.15"/>
+      <text x="0" y="13" font-size="40" text-anchor="middle">💬</text>
+      <text x="0" y="80" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">Ücretsiz</text>
+      <text x="0" y="105" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">Görüşme</text>
+    </g>
+    <g transform="translate(300, 0)">
+      <circle cx="0" cy="0" r="40" fill="#ffffff" fill-opacity="0.15"/>
+      <text x="0" y="13" font-size="40" text-anchor="middle">📊</text>
+      <text x="0" y="80" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">Demo</text>
+      <text x="0" y="105" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle">İncele</text>
+    </g>
+  </g>
+
+  <!-- CTA button -->
+  <g transform="translate(540, 940)">
+    <rect x="-280" y="-40" width="560" height="80" rx="40" fill="#FFC0CB"/>
+    <text x="0" y="13" font-family="Arial, sans-serif" font-weight="900" font-size="28" fill="#714B67" text-anchor="middle">Link bio'da → kooza.tr</text>
+  </g>
+
+  <!-- Follow CTA -->
+  <text x="540" y="1040" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#ffffff" fill-opacity="0.7" text-anchor="middle">Takip et: @kooza · Beğen · Kaydet</text>
+</svg>

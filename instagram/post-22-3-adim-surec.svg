@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#714B67"/>
+      <stop offset="100%" stop-color="#3a2436"/>
+    </linearGradient>
+    <radialGradient id="g" cx="0.5" cy="0.5" r="0.7">
+      <stop offset="0%" stop-color="#FFC0CB" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FFC0CB" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect width="1080" height="1080" fill="url(#g)"/>
+
+  <!-- Logo -->
+  <g transform="translate(80, 80) scale(1.2)">
+    <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+    <circle cx="40" cy="40" r="14" fill="#714B67"/>
+    <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+    <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    <text x="170" y="62" font-family="Arial Black, sans-serif" font-weight="900" font-size="62" fill="#ffffff">kooza</text>
+  </g>
+
+  <text x="540" y="270" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#FFC0CB" text-anchor="middle" letter-spacing="3">NASIL ÇALIŞIYORUZ?</text>
+
+  <text x="540" y="370" font-family="Arial Black, sans-serif" font-weight="900" font-size="84" fill="#ffffff" text-anchor="middle" letter-spacing="-2">3 adımda</text>
+  <text x="540" y="450" font-family="Arial Black, sans-serif" font-weight="900" font-size="84" fill="#FFC0CB" text-anchor="middle" letter-spacing="-2">dijitalleşin.</text>
+
+  <!-- 3 steps -->
+  <g transform="translate(80, 560)" font-family="Arial, sans-serif">
+    <!-- Step 1 -->
+    <g transform="translate(0, 0)">
+      <rect width="920" height="130" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <circle cx="70" cy="65" r="38" fill="#FFC0CB"/>
+      <text x="70" y="80" font-weight="900" font-size="42" fill="#714B67" text-anchor="middle">1</text>
+      <text x="140" y="50" font-weight="800" font-size="32" fill="#ffffff">Ücretsiz keşif görüşmesi</text>
+      <text x="140" y="90" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">30 dakika · Sürecinizi anlıyoruz · Yol haritası</text>
+    </g>
+    <!-- Step 2 -->
+    <g transform="translate(0, 150)">
+      <rect width="920" height="130" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <circle cx="70" cy="65" r="38" fill="#FFC0CB"/>
+      <text x="70" y="80" font-weight="900" font-size="42" fill="#714B67" text-anchor="middle">2</text>
+      <text x="140" y="50" font-weight="800" font-size="32" fill="#ffffff">Size özel kurulum + eğitim</text>
+      <text x="140" y="90" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">3-7 gün · Veri taşıma · Ekip eğitimi</text>
+    </g>
+    <!-- Step 3 -->
+    <g transform="translate(0, 300)">
+      <rect width="920" height="130" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+      <circle cx="70" cy="65" r="38" fill="#FFC0CB"/>
+      <text x="70" y="80" font-weight="900" font-size="42" fill="#714B67" text-anchor="middle">3</text>
+      <text x="140" y="50" font-weight="800" font-size="32" fill="#ffffff">Yayında + sürekli destek</text>
+      <text x="140" y="90" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">İlk ay ücretsiz · 24/7 Türkçe destek</text>
+    </g>
+  </g>
+
+  <!-- CTA -->
+  <text x="540" y="1040" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#FFC0CB" text-anchor="middle">Başlamak için → link bio</text>
+</svg>

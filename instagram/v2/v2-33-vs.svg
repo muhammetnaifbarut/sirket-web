@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="540" height="1080" fill="#fef2f2"/>
+    <rect x="540" width="540" height="1080" fill="#f0fdf4"/>
+    
+    <g transform="translate(435, 70) scale(0.85)">
+      
+    <g transform="translate(0, 0)">
+      <circle cx="-14" cy="0" r="28" fill="#1f2937"/>
+      <circle cx="-14" cy="0" r="11.200000000000001" fill="#fafafa"/>
+      <circle cx="19" cy="0" r="28" fill="none" stroke="#1f2937" stroke-width="9.799999999999999"/>
+      <circle cx="54" cy="-23.8" r="5.04" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="60" y="20" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#1f2937">kooza</text>
+    </g>
+  
+    <g transform="translate(270, 200)"><rect x="-100" y="-30" width="200" height="50" rx="25" fill="#dc2626"/><text x="0" y="6" font-family="Arial, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">KOMPLİKE</text></g>
+    <g transform="translate(810, 200)"><rect x="-100" y="-30" width="200" height="50" rx="25" fill="#16a34a"/><text x="0" y="6" font-family="Arial, sans-serif" font-weight="800" font-size="20" fill="#ffffff" text-anchor="middle">kooza</text></g>
+    <text x="40" y="320" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#7f1d1d">💸 Yüksek ön ödeme</text><text x="40" y="390" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#7f1d1d">⏳ 6 aylık kurulum</text><text x="40" y="460" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#7f1d1d">🤔 Kullanılmayan özellik</text><text x="40" y="530" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#7f1d1d">👨‍💻 Teknik ekip gerekli</text><text x="40" y="600" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#7f1d1d">📚 Aylar süren eğitim</text>
+    <text x="580" y="320" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#14532d">💰 Aylık abonelik</text><text x="580" y="390" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#14532d">⚡ 5 dakika kurulum</text><text x="580" y="460" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#14532d">🎯 Sadece gerekenler</text><text x="580" y="530" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#14532d">👤 Tek kişi yeter</text><text x="580" y="600" font-family="Arial, sans-serif" font-weight="600" font-size="24" fill="#14532d">⏱️ 1 saatlik eğitim</text>
+    <g transform="translate(540, 920)">
+      <rect x="-460" y="-50" width="920" height="100" rx="20" fill="#714B67"/>
+      <text x="0" y="-10" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#ffffff" text-anchor="middle" letter-spacing="2">SONUÇ</text>
+      <text x="0" y="35" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#FFC0CB" text-anchor="middle">Sade ama derinlikli</text>
+    </g>
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#714B67" text-anchor="middle" opacity="0.7">kooza.tr</text>
+  </svg>

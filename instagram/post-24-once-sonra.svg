@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fafafa"/>
+      <stop offset="100%" stop-color="#f5f0f3"/>
+    </linearGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+
+  <!-- Logo -->
+  <g transform="translate(80, 70)">
+    <circle cx="30" cy="30" r="28" fill="#714B67"/>
+    <circle cx="30" cy="30" r="11" fill="#fafafa"/>
+    <circle cx="80" cy="30" r="28" fill="none" stroke="#714B67" stroke-width="11"/>
+    <circle cx="113" cy="2" r="6" fill="#FFC0CB"/>
+    <text x="135" y="48" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#1f2937">kooza</text>
+  </g>
+
+  <!-- Top label -->
+  <text x="540" y="200" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" text-anchor="middle" letter-spacing="3">İŞLETMENİZ İÇİN</text>
+
+  <text x="540" y="290" font-family="Arial Black, sans-serif" font-weight="900" font-size="76" fill="#1f2937" text-anchor="middle" letter-spacing="-3">Önce ve sonra.</text>
+
+  <!-- ÖNCE box -->
+  <g transform="translate(80, 380)" font-family="Arial, sans-serif">
+    <rect width="430" height="500" rx="24" fill="#fef2f2" stroke="#fecaca" stroke-width="2"/>
+    <g transform="translate(215, 60)">
+      <rect x="-90" y="-30" width="180" height="50" rx="25" fill="#dc2626"/>
+      <text x="0" y="6" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle" letter-spacing="2">ÖNCE</text>
+    </g>
+    <g fill="#7f1d1d" font-weight="600" font-size="22">
+      <text x="30" y="160">😩 5 farklı yazılım</text>
+      <text x="30" y="220">📞 5 destek hattı</text>
+      <text x="30" y="280">📊 Excel'de stok</text>
+      <text x="30" y="340">📅 WhatsApp'ta veli</text>
+      <text x="30" y="400">💸 36.000 TL/yıl</text>
+      <text x="30" y="460">😴 Geç tahsilat</text>
+    </g>
+  </g>
+
+  <!-- ARROW -->
+  <text x="540" y="650" font-family="Arial, sans-serif" font-weight="900" font-size="60" fill="#714B67" text-anchor="middle">→</text>
+
+  <!-- SONRA box -->
+  <g transform="translate(570, 380)" font-family="Arial, sans-serif">
+    <rect width="430" height="500" rx="24" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+    <g transform="translate(215, 60)">
+      <rect x="-90" y="-30" width="180" height="50" rx="25" fill="#16a34a"/>
+      <text x="0" y="6" font-weight="800" font-size="22" fill="#ffffff" text-anchor="middle" letter-spacing="2">SONRA</text>
+    </g>
+    <g fill="#14532d" font-weight="600" font-size="22">
+      <text x="30" y="160">🎯 Tek platform</text>
+      <text x="30" y="220">🤝 Tek partner</text>
+      <text x="30" y="280">📦 Otomatik stok</text>
+      <text x="30" y="340">📱 Veli portalı</text>
+      <text x="30" y="400">💰 Tek fatura</text>
+      <text x="30" y="460">⚡ Otomatik tahsilat</text>
+    </g>
+  </g>
+
+  <!-- Bottom -->
+  <text x="540" y="950" font-family="Arial Black, sans-serif" font-weight="900" font-size="36" fill="#714B67" text-anchor="middle">Hangisi sizin işletmeniz?</text>
+  <text x="540" y="1010" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="#6b7280" text-anchor="middle">Yorumda yazın · Takip et @kooza · kooza.tr</text>
+</svg>

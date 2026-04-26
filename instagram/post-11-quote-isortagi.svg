@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1f2937"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <radialGradient id="g1" cx="0.5" cy="0.5" r="0.6">
+      <stop offset="0%" stop-color="#714B67" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#714B67" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect width="1080" height="1080" fill="url(#g1)"/>
+
+  <!-- Big quote mark -->
+  <text x="540" y="380" font-family="Georgia, serif" font-weight="900" font-size="320" fill="#714B67" text-anchor="middle" opacity="0.5">"</text>
+
+  <!-- Quote text -->
+  <text x="540" y="500" font-family="Georgia, serif" font-style="italic" font-weight="500" font-size="56" fill="#ffffff" text-anchor="middle">Bir yazılım tedarikçisi</text>
+  <text x="540" y="570" font-family="Georgia, serif" font-style="italic" font-weight="500" font-size="56" fill="#ffffff" text-anchor="middle">gibi değil,</text>
+  <text x="540" y="660" font-family="Georgia, serif" font-style="italic" font-weight="900" font-size="68" fill="#FFC0CB" text-anchor="middle">bir iş ortağı gibi.</text>
+
+  <!-- Divider -->
+  <line x1="450" y1="780" x2="630" y2="780" stroke="#714B67" stroke-width="3"/>
+
+  <!-- Logo + name -->
+  <g transform="translate(540, 880)">
+    <g transform="translate(-100, -40) scale(0.7)">
+      <circle cx="40" cy="40" r="36" fill="#ffffff"/>
+      <circle cx="40" cy="40" r="14" fill="#1f2937"/>
+      <circle cx="100" cy="40" r="36" fill="none" stroke="#ffffff" stroke-width="14"/>
+      <circle cx="142" cy="6" r="7" fill="#FFC0CB"/>
+    </g>
+    <text x="20" y="0" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ffffff">kooza</text>
+    <text x="540" y="50" font-family="Arial, sans-serif" font-weight="500" font-size="18" fill="#9ca3af" text-anchor="end">— Manifestomuz</text>
+  </g>
+  <text x="540" y="1010" font-family="Arial, sans-serif" font-weight="600" font-size="20" fill="#714B67" text-anchor="middle">kooza.tr · Yazılım ve Danışmanlık</text>
+</svg>

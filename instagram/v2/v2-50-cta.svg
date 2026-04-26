@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#fafafa"/>
+    
+    <g transform="translate(80, 70) scale(0.9)">
+      
+    <g transform="translate(0, 0)">
+      <circle cx="-14" cy="0" r="28" fill="#1f2937"/>
+      <circle cx="-14" cy="0" r="11.200000000000001" fill="#fafafa"/>
+      <circle cx="19" cy="0" r="28" fill="none" stroke="#1f2937" stroke-width="9.799999999999999"/>
+      <circle cx="54" cy="-23.8" r="5.04" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="60" y="20" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#1f2937">kooza</text>
+    </g>
+  
+    <text x="540" y="220" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#714B67" text-anchor="middle" letter-spacing="3">HİZMETLERİMİZ</text>
+    <text x="540" y="310" font-family="Arial Black, sans-serif" font-weight="900" font-size="68" fill="#1f2937" text-anchor="middle" letter-spacing="-2">kooza'da neler var?</text>
+    
+        <g transform="translate(80, 400)">
+          <rect width="440" height="110" rx="16" fill="#714B67"/>
+          <text x="30" y="50" font-size="36">🌐</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Web Sitesi</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Kurumsal · E-ticaret · Blog</text>
+        </g>
+      
+        <g transform="translate(540, 400)">
+          <rect width="440" height="110" rx="16" fill="#dc2626"/>
+          <text x="30" y="50" font-size="36">🏥</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Klinik</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Hasta dosyası · e-Reçete</text>
+        </g>
+      
+        <g transform="translate(80, 530)">
+          <rect width="440" height="110" rx="16" fill="#ea580c"/>
+          <text x="30" y="50" font-size="36">🍽️</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Restoran</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Adisyon · Kasa · Kurye</text>
+        </g>
+      
+        <g transform="translate(540, 530)">
+          <rect width="440" height="110" rx="16" fill="#16a34a"/>
+          <text x="30" y="50" font-size="36">🛒</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Market</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Barkod · Kasa · Stok</text>
+        </g>
+      
+        <g transform="translate(80, 660)">
+          <rect width="440" height="110" rx="16" fill="#4f46e5"/>
+          <text x="30" y="50" font-size="36">🎓</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Eğitim</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Öğrenci · Sınav · Veli</text>
+        </g>
+      
+        <g transform="translate(540, 660)">
+          <rect width="440" height="110" rx="16" fill="#0891b2"/>
+          <text x="30" y="50" font-size="36">👥</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">İK</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Bordro · İzin · PDKS</text>
+        </g>
+      
+        <g transform="translate(80, 790)">
+          <rect width="440" height="110" rx="16" fill="#059669"/>
+          <text x="30" y="50" font-size="36">🧾</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">Muhasebe</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">e-Fatura · GİB</text>
+        </g>
+      
+        <g transform="translate(540, 790)">
+          <rect width="440" height="110" rx="16" fill="#db2777"/>
+          <text x="30" y="50" font-size="36">👤</text>
+          <text x="80" y="50" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#ffffff">CRM</text>
+          <text x="30" y="90" font-family="Arial, sans-serif" font-weight="500" font-size="16" fill="#ffffff" fill-opacity="0.85">Pipeline · Teklif</text>
+        </g>
+      
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#714B67" text-anchor="middle" opacity="0.7">kooza.tr · 12 modül, tek platform</text>
+  </svg>

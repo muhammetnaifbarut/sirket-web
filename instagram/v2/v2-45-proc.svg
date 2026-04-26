@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+    <rect width="1080" height="1080" fill="#4f46e5"/>
+    
+    <g transform="translate(80, 80) scale(1)">
+      
+    <g transform="translate(0, 0)">
+      <circle cx="-14" cy="0" r="28" fill="#ffffff"/>
+      <circle cx="-14" cy="0" r="11.200000000000001" fill="#4f46e5"/>
+      <circle cx="19" cy="0" r="28" fill="none" stroke="#ffffff" stroke-width="9.799999999999999"/>
+      <circle cx="54" cy="-23.8" r="5.04" fill="#FFC0CB"/>
+    </g>
+  
+      <text x="60" y="20" font-family="Arial Black, sans-serif" font-weight="900" font-size="44" fill="#ffffff">kooza</text>
+    </g>
+  
+    <text x="540" y="280" font-family="Arial Black, sans-serif" font-weight="900" font-size="60" fill="#ffffff" text-anchor="middle" letter-spacing="-2">Demo süreciniz</text>
+    
+      <g transform="translate(80, 380)">
+        <rect width="920" height="150" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+        <circle cx="80" cy="75" r="42" fill="#FFC0CB"/>
+        <text x="80" y="92" font-family="Arial Black, sans-serif" font-weight="900" font-size="48" fill="#714B67" text-anchor="middle">1</text>
+        <text x="160" y="60" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff">Demo formu doldurun</text>
+        <text x="160" y="100" font-family="Arial, sans-serif" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">1 dakika · İhtiyaçlarınızı yazın</text>
+      </g>
+    
+      <g transform="translate(80, 560)">
+        <rect width="920" height="150" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+        <circle cx="80" cy="75" r="42" fill="#FFC0CB"/>
+        <text x="80" y="92" font-family="Arial Black, sans-serif" font-weight="900" font-size="48" fill="#714B67" text-anchor="middle">2</text>
+        <text x="160" y="60" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff">Uzmanımız sizi arar</text>
+        <text x="160" y="100" font-family="Arial, sans-serif" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">24 saat içinde · Size özel demo</text>
+      </g>
+    
+      <g transform="translate(80, 740)">
+        <rect width="920" height="150" rx="20" fill="#ffffff" fill-opacity="0.1"/>
+        <circle cx="80" cy="75" r="42" fill="#FFC0CB"/>
+        <text x="80" y="92" font-family="Arial Black, sans-serif" font-weight="900" font-size="48" fill="#714B67" text-anchor="middle">3</text>
+        <text x="160" y="60" font-family="Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff">Beğenirseniz başlayın</text>
+        <text x="160" y="100" font-family="Arial, sans-serif" font-weight="500" font-size="22" fill="#ffffff" fill-opacity="0.75">İlk ay ücretsiz · Risk almazsınız</text>
+      </g>
+    
+    <text x="540" y="1020" font-family="Arial, sans-serif" font-weight="600" font-size="18" fill="#ffffff" text-anchor="middle" opacity="0.7">kooza.tr</text>
+  </svg>
