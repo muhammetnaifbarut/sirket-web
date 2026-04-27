@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import HeroDashboard from '@/components/site/HeroDashboard'
 
 interface VideoShowcaseSectionProps {
   settings: Record<string, string>
@@ -12,17 +13,17 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
 
   const videoUrl = settings.showcase_video_url
   const posterImage = settings.showcase_poster_image
-  const badge = settings.showcase_badge || 'Ürün Turu'
+  const badge = settings.showcase_badge || 'Canlı Önizleme'
   const title = settings.showcase_title || 'Güçlü özellikleri keşfedin.'
   const subtitle =
     settings.showcase_subtitle ||
-    '5 dakikada platformun tüm özelliklerini tanıyın ve nasıl çalıştığını görün.'
+    'Her sektör için özelleştirilmiş paneller. CRM\'den stoka, randevudan bordroya — her şey tek ekranda, gerçek zamanlı.'
 
   const features = [
-    settings.showcase_feat1 || 'Kolay kurulum, dakikalar içinde hazır',
-    settings.showcase_feat2 || 'Sezgisel arayüz, eğitim gerekmez',
-    settings.showcase_feat3 || 'Gerçek zamanlı raporlama ve analiz',
-    settings.showcase_feat4 || 'Güvenli altyapı, %99.9 uptime',
+    settings.showcase_feat1 || '⚡ Anlık veri akışı, gecikme yok',
+    settings.showcase_feat2 || '🎨 Sezgisel arayüz, eğitim gerekmez',
+    settings.showcase_feat3 || '📊 Gerçek zamanlı raporlama ve analiz',
+    settings.showcase_feat4 || '🔒 KVKK uyumlu, %99.9 uptime',
   ]
 
   const titleLines = title.split('\n')
@@ -58,7 +59,7 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
         ))}
       </ul>
 
-      {videoUrl && (
+      {videoUrl ? (
         <button onClick={() => setPlaying(true)} className="inline-flex items-center gap-3 group">
           <div className="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center group-hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200">
             <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
@@ -70,46 +71,16 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
             <p className="text-gray-500 text-xs">~5 dakika</p>
           </div>
         </button>
+      ) : (
+        <a href="/demo" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all shadow-button hover:-translate-y-0.5">
+          Ücretsiz Demo Talep Et
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       )}
     </motion.div>
   )
-
-  if (!videoUrl && !posterImage) {
-    return (
-      <section className="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-200/30 rounded-full blur-[100px]" />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {renderTextSide()}
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <div className="relative rounded-2xl overflow-hidden border border-gray-200 bg-white aspect-video shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-white shadow-lg flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-8 h-8 text-purple-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <p className="text-gray-700 text-sm font-medium">Admin panelinden video yükleyin</p>
-                    <p className="text-gray-400 text-xs mt-1">Ayarlar → Showcase Video</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   return (
     <section className="py-24 lg:py-32 bg-gray-50 relative overflow-hidden">
@@ -128,36 +99,58 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <div
-              className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl cursor-pointer group aspect-video"
-              onClick={() => setPlaying(true)}
-            >
-              {posterImage ? (
-                <div
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                  style={{ backgroundImage: `url(${posterImage})` }}
-                />
-              ) : (
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200" />
-              )}
-
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
-
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                  <svg className="w-7 h-7 text-purple-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
+            {videoUrl ? (
+              <div
+                className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl cursor-pointer group aspect-video"
+                onClick={() => setPlaying(true)}
+              >
+                {posterImage ? (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${posterImage})` }}
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200" />
+                )}
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
+                    <svg className="w-7 h-7 text-purple-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full">
+                  <svg className="w-3 h-3 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
+                  <span className="text-xs text-white/90 font-medium">5:32</span>
                 </div>
               </div>
-
-              <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full">
-                <svg className="w-3 h-3 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-xs text-white/90 font-medium">5:32</span>
+            ) : (
+              // Video yoksa: Animasyonlu CANLI dashboard önizlemesi
+              <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white">
+                {/* Browser bar */}
+                <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
+                  <div className="flex gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
+                  </div>
+                  <div className="flex-1 flex justify-center">
+                    <span className="text-xs text-gray-400 font-medium">app.kooza.com.tr</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-[10px] text-emerald-600 font-bold">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                    </span>
+                    CANLI
+                  </div>
+                </div>
+                <HeroDashboard />
               </div>
-            </div>
+            )}
           </motion.div>
         </div>
       </div>
