@@ -155,30 +155,38 @@ export default function QuickCallbackForm() {
       </div>
 
       <form onSubmit={submit} className="space-y-3">
-        <input
-          type="text"
-          name="name"
-          placeholder="Adınız"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-          minLength={2}
-          maxLength={120}
-          autoComplete="name"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none text-sm"
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Telefon (örn: 0532 123 45 67)"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          required
-          minLength={7}
-          maxLength={40}
-          autoComplete="tel"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none text-sm"
-        />
+        <label className="block">
+          <span className="sr-only">Adınız</span>
+          <input
+            type="text"
+            name="name"
+            placeholder="Adınız (örn: Mehmet Yılmaz)"
+            aria-label="Adınız ve soyadınız"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            minLength={2}
+            maxLength={120}
+            autoComplete="name"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none text-sm"
+          />
+        </label>
+        <label className="block">
+          <span className="sr-only">Telefon numaranız</span>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Telefon (0532 ile başlayan)"
+            aria-label="Telefon numaranız - sizi bu numaradan arayacağız"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            minLength={7}
+            maxLength={40}
+            autoComplete="tel"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-purple-400 focus:ring-2 focus:ring-purple-100 outline-none text-sm"
+          />
+        </label>
         {/* Honeypot — bot tarafından doldurulur, gizli */}
         <input
           type="text"

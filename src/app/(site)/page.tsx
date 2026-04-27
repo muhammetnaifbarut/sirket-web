@@ -3,6 +3,8 @@ import prisma from '@/lib/db'
 import HeroSection from '@/components/site/sections/HeroSection'
 import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
+import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
+import UrgencyBanner from '@/components/site/sections/UrgencyBanner'
 import ProductsSection from '@/components/site/sections/ProductsSection'
 import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
@@ -81,12 +83,14 @@ export default async function HomePage() {
 
   return (
     <>
+      <UrgencyBanner />
       <HeroSection
         settings={settings}
         ticker={tickerItems.map((t) => ({ emoji: t.emoji, text: t.text }))}
         stats={statItems.map((s) => ({ value: s.value, label: s.label, color: s.color }))}
       />
       <WhyKoozaSection />
+      <LeadMagnetTrio />
       <QuickCallbackBand />
       {isVisible(settings, 'section_clients_visible') && <ClientsSection clients={clients} />}
       {isVisible(settings, 'section_modules_visible') && <ModulesShowcase modules={modules} />}

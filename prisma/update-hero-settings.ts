@@ -9,7 +9,7 @@ const SETTINGS = [
   { key: 'hero_badge',          value: '🌟 Restoran, klinik, dükkân - hepsi için tek yazılım', group: 'hero' },
   { key: 'hero_title',          value: 'Sektörünüze özel\nyazılım, tek platformda', group: 'hero' },
   { key: 'hero_subtitle',       value: 'Restoran, klinik, market, eğitim, güzellik salonu, e-ticaret. Her sektör için randevu, kasa, stok, CRM ve muhasebe - hepsi tek panelde, türkçe, KVKK uyumlu.', group: 'hero' },
-  { key: 'hero_cta_label',      value: '14 Gün Ücretsiz Başla', group: 'hero' },
+  { key: 'hero_cta_label',      value: '14 Gün Ücretsiz Dene · Kart Yok', group: 'hero' },
   { key: 'hero_cta_url',        value: '/demo', group: 'hero' },
   { key: 'hero_secondary_label', value: 'Sektörünüzü Seçin', group: 'hero' },
   { key: 'hero_secondary_url',   value: '/cozumler', group: 'hero' },

@@ -24,6 +24,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/guvenlik`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/dijital-olgunluk-testi`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/roi-hesaplama`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/karsilastir`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/marka`, lastModified: now, changeFrequency: 'yearly', priority: 0.4 },
+    { url: `${base}/dijital-rehber`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/gizlilik-politikasi`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${base}/kullanim-kosullari`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]
