@@ -19,10 +19,14 @@ export default async function DemoPage() {
 
   return (
     <div>
-      <section className="bg-gradient-to-br from-blue-900 to-purple-900 text-white py-24">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4">Ücretsiz Demo Talep Et</h1>
-          <p className="text-xl text-blue-200 max-w-2xl mx-auto">
+      <section className="relative overflow-hidden text-white py-24" style={{ background: 'linear-gradient(135deg, #714B67 0%, #3a2436 100%)' }}>
+        <div aria-hidden className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-32 -right-20 w-[600px] h-[600px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,192,203,0.18) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+          <div className="absolute -bottom-40 -left-32 w-[500px] h-[500px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,192,203,0.12) 0%, transparent 70%)', filter: 'blur(50px)' }} />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Ücretsiz Demo Talep Et</h1>
+          <p className="text-xl max-w-2xl mx-auto" style={{ color: '#FFC0CB' }}>
             14 gün boyunca tüm özellikleri ücretsiz kullanın. Kredi kartı gerekmez.
           </p>
         </div>
