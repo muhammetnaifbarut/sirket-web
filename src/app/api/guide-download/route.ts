@@ -271,7 +271,7 @@ function buildGuideHtml(sector: string, name: string): string {
         <div style="margin-top:40px;padding:24px;background:linear-gradient(135deg,#f7f2f5,#fde2e6);border-radius:12px;text-align:center">
           <div style="font-size:18px;font-weight:700;color:#714B67;margin-bottom:8px">Bu rehberi uygulamak için kooza yanınızda</div>
           <div style="font-size:14px;color:#6b7280;margin-bottom:16px">Ücretsiz keşif görüşmesi · 30 dakika · Sıfır risk</div>
-          <a href="https://kooza.vercel.app/iletisim" style="display:inline-block;padding:14px 28px;background:#714B67;color:white;text-decoration:none;border-radius:10px;font-weight:600">
+          <a href="https://kooza.tr/iletisim" style="display:inline-block;padding:14px 28px;background:#714B67;color:white;text-decoration:none;border-radius:10px;font-weight:600">
             Görüşme Talep Et →
           </a>
         </div>
