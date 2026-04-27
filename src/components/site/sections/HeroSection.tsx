@@ -131,16 +131,27 @@ export default function HeroSection({ settings, ticker, stats }: HeroProps) {
               {btn2Label}
             </Link>
           </div>
-          {/* TERTIARY — low-pressure text link */}
-          <Link
-            href="/dijital-yol-haritasi"
-            className="mt-4 text-sm text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
-          >
-            <span className="text-base">✨</span>
-            <span className="px-2 py-0.5 rounded-md bg-purple-100 text-purple-700 text-[10px] font-bold uppercase tracking-wider mr-1">AI</span>
-            Şirketinize özel ücretsiz dijital yol haritası alın
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          {/* TERTIARY — 2 ücretsiz araç */}
+          <div className="mt-4 flex flex-col sm:flex-row gap-3 items-center justify-center text-sm">
+            <Link
+              href="/dijital-yol-haritasi"
+              className="text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
+            >
+              <span className="text-base">✨</span>
+              <span className="px-2 py-0.5 rounded-md bg-purple-100 text-purple-700 text-[10px] font-bold uppercase tracking-wider">AI</span>
+              <span>Şirketinize özel yol haritası</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <span className="hidden sm:inline text-gray-300">·</span>
+            <Link
+              href="/dijital-olgunluk-testi"
+              className="text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
+            >
+              <span className="text-base">🎯</span>
+              <span>2 dakikalık dijital olgunluk testi</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </motion.div>
 
         {/* ── Trust line — checkmarks ───────────────────────────────── */}
