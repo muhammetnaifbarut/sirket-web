@@ -100,32 +100,18 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
             transition={{ duration: 0.6, delay: 0.1 }}
           >
             {videoUrl ? (
-              <div
-                className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl cursor-pointer group aspect-video"
-                onClick={() => setPlaying(true)}
-              >
-                {posterImage ? (
-                  <div
-                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
-                    style={{ backgroundImage: `url(${posterImage})` }}
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200" />
-                )}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-20 h-20 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-2xl">
-                    <svg className="w-7 h-7 text-purple-600 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </div>
-                </div>
-                <div className="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 bg-black/60 backdrop-blur-sm rounded-full">
-                  <svg className="w-3 h-3 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-xs text-white/90 font-medium">5:32</span>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-black aspect-video">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  controls
+                  className="w-full h-full object-cover"
+                  poster={posterImage || undefined}
+                >
+                  <source src={videoUrl} type="video/mp4" />
+                </video>
               </div>
             ) : (
               // Video yoksa: Animasyonlu CANLI dashboard önizlemesi
@@ -155,31 +141,6 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
         </div>
       </div>
 
-      {playing && videoUrl && (
-        <div
-          className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={() => setPlaying(false)}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <video autoPlay controls className="w-full h-full">
-              <source src={videoUrl} />
-            </video>
-            <button
-              onClick={() => setPlaying(false)}
-              className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition-colors"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </motion.div>
-        </div>
-      )}
     </section>
   )
 }
