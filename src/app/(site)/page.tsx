@@ -6,6 +6,8 @@ import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
 import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
 import UrgencyBanner from '@/components/site/sections/UrgencyBanner'
 import PressMentions from '@/components/site/sections/PressMentions'
+import WallOfLove from '@/components/site/sections/WallOfLove'
+import MiniCalculator from '@/components/site/sections/MiniCalculator'
 import ProductsSection from '@/components/site/sections/ProductsSection'
 import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
@@ -102,6 +104,8 @@ export default async function HomePage() {
       {isVisible(settings, 'section_testimonials_visible') && (
         <TestimonialsSection testimonials={testimonials} />
       )}
+      <WallOfLove />
+      <MiniCalculator />
       {faqs.length > 0 && (
         <FAQSection faqs={faqs.map((f) => ({ id: f.id, question: f.question, answer: f.answer }))} />
       )}
