@@ -88,7 +88,7 @@ export default async function HomePage() {
       {isVisible(settings, 'section_modules_visible') && <ModulesShowcase modules={modules} />}
       {isVisible(settings, 'section_products_visible') && <ProductsSection products={products} />}
       {isVisible(settings, 'section_sectors_visible') && <SectorsSection sectors={sectors} />}
-      {settings.section_video_visible === 'true' && <VideoShowcaseSection settings={settings} />}
+      {settings.section_video_visible !== 'false' && <VideoShowcaseSection settings={settings} />}
       {isVisible(settings, 'section_testimonials_visible') && (
         <TestimonialsSection testimonials={testimonials} />
       )}

@@ -11,7 +11,7 @@ interface VideoShowcaseSectionProps {
 export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionProps) {
   const [playing, setPlaying] = useState(false)
 
-  const videoUrl = settings.showcase_video_url
+  const videoUrl = settings.showcase_video_url || '/showcase-video.mp4'
   const posterImage = settings.showcase_poster_image
   const badge = settings.showcase_badge || 'Canlı Önizleme'
   const title = settings.showcase_title || 'Güçlü özellikleri keşfedin.'
