@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import HeroDashboard from '@/components/site/HeroDashboard'
+import HeroDashboardMobile from '@/components/site/HeroDashboardMobile'
 
 interface VideoShowcaseSectionProps {
   settings: Record<string, string>
