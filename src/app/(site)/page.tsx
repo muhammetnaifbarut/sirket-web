@@ -5,6 +5,7 @@ import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
 import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
 import UrgencyBanner from '@/components/site/sections/UrgencyBanner'
+import TryProductsBand from '@/components/site/sections/TryProductsBand'
 import PressMentions from '@/components/site/sections/PressMentions'
 import WallOfLove from '@/components/site/sections/WallOfLove'
 import MiniCalculator from '@/components/site/sections/MiniCalculator'
@@ -93,6 +94,7 @@ export default async function HomePage() {
         stats={statItems.map((s) => ({ value: s.value, label: s.label, color: s.color }))}
       />
       <WhyKoozaSection />
+      <TryProductsBand />
       <LeadMagnetTrio />
       <QuickCallbackBand />
       {isVisible(settings, 'section_clients_visible') && <ClientsSection clients={clients} />}
