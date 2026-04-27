@@ -5,6 +5,8 @@ import ScrollProgress from '@/components/site/ScrollProgress'
 import BackToTop from '@/components/site/BackToTop'
 import CookieConsent from '@/components/site/CookieConsent'
 import StructuredData from '@/components/site/StructuredData'
+import StickyMobileCTA from '@/components/site/StickyMobileCTA'
+import ExitIntentPopup from '@/components/site/ExitIntentPopup'
 import { getSettings, getMenuItems } from '@/lib/settings'
 
 // Tüm site rotalarını dinamik render — build sırasında DB'ye gitme
@@ -35,6 +37,8 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
         phone={settings.whatsapp_number || '+905414142942'}
         message={settings.whatsapp_message || 'Merhaba kooza, bilgi almak istiyorum.'}
       />
+      <StickyMobileCTA />
+      <ExitIntentPopup />
     </div>
   )
 }

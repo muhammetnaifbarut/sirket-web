@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import HeroBackground from '@/components/site/HeroBackground'
 import HeroDashboard from '@/components/site/HeroDashboard'
 import HeroDashboardMobile from '@/components/site/HeroDashboardMobile'
+import AnimatedCounter from '@/components/site/AnimatedCounter'
 import { ArrowRight, Check } from 'lucide-react'
 
 interface TickerItem {
@@ -266,12 +267,11 @@ export default function HeroSection({ settings, ticker, stats }: HeroProps) {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {statItems.map((stat, i) => (
               <div key={i} className="text-center">
-                <div
-                  className="text-3xl lg:text-4xl font-bold mb-1 tabular-nums"
+                <AnimatedCounter
+                  value={stat.value}
+                  className="text-3xl lg:text-4xl font-bold mb-1 tabular-nums block"
                   style={{ color: stat.color }}
-                >
-                  {stat.value}
-                </div>
+                />
                 <div className="text-xs text-gray-500 uppercase tracking-wider font-medium">
                   {stat.label}
                 </div>

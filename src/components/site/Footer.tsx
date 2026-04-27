@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import KoozaLogo from '@/components/site/KoozaLogo'
+import NewsletterSignup from '@/components/site/NewsletterSignup'
+import StatusBadge from '@/components/site/StatusBadge'
 import prisma from '@/lib/db'
 
 interface FooterProps {
@@ -162,10 +164,10 @@ export default async function Footer({ settings }: FooterProps) {
               {[
                 { label: 'Hakkımızda', href: '/hakkimizda' },
                 { label: 'Vaka Çalışmaları', href: '/vaka-calismalari' },
-                { label: 'Kariyer', href: '/kariyer' },
-                { label: 'Basın', href: '/basin' },
+                { label: 'Karşılaştırma', href: '/karsilastir' },
+                { label: 'Marka Kılavuzu', href: '/marka' },
                 { label: 'Danışmanlık', href: '/danismanlik' },
-                { label: 'Yazılımlar', href: '/yazilimlar' },
+                { label: 'Modüller', href: '/yazilimlar' },
               ].map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="text-sm text-gray-500 hover:text-white transition-colors flex items-center gap-2 group">
@@ -184,8 +186,9 @@ export default async function Footer({ settings }: FooterProps) {
               {[
                 { label: 'Blog', href: '/blog' },
                 { label: '📘 Sektörel Rehber', href: '/dijital-rehber' },
-                { label: 'Olgunluk Testi', href: '/dijital-olgunluk-testi' },
-                { label: 'ROI Hesaplama', href: '/roi-hesaplama' },
+                { label: '🎯 Olgunluk Testi', href: '/dijital-olgunluk-testi' },
+                { label: '💰 ROI Hesaplama', href: '/roi-hesaplama' },
+                { label: '🆘 Yardım Merkezi', href: '/yardim' },
                 { label: 'Sıkça Sorulanlar', href: '/sss' },
                 { label: 'Entegrasyonlar', href: '/entegrasyonlar' },
                 { label: 'Güvenlik & KVKK', href: '/guvenlik' },
@@ -253,6 +256,22 @@ export default async function Footer({ settings }: FooterProps) {
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Newsletter + Status */}
+        <div className="border-t border-gray-800/60 pt-10 mb-10 grid lg:grid-cols-2 gap-6 items-center">
+          <div className="lg:max-w-md">
+            <NewsletterSignup />
+          </div>
+          <div className="flex items-center gap-4 lg:justify-end flex-wrap">
+            <StatusBadge />
+            <a
+              href="https://kooza.tr"
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700 text-gray-400 text-xs font-semibold hover:bg-gray-800"
+            >
+              🌐 kooza.tr
+            </a>
           </div>
         </div>
 

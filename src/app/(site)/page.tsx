@@ -5,6 +5,7 @@ import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
 import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
 import UrgencyBanner from '@/components/site/sections/UrgencyBanner'
+import PressMentions from '@/components/site/sections/PressMentions'
 import ProductsSection from '@/components/site/sections/ProductsSection'
 import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
@@ -93,6 +94,7 @@ export default async function HomePage() {
       <LeadMagnetTrio />
       <QuickCallbackBand />
       {isVisible(settings, 'section_clients_visible') && <ClientsSection clients={clients} />}
+      <PressMentions />
       {isVisible(settings, 'section_modules_visible') && <ModulesShowcase modules={modules} />}
       {isVisible(settings, 'section_products_visible') && <ProductsSection products={products} />}
       {isVisible(settings, 'section_sectors_visible') && <SectorsSection sectors={sectors} />}

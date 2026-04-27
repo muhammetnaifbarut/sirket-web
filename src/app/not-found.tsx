@@ -44,21 +44,47 @@ export default function NotFound() {
           Endişelenme — buradan devam edebilirsin.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
           <Link
             href="/"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all hover:-translate-y-0.5 shadow-button min-h-[48px]"
           >
             <Home className="w-4 h-4" />
-            Ana Sayfaya Dön
+            Ana Sayfa
           </Link>
           <Link
             href="/blog"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border-2 border-gray-200 text-gray-900 font-semibold hover:border-purple-300 hover:bg-purple-50 transition-all min-h-[48px]"
           >
             <Search className="w-4 h-4" />
-            Bloga Göz At
+            Blog
           </Link>
+          <a
+            href="https://wa.me/905414142942"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-50 border-2 border-emerald-200 text-emerald-700 font-semibold hover:bg-emerald-100 transition-all min-h-[48px]"
+          >
+            💬 WhatsApp
+          </a>
+        </div>
+
+        <div className="text-sm text-gray-500 mb-2">Veya bu popüler sayfalardan birine git:</div>
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 text-sm">
+          {[
+            { l: 'Fiyatlandırma', h: '/fiyatlandirma' },
+            { l: 'Çözümler', h: '/cozumler' },
+            { l: 'Modüller', h: '/yazilimlar' },
+            { l: 'Hakkımızda', h: '/hakkimizda' },
+            { l: 'Olgunluk Testi', h: '/dijital-olgunluk-testi' },
+            { l: 'İletişim', h: '/iletisim' },
+          ].map((l) => (
+            <Link
+              key={l.h}
+              href={l.h}
+              className="px-3 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 font-medium border border-purple-100"
+            >
+              {l.l}
+            </Link>
+          ))}
         </div>
 
         <button
