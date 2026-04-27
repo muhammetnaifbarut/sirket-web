@@ -59,26 +59,12 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
         ))}
       </ul>
 
-      {videoUrl ? (
-        <button onClick={() => setPlaying(true)} className="inline-flex items-center gap-3 group">
-          <div className="w-12 h-12 rounded-full bg-purple-600 flex items-center justify-center group-hover:bg-purple-700 transition-colors shadow-lg shadow-purple-200">
-            <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-          <div className="text-left">
-            <p className="text-gray-900 font-semibold text-sm">Demo videosunu izle</p>
-            <p className="text-gray-500 text-xs">~5 dakika</p>
-          </div>
-        </button>
-      ) : (
-        <a href="/demo" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all shadow-button hover:-translate-y-0.5">
-          Ücretsiz Demo Talep Et
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-      )}
+      <a href="/demo" className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-all shadow-button hover:-translate-y-0.5">
+        Ücretsiz Demo Talep Et
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
     </motion.div>
   )
 
