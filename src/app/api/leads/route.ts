@@ -57,10 +57,11 @@ export async function POST(req: NextRequest) {
 
   try {
     const { name, email, phone, company, message, subject, productId, type } = parsed.data
+    const finalEmail: string = email || `phone-${Date.now()}@kooza.local`
     const lead = await prisma.lead.create({
       data: {
         name,
-        email: email || `nophone-${Date.now()}@kooza.local`,
+        email: finalEmail,
         phone: phone || null,
         company: company || null,
         message: message || subject || null,
@@ -75,7 +76,7 @@ export async function POST(req: NextRequest) {
     // Admin'e e-posta bildirimi (non-blocking)
     notifyAdmin(
       `Yeni ${type || 'CONTACT'} talebi: ${name}`,
-      leadEmailTemplate({ name, email, phone, company, message: message || subject, source: type || 'CONTACT' })
+      leadEmailTemplate({ name, email: finalEmail, phone, company, message: message || subject, source: type || 'CONTACT' })
     ).catch((e) => console.error('Email notify failed:', e))
 
     return NextResponse.json(
