@@ -99,6 +99,58 @@ export default function HakkimizdaPage() {
         </div>
       </section>
 
+      {/* ─── KELEBEK HİKAYESİ ─── */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-amber-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <span className="inline-block px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs font-semibold mb-4">
+              🦋 Marka hikayemiz
+            </span>
+            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 tracking-tight">
+              Neden <span className="text-purple-700">kelebek</span>?
+            </h2>
+          </div>
+
+          <div className="bg-white/80 backdrop-blur rounded-3xl p-8 lg:p-12 border border-purple-100 shadow-soft">
+            <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+              <p className="text-2xl font-bold text-gray-900">
+                İşletmeniz tırtıl olmamalı.
+              </p>
+              <p>
+                Çoğu KOBİ, defterlerle, telefonla, dağınık dosyalarla, Excel'lerle çalışıyor.
+                Tıpkı bir <strong>tırtıl gibi</strong> — yavaş, ağır, dünyaya bir yaprak kadar erişebilen.
+              </p>
+              <p>
+                Kelebek olmak, koza içinde geçirilen bir <strong>dönüşüm sürecinin</strong> sonucudur.
+                kooza, sizin koza'nız. Geleneksel iş süreçlerinizi <strong>14 günde</strong> dijital sisteme
+                dönüştürür: web sitenizden randevu yönetiminize, stoğunuzdan müşteri ilişkilerinize.
+              </p>
+              <p className="text-xl font-bold text-purple-700">
+                Kapıdan girdiğinizde tırtılsınız. Kapıdan çıktığınızda kelebeksiniz. ✨
+              </p>
+            </div>
+
+            <div className="mt-8 pt-8 border-t border-purple-100 grid sm:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl mb-2">🐛</div>
+                <div className="font-bold text-gray-900 text-sm mb-1">1. Tırtıl</div>
+                <div className="text-xs text-gray-500">Dağınık operasyon, manuel işler</div>
+              </div>
+              <div>
+                <div className="text-3xl mb-2">🏵️</div>
+                <div className="font-bold text-gray-900 text-sm mb-1">2. Koza (kooza)</div>
+                <div className="text-xs text-gray-500">14 günlük dönüşüm süreci</div>
+              </div>
+              <div>
+                <div className="text-3xl mb-2">🦋</div>
+                <div className="font-bold text-gray-900 text-sm mb-1">3. Kelebek</div>
+                <div className="text-xs text-gray-500">Dijital, hızlı, ölçeklenebilir işletme</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── MANIFESTO ─── */}
       <section className="py-16 lg:py-20 bg-gray-50 border-y border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

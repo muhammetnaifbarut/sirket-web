@@ -93,6 +93,7 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
                   muted
                   playsInline
                   controls
+                  preload="metadata"
                   className="w-full h-full object-cover"
                   poster={posterImage || undefined}
                 >

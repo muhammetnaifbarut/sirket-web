@@ -46,6 +46,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 }
 
+// Sektör slug → Vaka çalışması sektör adı map
+const SECTOR_TO_CASE: Record<string, string> = {
+  'klinik': 'Diş Hekimliği',
+  'dis-hekimi': 'Diş Hekimliği',
+  'restoran': 'Restoran & Kafe',
+  'guzellik-salonu': 'Güzellik Salonu',
+}
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const s = await prisma.sectorSolution.findUnique({ where: { slug: params.slug } })
   if (!s || !s.isActive) notFound()
@@ -55,6 +63,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const benefits = (s.benefits as unknown as Benefit[]) ?? []
   const modules = (s.modules as unknown as ModuleItem[]) ?? []
   const faqs = (s.faqs as unknown as FAQ[]) ?? []
+
+  // Bu sektörle eşleşen vaka çalışmasını çek
+  const caseSector = SECTOR_TO_CASE[params.slug]
+  const customerCase = caseSector
+    ? await prisma.caseStudy.findFirst({
+        where: { sector: caseSector, isActive: true },
+        orderBy: { order: 'asc' },
+      })
+    : null
+  const caseResults = (customerCase?.results as any) || []
 
   return (
     <div className="bg-white">
@@ -232,6 +250,78 @@ export default async function Page({ params }: { params: { slug: string } }) {
           items={faqs}
           accent={s.iconColor}
         />
+      )}
+
+      {/* CUSTOMER STORY (vaka çalışması) */}
+      {customerCase && (
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="mb-10">
+              <span
+                className="text-sm font-bold uppercase tracking-wider mb-3 block"
+                style={{ color: s.iconColor }}
+              >
+                Gerçek Hikaye
+              </span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                {customerCase.company} bunu nasıl başardı?
+              </h2>
+            </div>
+
+            <div className="bg-white rounded-3xl border border-gray-200 p-8 lg:p-10 shadow-soft">
+              <div className="grid lg:grid-cols-3 gap-8">
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Süre</div>
+                  <div className="text-3xl font-bold mb-4" style={{ color: s.iconColor }}>{customerCase.timeframe}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Müşteri</div>
+                  <div className="font-bold text-gray-900">{customerCase.person}</div>
+                  <div className="text-sm text-gray-500 mb-4">{customerCase.role}</div>
+                  <blockquote className="text-sm italic text-gray-600 leading-relaxed border-l-2 border-gray-200 pl-4">
+                    "{customerCase.quote}"
+                  </blockquote>
+                </div>
+
+                <div className="lg:col-span-2 space-y-5">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-rose-600 mb-2">Sorun</div>
+                    <p className="text-gray-700 leading-relaxed">{customerCase.challenge}</p>
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-2">Çözüm</div>
+                    <p className="text-gray-700 leading-relaxed">{customerCase.solution}</p>
+                  </div>
+                  {caseResults.length > 0 && (
+                    <div className="pt-4 border-t border-gray-100">
+                      <div className="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-3">Sonuç</div>
+                      <div className="grid sm:grid-cols-3 gap-3">
+                        {caseResults.map((r: any, i: number) => (
+                          <div key={i} className="rounded-xl bg-emerald-50 border border-emerald-100 p-4 text-center">
+                            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">{r.label}</div>
+                            <div className="text-sm font-bold text-gray-700">
+                              <span className="text-gray-400 line-through">{r.from}</span>
+                              <span className="mx-2 text-emerald-500">→</span>
+                              <span className="text-emerald-700">{r.to}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-6 text-center">
+              <Link
+                href="/vaka-calismalari"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-purple-700 hover:text-purple-900"
+              >
+                Tüm vaka çalışmalarını gör
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </section>
       )}
 
       {/* CTA */}

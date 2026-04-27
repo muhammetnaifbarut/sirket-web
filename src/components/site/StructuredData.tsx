@@ -62,6 +62,81 @@ export default function StructuredData({ settings }: StructuredDataProps) {
     },
   }
 
+  const softwareApp = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': `${base}#software`,
+    name: 'kooza',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web, iOS, Android',
+    description:
+      'Restoran, klinik, market, eğitim, güzellik salonu, e-ticaret için randevu, kasa, stok, CRM ve muhasebe — tek platformda Türkçe SaaS.',
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Starter',
+        price: '499',
+        priceCurrency: 'TRY',
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: '499', priceCurrency: 'TRY', unitText: 'MONTH' },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Professional',
+        price: '999',
+        priceCurrency: 'TRY',
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: '999', priceCurrency: 'TRY', unitText: 'MONTH' },
+      },
+      {
+        '@type': 'Offer',
+        name: 'Enterprise',
+        price: '2999',
+        priceCurrency: 'TRY',
+        priceSpecification: { '@type': 'UnitPriceSpecification', price: '2999', priceCurrency: 'TRY', unitText: 'MONTH' },
+      },
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '500',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    publisher: { '@id': `${base}#organization` },
+    inLanguage: 'tr-TR',
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'kooza ücretsiz mi denenebiliyor?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Evet — 14 günlük ücretsiz deneme, kredi kartı bilgisi istemiyoruz, anlık iptal edebilirsiniz.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Hangi sektörlere uygun?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner, İK ve daha fazlası — 9 sektörel paket mevcut.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Aylık fiyatı nedir?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Starter ₺499/ay, Professional ₺999/ay (en popüler), Enterprise ₺2999/ay. Yıllık ödemede %20 indirim.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'KVKK uyumlu mu?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Evet — KVKK uyumlu altyapı, AES-256 şifreleme, ISO 27001 sertifikalı sunucular Türkiye\'de.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'e-Fatura entegrasyonu var mı?',
+        acceptedAnswer: { '@type': 'Answer', text: 'GİB e-Fatura, e-Arşiv ve e-İrsaliye entegrasyonu Pro ve Enterprise paketlerde dahil.' },
+      },
+    ],
+  }
+
   return (
     <>
       <script
@@ -71,6 +146,14 @@ export default function StructuredData({ settings }: StructuredDataProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(website) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApp) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
     </>
   )

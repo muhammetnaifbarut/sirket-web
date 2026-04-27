@@ -55,20 +55,82 @@ export default function QuickCallbackForm() {
   if (done) {
     return (
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 text-center"
+        transition={{ type: 'spring', bounce: 0.5, duration: 0.6 }}
+        className="relative bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 rounded-3xl p-8 text-center overflow-hidden"
       >
-        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-emerald-500 flex items-center justify-center">
-          <Check className="w-6 h-6 text-white" strokeWidth={3} />
+        {/* Konfeti partikülleri */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(18)].map((_, i) => (
+            <motion.div
+              key={i}
+              initial={{ y: -20, opacity: 0, x: '50%' }}
+              animate={{
+                y: [0, 200],
+                x: `${50 + (Math.random() - 0.5) * 100}%`,
+                rotate: [0, 360],
+                opacity: [1, 1, 0],
+              }}
+              transition={{
+                duration: 1.5 + Math.random() * 1.5,
+                delay: Math.random() * 0.4,
+                ease: 'easeOut',
+              }}
+              className="absolute top-0 w-2.5 h-2.5"
+              style={{
+                background: ['#a855f7', '#ec4899', '#22c55e', '#f59e0b', '#3b82f6'][i % 5],
+                borderRadius: i % 2 ? '50%' : '2px',
+              }}
+            />
+          ))}
         </div>
-        <div className="font-bold text-emerald-900 mb-1">Talebiniz alındı! 🎉</div>
-        <div className="text-sm text-emerald-700">
-          Mesai içinde sizi arayacağız. Bu arada{' '}
-          <a href="https://wa.me/905414142942" className="underline font-semibold">
-            WhatsApp'tan da yazabilirsiniz
-          </a>
-          .
+
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ type: 'spring', bounce: 0.6, delay: 0.2 }}
+          className="relative w-16 h-16 mx-auto mb-4 rounded-full bg-emerald-500 flex items-center justify-center shadow-lg shadow-emerald-300"
+        >
+          <Check className="w-8 h-8 text-white" strokeWidth={3.5} />
+        </motion.div>
+
+        <div className="relative">
+          <div className="text-2xl font-bold text-emerald-900 mb-2">
+            Hoş geldin kelebek 🦋
+          </div>
+          <div className="text-base text-emerald-800 mb-1 font-semibold">
+            Talebin alındı, ekip 15 dakika içinde arıyor.
+          </div>
+          <div className="text-sm text-emerald-700 mb-5">
+            Mesai dışındaysa ilk mesai başlangıcında.
+          </div>
+
+          <div className="bg-white rounded-xl p-4 border border-emerald-100">
+            <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Bu arada ne yapabilirsin?
+            </div>
+            <div className="space-y-2 text-sm">
+              <a
+                href="https://wa.me/905414142942?text=Merhaba%20kooza%2C%20az%20önce%20callback%20formu%20doldurdum"
+                className="flex items-center gap-2 text-emerald-700 font-semibold hover:text-emerald-900 transition-colors"
+              >
+                💬 WhatsApp'tan acil yaz →
+              </a>
+              <a
+                href="/dijital-olgunluk-testi"
+                className="flex items-center gap-2 text-purple-700 font-semibold hover:text-purple-900 transition-colors"
+              >
+                🎯 2 dakikada dijital olgunluk testi yap →
+              </a>
+              <a
+                href="/dijital-rehber"
+                className="flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-900 transition-colors"
+              >
+                📘 Sektörel rehberini indir →
+              </a>
+            </div>
+          </div>
         </div>
       </motion.div>
     )
