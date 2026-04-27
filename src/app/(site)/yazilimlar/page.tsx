@@ -177,7 +177,7 @@ export default async function YazilimlarPage() {
 
                       {/* Features */}
                       <ul className="space-y-2 mb-5 flex-1">
-                        {product.features.slice(0, 4).map((f) => (
+                        {product.features.slice(0, 4).map((f: string) => (
                           <li key={f} className="flex items-start gap-2 text-sm text-gray-700">
                             <svg className={`w-4 h-4 mt-0.5 shrink-0 ${c.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />

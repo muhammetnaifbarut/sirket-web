@@ -316,7 +316,7 @@ export async function POST(req: NextRequest) {
   // Save to DB
   let savedId = ''
   try {
-    const saved = await prisma.guideDownload.create({
+    const saved = await (prisma as any).guideDownload.create({
       data: { name, email, phone: phone || null, company: company || null, sector },
     })
     savedId = saved.id

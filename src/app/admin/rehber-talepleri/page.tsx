@@ -14,18 +14,18 @@ const SECTOR_NAMES: Record<string, string> = {
 }
 
 export default async function Page() {
-  const downloads = await prisma.guideDownload.findMany({
+  const downloads: any[] = await (prisma as any).guideDownload.findMany({
     orderBy: { createdAt: 'desc' },
     take: 100,
   }).catch(() => [])
 
   const total = downloads.length
-  const sectorStats = downloads.reduce((acc, d) => {
+  const sectorStats: Record<string, number> = downloads.reduce((acc: Record<string, number>, d: any) => {
     acc[d.sector] = (acc[d.sector] || 0) + 1
     return acc
-  }, {} as Record<string, number>)
+  }, {})
 
-  const topSector = Object.entries(sectorStats).sort((a, b) => b[1] - a[1])[0]
+  const topSector = Object.entries(sectorStats).sort((a, b) => b[1] - a[1])[0] as [string, number] | undefined
 
   return (
     <div className="space-y-6">
@@ -47,7 +47,7 @@ export default async function Page() {
         <div className="rounded-xl bg-white border border-gray-100 p-5">
           <div className="flex items-center gap-2 text-gray-500 text-xs font-semibold uppercase mb-2">Bu Ay</div>
           <div className="text-3xl font-bold text-purple-700">
-            {downloads.filter(d => {
+            {downloads.filter((d: any) => {
               const dt = new Date(d.createdAt)
               const now = new Date()
               return dt.getMonth() === now.getMonth() && dt.getFullYear() === now.getFullYear()
@@ -94,7 +94,7 @@ export default async function Page() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {downloads.map((d) => (
+                {downloads.map((d: any) => (
                   <tr key={d.id} className="hover:bg-gray-50/60">
                     <td className="px-6 py-3 text-gray-500 whitespace-nowrap">
                       {new Date(d.createdAt).toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', year: '2-digit', hour: '2-digit', minute: '2-digit' })}
