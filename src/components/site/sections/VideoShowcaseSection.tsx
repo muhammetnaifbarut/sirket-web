@@ -114,27 +114,8 @@ export default function VideoShowcaseSection({ settings }: VideoShowcaseSectionP
                 </video>
               </div>
             ) : (
-              // Video yoksa: Animasyonlu CANLI dashboard önizlemesi
-              <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl bg-white">
-                {/* Browser bar */}
-                <div className="flex items-center gap-2 px-4 py-3 bg-gray-50 border-b border-gray-100">
-                  <div className="flex gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-amber-400" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  </div>
-                  <div className="flex-1 flex justify-center">
-                    <span className="text-xs text-gray-400 font-medium">app.kooza.com.tr</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[10px] text-emerald-600 font-bold">
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-1.5 w-1.5 rounded-full bg-emerald-400 opacity-75" />
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
-                    </span>
-                    CANLI
-                  </div>
-                </div>
-                <HeroDashboard />
+              <div className="relative rounded-2xl overflow-hidden border border-gray-200 shadow-xl aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+                <span className="text-gray-500 text-sm">Video yükleniyor...</span>
               </div>
             )}
           </motion.div>
