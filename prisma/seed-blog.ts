@@ -53,7 +53,7 @@ Bir orta ölçekli KOBİ'nin AI-CRM geçişinde gördüğümüz somut sonuçlar:
 
 Yapay zeka modelleri 2024-2026 yılları arasında üç önemli aşamadan geçti: erişilebilirlik, doğruluk ve maliyet. Bugün, 5 kişilik bir ekibin bile kullanabileceği AI-CRM çözümleri **aylık birkaç bin liraya** mevcut.
 
-KEEPX CRM modülü bu yetenekleri Türkçe diline ve Türk iş dinamiklerine optimize edilmiş şekilde sunar. Modülü bugün denemek için demo talep edebilirsiniz.
+kooza CRM modülü bu yetenekleri Türkçe diline ve Türk iş dinamiklerine optimize edilmiş şekilde sunar. Modülü bugün denemek için demo talep edebilirsiniz.
 
 ## Sonuç
 
@@ -94,9 +94,9 @@ Son 90 gündür hareket görmemiş ürünleri **kırmızı bayrak** olarak işar
 
 E-ticaret sitesi, mağaza, depo ve muhasebe — hepsinde aynı stok rakamını gören bir sistem kurun. **Birden fazla yerde manuel takip = kayıp.**
 
-## KEEPX Stok Modülü
+## kooza Stok Modülü
 
-Bu 7 maddeyi sıfırdan kurmak isteyen KOBİ'ler için KEEPX Stok Takip modülünü tasarladık. ABC analizi, döngüsel sayım planlama, otomatik yenileme siparişi ve ölü stok raporu — hepsi tek panelde.
+Bu 7 maddeyi sıfırdan kurmak isteyen KOBİ'ler için kooza Stok Takip modülünü tasarladık. ABC analizi, döngüsel sayım planlama, otomatik yenileme siparişi ve ölü stok raporu — hepsi tek panelde.
 
 Demo talep edip kendi işletmeniz için kurulumu deneyimleyin.`,
   },
@@ -146,9 +146,9 @@ Tüm şirketi aynı anda dönüştürmeye çalışmayın. **Bir departman seçin
 
 200 projede gözlemim: en sık takıldığımız nokta **3. adım değil, 1. adım**. Çoğu yönetici "süreçlerimizi zaten biliyoruz" diyor — ama haritalandırmaya başlayınca aynı süreci 4 farklı kişiden 4 farklı şekilde duyduğumuz oluyor.
 
-## KEEPX Dijital Dönüşüm Danışmanlığı
+## kooza Dijital Dönüşüm Danışmanlığı
 
-Eğer bu 5 adımı kendi başınıza atmak yerine bir uzmanla beraber atmak isterseniz, KEEPX'in danışmanlık ekibi tam bu süreci yönetir. İlk görüşme ücretsizdir.`,
+Eğer bu 5 adımı kendi başınıza atmak yerine bir uzmanla beraber atmak isterseniz, kooza'in danışmanlık ekibi tam bu süreci yönetir. İlk görüşme ücretsizdir.`,
   },
   {
     title: 'Randevu Sisteminin Müşteri Sadakatine Etkisi: Saha Verileri',
@@ -192,9 +192,9 @@ SMS veya WhatsApp ile gelen hatırlatma, no-show oranını %78 azaltıyor. Perso
 
 **"Sistem pahalı."** Aylık maliyet, kaybedilen 1 randevuyu (no-show) bile telafi etmiyor.
 
-## KEEPX Randevu Sistemi
+## kooza Randevu Sistemi
 
-Bu 4 prensibi temel alarak KEEPX Randevu modülünü tasarladık. Online ödeme entegrasyonu, multi-personel takvimi, otomatik SMS/WhatsApp hatırlatma — hepsi bir arada. 14 gün ücretsiz deneyebilirsiniz.`,
+Bu 4 prensibi temel alarak kooza Randevu modülünü tasarladık. Online ödeme entegrasyonu, multi-personel takvimi, otomatik SMS/WhatsApp hatırlatma — hepsi bir arada. 14 gün ücretsiz deneyebilirsiniz.`,
   },
   {
     title: 'Bulut Tabanlı Finans Yönetiminin 6 Avantajı',
@@ -244,9 +244,9 @@ Bulut sağlayıcısı KVKK uyum sertifikasına sahipse, sizin uyum süreciniz ko
 2. **Mali müşavir uyumu:** Mali müşaviriniz bulut sistemle çalışmaya hazır mı?
 3. **Yedek erişim hakkı:** Aboneliği bıraksanız bile verilerinize erişebileceğiniz garanti edilmeli
 
-## KEEPX Finans Modülü
+## kooza Finans Modülü
 
-KEEPX Finans modülü tüm bu özellikleri tek pakette sunar. e-Fatura/e-Arşiv entegrasyonu, 5 banka direkt bağlantısı, KVKK uyumlu Türkiye sunucuları. Demo talep ederek kendi işletmeniz için kurulumu test edebilirsiniz.`,
+kooza Finans modülü tüm bu özellikleri tek pakette sunar. e-Fatura/e-Arşiv entegrasyonu, 5 banka direkt bağlantısı, KVKK uyumlu Türkiye sunucuları. Demo talep ederek kendi işletmeniz için kurulumu test edebilirsiniz.`,
   },
   {
     title: 'Uzaktan Çalışan Ekipler İçin İK Yazılımı: Olmazsa Olmaz Özellikler',
@@ -291,9 +291,9 @@ Yeni çalışana ilk hafta yapılması gereken her şeyi (hesap açma, eğitim, 
 
 Bazı yazılımlar her özelliği "var" diye işaretler ama yüzeysel sunar. Demo talep ettiğinizde bu 8 özelliği **canlı olarak** denemenizi öneririm.
 
-## KEEPX İK Modülü
+## kooza İK Modülü
 
-KEEPX İK Yönetimi tam olarak bu 8 özelliği derinleme sunar. KVKK uyumlu, Türk mevzuatına özel hesaplama motoru, mobil uygulama. Ekibinize 14 gün ücretsiz deneyim sunabilirsiniz.`,
+kooza İK Yönetimi tam olarak bu 8 özelliği derinleme sunar. KVKK uyumlu, Türk mevzuatına özel hesaplama motoru, mobil uygulama. Ekibinize 14 gün ücretsiz deneyim sunabilirsiniz.`,
   },
   {
     title: '2026\'da SaaS Trendleri: İşletmelerin İzlemesi Gereken 6 Akım',
@@ -337,9 +337,9 @@ Tek bir SaaS firması artık 1 ürün satmıyor — bir **platform** sunuyor: CR
 3. **Veri saklama lokasyonunu** sorgulayın
 4. **Modüler büyüyebilen** platformlara yatırım yapın
 
-## KEEPX'in Konumu
+## kooza'in Konumu
 
-KEEPX, bu 6 trendi kuruluşundan beri rehber edinen bir platform. AI gömülü, Türkiye'ye özel, KOBİ ölçeğinde modüler. 2026'da sektörünüzü dijitalleştirme yolculuğunuzda yanınızda olmak için buradayız.`,
+kooza, bu 6 trendi kuruluşundan beri rehber edinen bir platform. AI gömülü, Türkiye'ye özel, KOBİ ölçeğinde modüler. 2026'da sektörünüzü dijitalleştirme yolculuğunuzda yanınızda olmak için buradayız.`,
   },
   {
     title: 'Sağlık Sektöründe Dijital Operasyon Yönetimi: Klinikler İçin Yol Haritası',
@@ -382,9 +382,9 @@ Yönetici şu soruyu sormalı: "Hangi doktor en verimli? Hangi tedavi en kârlı
 
 Klinik sahibi olarak ve dijital dönüşüm danışmanı olarak şunu söyleyebilirim: tüm 6 sütunu aynı anda hayata geçirmek ekipte yorgunluk yaratır. **Önce 1 ve 2 (PMS + Randevu)**. 3 ay sonra 3 ve 4 (Reçete + Faturalama). 6 ay sonra 5 ve 6.
 
-## KEEPX Sağlık Modülü
+## kooza Sağlık Modülü
 
-KEEPX'in sağlık dikeyi, bu 6 sütunu özel olarak Türkiye'deki klinik işletmeleri için yapılandırır. SGK e-Reçete, MEDULA bağlantısı, sigorta çapraz mutabakat — tümü Türkçe ve mevzuata uyumlu.
+kooza'in sağlık dikeyi, bu 6 sütunu özel olarak Türkiye'deki klinik işletmeleri için yapılandırır. SGK e-Reçete, MEDULA bağlantısı, sigorta çapraz mutabakat — tümü Türkçe ve mevzuata uyumlu.
 
 Klinik kuruluşundan veya geçişinden sorumluysanız, ekibimizle ücretsiz görüşme talep edebilirsiniz. Süreci doğru kurmak, sonradan düzeltmekten her zaman ucuzdur.`,
   },

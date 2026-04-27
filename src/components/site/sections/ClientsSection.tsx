@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 interface Client {
   id: string
@@ -9,20 +10,35 @@ interface Client {
   url?: string | null
 }
 
-const defaultClients: Client[] = [
-  { id: '1', name: 'ABC Holding' },
-  { id: '2', name: 'XYZ Teknoloji' },
-  { id: '3', name: 'Global Lojistik' },
-  { id: '4', name: 'Smart Retail' },
-  { id: '5', name: 'EduTech AŞ' },
-  { id: '6', name: 'FinGroup' },
-  { id: '7', name: 'MedCare' },
-  { id: '8', name: 'AgriTech' },
+// Sektörel temsil — "fake müşteri logosu" yerine hangi sektörlerde uzmanız
+const SECTORS = [
+  { id: 's1', emoji: '🏥', label: 'Klinikler', href: '/cozumler/klinik' },
+  { id: 's2', emoji: '🍽️', label: 'Restoran & Kafe', href: '/cozumler/restoran' },
+  { id: 's3', emoji: '🛒', label: 'Market & Perakende', href: '/cozumler/market' },
+  { id: 's4', emoji: '🎓', label: 'Eğitim Kurumları', href: '/cozumler/egitim' },
+  { id: 's5', emoji: '👥', label: 'İK & Bordro', href: '/cozumler/ik' },
+  { id: 's6', emoji: '🌐', label: 'Web & E-Ticaret', href: '/cozumler/e-ticaret' },
+  { id: 's7', emoji: '🦷', label: 'Diş Hekimleri', href: '/cozumler/dis-hekimi' },
+  { id: 's8', emoji: '🐾', label: 'Veteriner Klinikleri', href: '/cozumler/veteriner' },
+  { id: 's9', emoji: '💄', label: 'Güzellik Salonları', href: '/cozumler/guzellik-salonu' },
 ]
 
-function ClientLogo({ client }: { client: Client }) {
+function SectorChip({ sector }: { sector: typeof SECTORS[number] }) {
   return (
-    <div className="mx-8 shrink-0 group">
+    <Link href={sector.href} className="mx-3 shrink-0 group">
+      <div className="h-14 flex items-center gap-2.5 px-5 rounded-xl border border-gray-100 bg-white hover:border-purple-200 hover:shadow-md transition-all duration-300 whitespace-nowrap">
+        <span className="text-2xl">{sector.emoji}</span>
+        <span className="text-gray-700 font-semibold text-sm group-hover:text-purple-700 transition-colors">
+          {sector.label}
+        </span>
+      </div>
+    </Link>
+  )
+}
+
+function RealClientLogo({ client }: { client: Client }) {
+  return (
+    <div className="mx-6 shrink-0 group">
       <div className="h-14 flex items-center justify-center px-6 rounded-xl border border-gray-100 bg-white hover:border-purple-200 hover:shadow-md transition-all duration-300">
         {client.logo ? (
           <img
@@ -31,7 +47,7 @@ function ClientLogo({ client }: { client: Client }) {
             className="h-8 w-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
           />
         ) : (
-          <span className="text-gray-400 font-bold text-sm group-hover:text-purple-600 transition-colors uppercase tracking-wider whitespace-nowrap">
+          <span className="text-gray-500 font-bold text-sm group-hover:text-purple-600 transition-colors uppercase tracking-wider whitespace-nowrap">
             {client.name}
           </span>
         )}
@@ -41,8 +57,9 @@ function ClientLogo({ client }: { client: Client }) {
 }
 
 export default function ClientsSection({ clients }: { clients?: Client[] }) {
-  const displayClients = clients && clients.length > 0 ? clients : defaultClients
-  const doubled = [...displayClients, ...displayClients]
+  // Gerçek müşteri yoksa sektör chip'lerini göster (jenerik fake firma yerine)
+  const hasRealClients = clients && clients.length > 0
+  const items = hasRealClients ? [...clients!, ...clients!] : [...SECTORS, ...SECTORS]
 
   return (
     <section className="py-20 bg-gray-50 overflow-hidden">
@@ -54,22 +71,24 @@ export default function ClientsSection({ clients }: { clients?: Client[] }) {
           transition={{ duration: 0.5 }}
         >
           <span className="inline-block px-4 py-1.5 rounded-full bg-purple-50 border border-purple-100 text-purple-700 text-sm font-semibold mb-4">
-            Referanslarımız
+            {hasRealClients ? 'Müşterilerimiz' : 'Hizmet Verdiğimiz Sektörler'}
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-            500+ mutlu müşterimiz var.
+            {hasRealClients
+              ? 'İşletmeler kooza\'ya güveniyor.'
+              : 'Sektörünüze uygun çözüm var.'}
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto">
-            Türkiye'nin önde gelen şirketleri dijital dönüşüm için bize güveniyor.
+            {hasRealClients
+              ? 'Türkiye\'nin önde gelen şirketleri dijital dönüşüm için bize güveniyor.'
+              : '9 farklı sektör için özel paket. Sizinkini hemen seçin, demo isteyin.'}
           </p>
         </motion.div>
       </div>
 
       {/* Slider */}
       <div className="relative">
-        {/* Left fade */}
         <div className="absolute left-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
-        {/* Right fade */}
         <div className="absolute right-0 top-0 bottom-0 w-32 z-10 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
 
         <div className="flex overflow-hidden">
@@ -77,14 +96,14 @@ export default function ClientsSection({ clients }: { clients?: Client[] }) {
             className="flex items-center"
             animate={{ x: ['0%', '-50%'] }}
             transition={{
-              duration: displayClients.length * 3,
+              duration: items.length * 2.5,
               ease: 'linear',
               repeat: Infinity,
             }}
           >
-            {doubled.map((client, i) => (
-              <ClientLogo key={`${client.id}-${i}`} client={client} />
-            ))}
+            {hasRealClients
+              ? items.map((c: any, i) => <RealClientLogo key={`c-${c.id}-${i}`} client={c} />)
+              : items.map((s: any, i) => <SectorChip key={`s-${s.id}-${i}`} sector={s} />)}
           </motion.div>
         </div>
       </div>

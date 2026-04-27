@@ -15,6 +15,13 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  async redirects() {
+    return [
+      { source: '/olgunluk-testi', destination: '/dijital-olgunluk-testi', permanent: true },
+      { source: '/yol-haritasi', destination: '/dijital-olgunluk-testi', permanent: true },
+      { source: '/dijital-yol-haritasi', destination: '/dijital-rehber', permanent: true },
+    ]
+  },
   async headers() {
     return [
       {

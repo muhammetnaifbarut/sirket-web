@@ -10,7 +10,10 @@ const LEAD_WINDOW_MS = 60 * 60 * 1000 // 1 saatte 5 talep
 
 const leadSchema = z.object({
   name: z.string().trim().min(2, 'Ad en az 2 karakter olmalı').max(120),
-  email: z.string().trim().toLowerCase().email('Geçerli bir e-posta gir'),
+  email: z.union([
+    z.string().trim().toLowerCase().email('Geçerli bir e-posta gir'),
+    z.literal(''),
+  ]).optional().transform((v) => (v && v.length ? v : null)).nullable(),
   phone: z.string().trim().max(40).optional().nullable(),
   company: z.string().trim().max(160).optional().nullable(),
   message: z.string().trim().max(4000).optional().nullable(),
@@ -57,7 +60,7 @@ export async function POST(req: NextRequest) {
     const lead = await prisma.lead.create({
       data: {
         name,
-        email,
+        email: email || `nophone-${Date.now()}@kooza.local`,
         phone: phone || null,
         company: company || null,
         message: message || subject || null,

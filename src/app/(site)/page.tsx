@@ -1,6 +1,7 @@
 import { getSettings } from '@/lib/settings'
 import prisma from '@/lib/db'
 import HeroSection from '@/components/site/sections/HeroSection'
+import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import ProductsSection from '@/components/site/sections/ProductsSection'
 import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
@@ -84,6 +85,7 @@ export default async function HomePage() {
         ticker={tickerItems.map((t) => ({ emoji: t.emoji, text: t.text }))}
         stats={statItems.map((s) => ({ value: s.value, label: s.label, color: s.color }))}
       />
+      <QuickCallbackBand />
       {isVisible(settings, 'section_clients_visible') && <ClientsSection clients={clients} />}
       {isVisible(settings, 'section_modules_visible') && <ModulesShowcase modules={modules} />}
       {isVisible(settings, 'section_products_visible') && <ProductsSection products={products} />}
