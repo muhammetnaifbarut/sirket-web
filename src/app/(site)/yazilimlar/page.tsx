@@ -22,11 +22,34 @@ const PRODUCT_COLORS = [
 ]
 
 export default async function YazilimlarPage() {
-  const products = await prisma.product.findMany({
+  // Önce Product tablosundaki ürünlere bak
+  const dbProducts = await prisma.product.findMany({
     where: { status: 'ACTIVE' },
     include: { pricing: { where: { isPopular: true }, take: 1 } },
     orderBy: { order: 'asc' },
-  })
+  }).catch(() => [])
+
+  // Product boşsa, site_modules tablosundan modülleri ürün gibi göster
+  const modules = dbProducts.length === 0
+    ? await prisma.siteModule.findMany({
+        where: { isActive: true },
+        orderBy: { order: 'asc' },
+      }).catch(() => [])
+    : []
+
+  // Modülleri Product şemasına çevir (görüntü için)
+  const products = dbProducts.length > 0 ? dbProducts : modules.map((m, i) => ({
+    id: m.id,
+    name: m.name,
+    slug: m.slug,
+    tagline: m.description?.split('—')[0]?.trim() || m.description || '',
+    description: m.description || '',
+    features: (m.description || '').split(/[·,]/).map(s => s.trim()).filter(Boolean).slice(0, 4),
+    icon: m.icon?.toLowerCase().replace(/[^a-z]/g, '') || 'box',
+    badge: i < 3 ? 'Popüler' : null,
+    pricing: [] as any[],
+    href: m.href,
+  }))
 
   return (
     <div className="bg-white">
@@ -148,7 +171,7 @@ export default async function YazilimlarPage() {
                       {/* CTAs */}
                       <div className="flex gap-2">
                         <Link
-                          href={`/yazilimlar/${product.slug}`}
+                          href={(product as any).href || `/yazilimlar/${product.slug}`}
                           className="flex-1 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold transition-colors"
                         >
                           Detaylar

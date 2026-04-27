@@ -68,7 +68,7 @@ export default function HeroSection({ settings, ticker, stats }: HeroProps) {
           className="flex justify-center mb-6 sm:mb-8"
         >
           <Link
-            href="/yazilimlar"
+            href="/cozumler"
             className="group inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-purple-50 border border-purple-200 hover:border-purple-300 hover:bg-purple-100 transition-colors"
           >
             <span className="relative flex h-2 w-2">
