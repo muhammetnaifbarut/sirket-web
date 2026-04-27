@@ -666,26 +666,19 @@ model HeroStat {
   @@map("hero_stats")
 }
 
-// ─── AI ROADMAP REQUESTS (lead magnet — Claude AI) ──────────────────────────
+// ─── GUIDE DOWNLOADS (sektörel rehber lead magnet) ──────────────────────────
 
-model RoadmapRequest {
-  id              String   @id @default(cuid())
-  name            String
-  email           String
-  phone           String?
-  company         String
-  sector          String
-  employeeCount   String
-  monthlyRevenue  String?
-  currentSystems  Json     // ["Excel","CRM","Web"] gibi
-  goals           String   @db.Text
-  websiteUrl      String?
-  generatedReport String   @db.Text  // Claude'un ürettiği rapor
-  reportSent      Boolean  @default(false)
-  createdAt       DateTime @default(now())
+model GuideDownload {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  company   String?
+  sector    String   // klinik, restoran, market, egitim, ik, web
+  createdAt DateTime @default(now())
 
   @@index([email])
-  @@map("roadmap_requests")
+  @@map("guide_downloads")
 }
 
 // ─── MATURITY TEST RESULTS (lead magnet) ────────────────────────────────────

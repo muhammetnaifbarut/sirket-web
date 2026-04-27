@@ -131,15 +131,26 @@ export default function HeroSection({ settings, ticker, stats }: HeroProps) {
               {btn2Label}
             </Link>
           </div>
-          {/* TERTIARY — Olgunluk Testi tek CTA */}
-          <Link
-            href="/dijital-olgunluk-testi"
-            className="mt-4 text-sm text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
-          >
-            <span className="text-base">🎯</span>
-            Önce 2 dakikalık ücretsiz dijital olgunluk testimizi yapın
-            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
+          {/* TERTIARY — 2 ücretsiz araç */}
+          <div className="mt-4 flex flex-col sm:flex-row gap-3 items-center justify-center text-sm">
+            <Link
+              href="/dijital-olgunluk-testi"
+              className="text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
+            >
+              <span className="text-base">🎯</span>
+              <span>2 dk dijital olgunluk testi</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+            <span className="hidden sm:inline text-gray-300">·</span>
+            <Link
+              href="/dijital-rehber"
+              className="text-purple-700 hover:text-purple-900 font-semibold inline-flex items-center gap-1.5 group"
+            >
+              <span className="text-base">📘</span>
+              <span>Sektörel rehberi indir</span>
+              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </div>
         </motion.div>
 
         {/* ── Trust line — checkmarks ───────────────────────────────── */}

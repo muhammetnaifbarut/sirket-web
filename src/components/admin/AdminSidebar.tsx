@@ -11,6 +11,7 @@ const navGroups = [
       { href: '/admin', label: 'Dashboard', icon: HomeIcon },
       { href: '/admin/leads', label: 'Form Talepler', icon: InboxIcon, badge: true },
       { href: '/admin/olgunluk-testi', label: 'Olgunluk Testi', icon: ChartIcon },
+      { href: '/admin/rehber-talepleri', label: 'Rehber Talepleri', icon: FileTextIcon },
       { href: '/admin/crm', label: 'CRM Pipeline', icon: PipelineIcon },
       { href: '/admin/bildirimler', label: 'Bildirimler', icon: BellIcon },
     ],

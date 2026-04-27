@@ -183,6 +183,7 @@ export default async function Footer({ settings }: FooterProps) {
             <ul className="space-y-3">
               {[
                 { label: 'Blog', href: '/blog' },
+                { label: '📘 Sektörel Rehber', href: '/dijital-rehber' },
                 { label: 'Olgunluk Testi', href: '/dijital-olgunluk-testi' },
                 { label: 'ROI Hesaplama', href: '/roi-hesaplama' },
                 { label: 'Sıkça Sorulanlar', href: '/sss' },
