@@ -31,12 +31,10 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       <Footer settings={settings} />
       <BackToTop />
       <CookieConsent />
-      {settings.whatsapp_enabled === 'true' && (
-        <WhatsAppButton
-          phone={settings.whatsapp_number || ''}
-          message={settings.whatsapp_message || 'Merhaba, bilgi almak istiyorum.'}
-        />
-      )}
+      <WhatsAppButton
+        phone={settings.whatsapp_number || '+905414142942'}
+        message={settings.whatsapp_message || 'Merhaba kooza, bilgi almak istiyorum.'}
+      />
     </div>
   )
 }

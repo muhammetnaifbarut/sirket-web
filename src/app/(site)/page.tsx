@@ -9,7 +9,6 @@ import TestimonialsSection from '@/components/site/sections/TestimonialsSection'
 import DemoCtaSection from '@/components/site/sections/DemoCtaSection'
 import VideoShowcaseSection from '@/components/site/sections/VideoShowcaseSection'
 import FAQSection from '@/components/site/sections/FAQSection'
-import ChatbotWidget from '@/components/site/ChatbotWidget'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -98,19 +97,6 @@ export default async function HomePage() {
       )}
       {isVisible(settings, 'section_cta_visible') && <DemoCtaSection settings={settings} />}
 
-      {chatbotConfig?.isEnabled !== false && (
-        <ChatbotWidget
-          config={
-            chatbotConfig
-              ? {
-                  ...chatbotConfig,
-                  botAvatar: chatbotConfig.botAvatar ?? undefined,
-                }
-              : undefined
-          }
-          faqs={chatbotFaqs}
-        />
-      )}
     </>
   )
 }
