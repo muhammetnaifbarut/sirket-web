@@ -21,35 +21,67 @@ const PRODUCT_COLORS = [
   { bg: 'bg-cyan-50', text: 'text-cyan-600', accent: 'bg-cyan-100', tag: 'bg-cyan-50 text-cyan-700 border-cyan-100' },
 ]
 
+// HARDCODED 12 modül — DB ne olursa olsun sayfa hep dolu
+const FALLBACK_MODULES: any[] = [
+  { id: 'm1', name: 'Web Sitesi & E-Ticaret', slug: 'web', tagline: 'Kurumsal site, blog, e-ticaret, landing page',
+    description: 'Modern, mobil uyumlu, SEO optimize web siteleri ve e-ticaret altyapısı. Admin panelinden yönetin.',
+    features: ['Modern tasarım, 90+ PageSpeed', 'Admin panel — kod bilmeden yönet', 'E-ticaret + ödeme entegre', 'SEO + form → CRM otomatik'],
+    icon: 'globe', badge: 'En Popüler', href: '/cozumler/web', pricing: [] },
+  { id: 'm2', name: 'Klinik & Sağlık', slug: 'klinik', tagline: 'Hasta dosyası, e-Reçete, MHRS, randevu',
+    description: 'Klinik ve poliklinikler için tam dijital hasta yönetim sistemi. Sağlık Bakanlığı ile entegre.',
+    features: ['Online randevu + SMS hatırlatma', 'Dijital hasta dosyası (EHR)', 'e-Reçete & MHRS entegre', 'SGK provizyon otomatik'],
+    icon: 'hospital', badge: 'Popüler', href: '/cozumler/klinik', pricing: [] },
+  { id: 'm3', name: 'Restoran & Kafe', slug: 'restoran', tagline: 'Adisyon, kasa, mutfak ekranı, kurye',
+    description: 'Restoran ve kafe için adisyon, kasa, mutfak ekranı, Yemeksepeti/Getir/Trendyol entegrasyonu.',
+    features: ['Tablet adisyon, masa yönetimi', 'Mutfak ekranı (KDS)', 'Yemeksepeti/Getir/Trendyol entegre', 'Reçete bazlı stok takibi'],
+    icon: 'restaurant', badge: 'Popüler', href: '/cozumler/restoran', pricing: [] },
+  { id: 'm4', name: 'Market & Perakende', slug: 'market', tagline: 'Barkod, kasa, stok, sadakat',
+    description: 'Market, bakkal, perakende için kasa, barkod, stok, sadakat kart ve çoklu şube yönetimi.',
+    features: ['Barkod + hızlı kasa', 'Akıllı stok yönetimi', 'Çoklu şube karşılaştırma', 'Sadakat kart + SMS kampanya'],
+    icon: 'shoppingcart', badge: null, href: '/cozumler/market', pricing: [] },
+  { id: 'm5', name: 'Eğitim & Kurs', slug: 'egitim', tagline: 'Öğrenci kayıt, sınav, veli portalı',
+    description: 'Dershane, kurs, anaokulu için öğrenci yönetimi, online sınav, devam takibi ve veli portalı.',
+    features: ['Öğrenci kart, taksit takibi', 'Online sınav + otomatik puanlama', 'Veli portalı (web + mobil)', 'SMS bildirim'],
+    icon: 'graduation', badge: null, href: '/cozumler/egitim', pricing: [] },
+  { id: 'm6', name: 'İnsan Kaynakları', slug: 'ik', tagline: 'Bordro, izin, mesai, performans',
+    description: 'Personel özlük, bordro, izin, performans ve işe alım. KVKK uyumlu, self-servis çalışan portalı.',
+    features: ['Özlük + bordro otomasyonu', 'İzin + mesai + PDKS', 'Performans (OKR + 360°)', 'İşe alım (ATS)'],
+    icon: 'users', badge: null, href: '/cozumler/ik', pricing: [] },
+  { id: 'm7', name: 'Muhasebe & Finans', slug: 'muhasebe', tagline: 'e-Fatura, e-Arşiv, GİB entegre',
+    description: 'e-Fatura, e-Arşiv, cari, banka, çek-senet, gelir-gider — GİB ile tam entegre muhasebe.',
+    features: ['e-Fatura & e-Arşiv otomatik', 'Cari + banka takibi', 'Gelir-gider raporu', 'GİB ile tam entegre'],
+    icon: 'calculator', badge: null, href: '/cozumler', pricing: [] },
+  { id: 'm8', name: 'CRM & Satış', slug: 'crm', tagline: 'Müşteri pipeline, teklif, satış',
+    description: 'Müşteri kart, satış pipeline, teklif yönetimi ve tekrar satış otomasyonu.',
+    features: ['Müşteri pipeline', 'Teklif + anlaşma takibi', 'Tekrar satış otomasyonu', 'Form → CRM bildirimi'],
+    icon: 'usercheck', badge: null, href: '/cozumler', pricing: [] },
+  { id: 'm9', name: 'Stok & Depo', slug: 'stok', tagline: 'Çoklu depo, sayım, transfer',
+    description: 'Çoklu depo yönetimi, sayım, transfer, seri-parti, FIFO/LIFO ve barkod desteği.',
+    features: ['Çoklu depo yönetimi', 'Otomatik stok sayımı', 'Seri-parti + FIFO/LIFO', 'Barkod + QR kod'],
+    icon: 'package', badge: null, href: '/cozumler', pricing: [] },
+  { id: 'm10', name: 'Pazarlama Otomasyon', slug: 'pazarlama', tagline: 'Email, SMS, WhatsApp kampanya',
+    description: 'Email, SMS, WhatsApp kampanyaları, segment, A/B test, kupon ve sadakat programı.',
+    features: ['Email + SMS + WhatsApp', 'Segment + A/B test', 'Kupon + kampanya', 'Performans analitik'],
+    icon: 'mail', badge: null, href: '/cozumler', pricing: [] },
+  { id: 'm11', name: 'Randevu Sistemi', slug: 'randevu', tagline: 'Online rezervasyon, takvim, SMS',
+    description: 'Klinik, kuaför, danışmanlık, servis için online randevu sistemi ve SMS hatırlatma.',
+    features: ['Online rezervasyon', 'Akıllı takvim yönetimi', 'SMS hatırlatma otomatik', 'İptal + bekleme listesi'],
+    icon: 'calendar', badge: null, href: '/cozumler/klinik', pricing: [] },
+  { id: 'm12', name: 'Dijital Dönüşüm Danışmanlığı', slug: 'danismanlik', tagline: 'Süreç analizi, eğitim, destek',
+    description: 'Şirketinize özel süreç analizi, yazılım seçimi, ekip eğitimi ve sürekli teknik destek.',
+    features: ['Süreç analizi + iyileştirme', 'Ekip eğitimi (yerinde + online)', 'Yazılım seçim danışmanlığı', '24/7 teknik destek'],
+    icon: 'lightbulb', badge: null, href: '/danismanlik', pricing: [] },
+]
+
 export default async function YazilimlarPage() {
-  // Önce Product tablosundaki ürünlere bak
   const dbProducts = await prisma.product.findMany({
     where: { status: 'ACTIVE' },
     include: { pricing: { where: { isPopular: true }, take: 1 } },
     orderBy: { order: 'asc' },
   }).catch(() => [])
 
-  // Product boşsa, site_modules tablosundan modülleri ürün gibi göster
-  const modules = dbProducts.length === 0
-    ? await prisma.siteModule.findMany({
-        where: { isActive: true },
-        orderBy: { order: 'asc' },
-      }).catch(() => [])
-    : []
-
-  // Modülleri Product şemasına çevir (görüntü için)
-  const products = dbProducts.length > 0 ? dbProducts : modules.map((m, i) => ({
-    id: m.id,
-    name: m.name,
-    slug: m.slug,
-    tagline: m.description?.split('—')[0]?.trim() || m.description || '',
-    description: m.description || '',
-    features: (m.description || '').split(/[·,]/).map(s => s.trim()).filter(Boolean).slice(0, 4),
-    icon: m.icon?.toLowerCase().replace(/[^a-z]/g, '') || 'box',
-    badge: i < 3 ? 'Popüler' : null,
-    pricing: [] as any[],
-    href: m.href,
-  }))
+  // DB boşsa hardcoded fallback — sayfa kesinlikle dolu görünür
+  const products: any[] = dbProducts.length > 0 ? dbProducts : FALLBACK_MODULES
 
   return (
     <div className="bg-white">
