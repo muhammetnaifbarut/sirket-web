@@ -83,15 +83,15 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                     className={cn(
                       'group flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-base font-semibold tracking-tight transition-all duration-200 relative',
                       pathname.startsWith(item.url)
-                        ? 'text-purple-700'
-                        : 'text-gray-700 hover:text-purple-700'
+                        ? 'text-[#714B67]'
+                        : 'text-gray-700 hover:text-[#714B67]'
                     )}
                   >
                     <span className="relative">
                       {item.label}
                       <span
                         className={cn(
-                          'absolute -bottom-1 left-0 h-0.5 bg-purple-600 transition-all duration-300',
+                          'absolute -bottom-1 left-0 h-0.5 bg-[#714B67] transition-all duration-300',
                           pathname.startsWith(item.url)
                             ? 'w-full'
                             : 'w-0 group-hover:w-full'
@@ -119,9 +119,9 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                           <Link
                             key={child.id}
                             href={child.url}
-                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-600 hover:bg-purple-50 hover:text-purple-700 transition-colors"
+                            className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-600 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors"
                           >
-                            <div className="w-1.5 h-1.5 rounded-full bg-purple-300" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#FFC0CB]" />
                             {child.label}
                           </Link>
                         ))}
@@ -136,15 +136,15 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   className={cn(
                     'group px-4 py-2.5 rounded-xl text-base font-semibold tracking-tight transition-all duration-200 relative hover:-translate-y-0.5',
                     pathname === item.url
-                      ? 'text-purple-700'
-                      : 'text-gray-700 hover:text-purple-700'
+                      ? 'text-[#714B67]'
+                      : 'text-gray-700 hover:text-[#714B67]'
                   )}
                 >
                   <span className="relative inline-block">
                     {item.label}
                     <span
                       className={cn(
-                        'absolute -bottom-1 left-0 h-0.5 bg-purple-600 transition-all duration-300',
+                        'absolute -bottom-1 left-0 h-0.5 bg-[#714B67] transition-all duration-300',
                         pathname === item.url
                           ? 'w-full'
                           : 'w-0 group-hover:w-full'
@@ -156,18 +156,58 @@ export default function Header({ settings, menuItems }: HeaderProps) {
             )}
           </nav>
 
-          {/* Right side: Demo CTA + Mobile toggle */}
-          {(() => {
-            const demoItem = menuItems.find((m) => m.url === '/demo')
-            return demoItem ? (
-              <Link
-                href={demoItem.url}
-                className="hidden lg:inline-flex ml-auto items-center px-4 py-2 rounded-xl text-sm font-semibold bg-purple-600 text-white hover:bg-purple-700 shadow-md shadow-purple-500/30 transition-all shrink-0"
-              >
-                {demoItem.label}
-              </Link>
-            ) : null
-          })()}
+          {/* Right side: Sign in to products + Demo CTA */}
+          <div className="hidden lg:flex ml-auto items-center gap-2 shrink-0">
+            {/* Ürün giriş dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setOpenDropdown('product-login')}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              <button className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-[#714B67] hover:bg-[#714B67]/5 transition-all">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                Giriş
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <AnimatePresence>
+                {openDropdown === 'product-login' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 overflow-hidden"
+                  >
+                    <a href="https://randevu.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                      <span className="text-base">📅</span>
+                      <div>
+                        <div className="font-semibold">kooza Randevu</div>
+                        <div className="text-xs text-gray-400">randevu.kooza.tr</div>
+                      </div>
+                    </a>
+                    <a href="https://egitim.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                      <span className="text-base">🎓</span>
+                      <div>
+                        <div className="font-semibold">kooza Eğitim</div>
+                        <div className="text-xs text-gray-400">egitim.kooza.tr</div>
+                      </div>
+                    </a>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            {(() => {
+              const demoItem = menuItems.find((m) => m.url === '/demo')
+              return demoItem ? (
+                <Link
+                  href={demoItem.url}
+                  className="inline-flex items-center px-4 py-2 rounded-xl text-sm font-semibold bg-[#714B67] text-white hover:bg-[#5d3e55] shadow-md shadow-[#714B67]/30 transition-all"
+                >
+                  {demoItem.label}
+                </Link>
+              ) : null
+            })()}
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -204,6 +244,28 @@ export default function Header({ settings, menuItems }: HeaderProps) {
             className="lg:hidden overflow-hidden border-t border-gray-100 bg-white"
           >
             <div className="px-4 py-4 space-y-1">
+              {/* Ürün girişleri — mobile */}
+              <div className="grid grid-cols-2 gap-2 mb-2">
+                <a
+                  href="https://randevu.kooza.tr/login"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
+                >
+                  <span className="text-base">📅</span>
+                  <span className="font-semibold text-xs mt-1">Randevu Girişi</span>
+                </a>
+                <a
+                  href="https://egitim.kooza.tr/login"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
+                >
+                  <span className="text-base">🎓</span>
+                  <span className="font-semibold text-xs mt-1">Eğitim Girişi</span>
+                </a>
+              </div>
+
               {menuItems.map((item) => (
                 <div key={item.id}>
                   <Link
@@ -211,9 +273,9 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                     className={cn(
                       'flex items-center px-4 py-3 rounded-xl text-sm font-medium transition-colors',
                       item.url === '/demo'
-                        ? 'bg-purple-600 text-white mt-2 shadow-md'
+                        ? 'bg-[#714B67] text-white mt-2 shadow-md'
                         : pathname === item.url
-                        ? 'text-purple-700 bg-purple-50'
+                        ? 'text-[#714B67] bg-[#714B67]/5'
                         : 'text-gray-700 hover:bg-gray-50'
                     )}
                     onClick={() => setMobileOpen(false)}

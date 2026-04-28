@@ -11,25 +11,27 @@ import { ArrowRight, Calendar, GraduationCap, Users, ShoppingCart } from 'lucide
 const PRODUCTS = [
   {
     title: 'kooza Randevu',
-    subtitle: 'Klinik · Salon · Kuaför · Hizmet',
-    description: 'Akıllı randevu yönetimi, WhatsApp hatırlatma, online rezervasyon — 14 gün ücretsiz.',
+    subtitle: 'Klinik · Salon · Kuaför · 12 Sektör',
+    description: 'AI Asistan, WhatsApp hatırlatma, no-show önleme, müşteri portalı — 14 gün ücretsiz.',
     href: 'https://randevu.kooza.tr/register',
+    detailHref: '/urunler/randevu',
     label: 'Hemen Dene',
     icon: Calendar,
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-[#714B67] to-[#875A7B]',
     badge: '🦋 CANLI',
     available: true,
   },
   {
     title: 'kooza Eğitim',
-    subtitle: 'Okul · Kurs · Online Eğitim',
-    description: 'Öğrenci kayıt, sınav yönetimi, veli portalı — sektörel paket.',
-    href: '#',
-    label: 'Yakında',
+    subtitle: 'Kreş · Anaokulu · Kurs · Dershane',
+    description: 'Yoklama, ödeme, veli iletişimi (WhatsApp), sınav-karne — 14 gün ücretsiz.',
+    href: 'https://egitim.kooza.tr/register',
+    detailHref: '/urunler/egitim',
+    label: 'Hemen Dene',
     icon: GraduationCap,
-    color: 'from-blue-500 to-cyan-500',
-    badge: 'YAKINDA',
-    available: false,
+    color: 'from-[#5d3e55] to-[#875A7B]',
+    badge: '🦋 CANLI',
+    available: true,
   },
   {
     title: 'kooza CRM',
@@ -38,7 +40,7 @@ const PRODUCTS = [
     href: '#',
     label: 'Yakında',
     icon: Users,
-    color: 'from-emerald-500 to-teal-500',
+    color: 'from-[#4a3144] to-[#5d3e55]',
     badge: 'YAKINDA',
     available: false,
   },
@@ -49,7 +51,7 @@ const PRODUCTS = [
     href: '#',
     label: 'Yakında',
     icon: ShoppingCart,
-    color: 'from-amber-500 to-orange-500',
+    color: 'from-[#3a2436] to-[#4a3144]',
     badge: 'YAKINDA',
     available: false,
   },
@@ -85,7 +87,7 @@ export default function TryProductsBand() {
                 {...wrapperProps}
                 className={`group relative rounded-2xl p-6 border transition-all ${
                   p.available
-                    ? 'border-gray-200 hover:border-purple-300 hover:shadow-cardHover hover:-translate-y-1 bg-white cursor-pointer'
+                    ? 'border-gray-200 hover:border-[#875A7B] hover:shadow-cardHover hover:-translate-y-1 bg-white cursor-pointer'
                     : 'border-gray-100 bg-gray-50 cursor-not-allowed opacity-70'
                 }`}
               >
@@ -111,13 +113,24 @@ export default function TryProductsBand() {
                 <p className="text-sm text-gray-600 leading-relaxed mb-4 line-clamp-3">{p.description}</p>
 
                 {/* CTA */}
-                <div className={`flex items-center gap-1.5 text-sm font-bold ${
-                  p.available
-                    ? 'text-purple-700 group-hover:gap-2'
-                    : 'text-gray-400'
-                } transition-all`}>
-                  {p.label}
-                  {p.available && <ArrowRight className="w-4 h-4" />}
+                <div className="flex items-center justify-between gap-2">
+                  <div className={`flex items-center gap-1.5 text-sm font-bold ${
+                    p.available
+                      ? 'text-[#714B67] group-hover:gap-2'
+                      : 'text-gray-400'
+                  } transition-all`}>
+                    {p.label}
+                    {p.available && <ArrowRight className="w-4 h-4" />}
+                  </div>
+                  {p.available && p.detailHref && (
+                    <Link
+                      href={p.detailHref}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-xs text-gray-500 hover:text-[#714B67] underline-offset-2 hover:underline"
+                    >
+                      Detay
+                    </Link>
+                  )}
                 </div>
               </Wrapper>
             )
