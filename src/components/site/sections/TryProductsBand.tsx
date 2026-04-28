@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Calendar, GraduationCap, Users, ShoppingCart } from 'lucide-react'
+import { ArrowRight, Calendar, GraduationCap, Home, Users, ShoppingCart } from 'lucide-react'
 
 /**
  * "Şimdi Dene" bandı — kooza ekosistemindeki canlı ürünlere
@@ -34,15 +34,16 @@ const PRODUCTS = [
     available: true,
   },
   {
-    title: 'kooza CRM',
-    subtitle: 'Satış · Pazarlama · Lead Yönetimi',
-    description: 'Müşteri pipeline, otomatik takip, Iyzico entegre.',
-    href: '#',
-    label: 'Yakında',
-    icon: Users,
-    color: 'from-[#4a3144] to-[#5d3e55]',
-    badge: 'YAKINDA',
-    available: false,
+    title: 'kooza Emlak',
+    subtitle: 'Gayrimenkul · İlan · Lead · Komisyon',
+    description: 'AI fiyat tahmini, çoklu portal ilan otomasyonu, WhatsApp lead — 14 gün ücretsiz.',
+    href: 'https://emlak.kooza.tr/login',
+    detailHref: '/urunler/emlak',
+    label: 'Hemen Dene',
+    icon: Home,
+    color: 'from-[#4a3144] to-[#714B67]',
+    badge: '🦋 CANLI',
+    available: true,
   },
   {
     title: 'kooza E-Ticaret',
