@@ -136,6 +136,12 @@ export default function HeroDashboard() {
   const tiltY = useSpring(useTransform(mouseX, [-1, 1], [-3, 3]), { stiffness: 150, damping: 20 })
   const glowX = useTransform(mouseX, [-1, 1], ['0%', '100%'])
   const glowY = useTransform(mouseY, [-1, 1], ['0%', '100%'])
+  // 🔧 React #310 fix: useTransform JSX içinde çağrılmıştı, fonksiyon başına aldık
+  const glowBackground = useTransform(
+    [glowX, glowY] as any,
+    ([x, y]: any) =>
+      `radial-gradient(circle 240px at ${x} ${y}, rgba(113, 75, 103, 0.12), transparent 70%)`,
+  )
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return
@@ -197,11 +203,7 @@ export default function HeroDashboard() {
         className="absolute inset-0 pointer-events-none z-30 transition-opacity duration-300"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: useTransform(
-            [glowX, glowY] as any,
-            ([x, y]: any) =>
-              `radial-gradient(circle 240px at ${x} ${y}, rgba(113, 75, 103, 0.12), transparent 70%)`
-          ),
+          background: glowBackground,
         }}
       />
       {/* Sidebar */}

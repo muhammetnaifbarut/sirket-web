@@ -51,30 +51,6 @@ async function safe<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
 }
 
 export default async function HomePage() {
-  try {
-    return await renderHomePage()
-  } catch (e: any) {
-    // 🚧 DEBUG: Next.js production hata mesajını sansürlüyor.
-    // Try/catch ile yakalayıp HTML'e direkt yazıyoruz, böylece sansürü atlatıyoruz.
-    return (
-      <div style={{ padding: 24, fontFamily: 'monospace', fontSize: 13, color: '#7f1d1d', background: '#fef2f2', minHeight: '60vh' }}>
-        <h2 style={{ fontSize: 18, fontWeight: 700, marginBottom: 12 }}>🔴 SERVER RENDER ERROR (debug)</h2>
-        <p style={{ marginBottom: 8 }}><strong>Tür:</strong> {e?.name || 'Error'}</p>
-        <p style={{ marginBottom: 8 }}><strong>Mesaj:</strong> {String(e?.message || e)}</p>
-        {e?.code && <p style={{ marginBottom: 8 }}><strong>Code:</strong> {e.code}</p>}
-        {e?.cause && <p style={{ marginBottom: 8 }}><strong>Cause:</strong> {String(e.cause)}</p>}
-        <details open style={{ marginTop: 12 }}>
-          <summary style={{ cursor: 'pointer', fontWeight: 600, fontSize: 12 }}>📋 Stack trace</summary>
-          <pre style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all', fontSize: 11, marginTop: 8, padding: 12, background: 'white', borderRadius: 8, border: '1px solid #fecaca', maxHeight: 480, overflow: 'auto' }}>
-            {e?.stack || '(yok)'}
-          </pre>
-        </details>
-      </div>
-    )
-  }
-}
-
-async function renderHomePage() {
   const settings = await getSettings()
 
   const [
