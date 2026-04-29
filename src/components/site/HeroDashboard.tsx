@@ -127,7 +127,12 @@ export default function HeroDashboard() {
   const lastX = chartW
   const lastY = ys[ys.length - 1]
 
-  // Hover-driven 3D tilt
+  // 🔧 Hidration mismatch guard — framer-motion hook'ları SSR'da farklı subscribe ediyor.
+  // Mounted olana kadar placeholder döndür. Tüm hook'lar bu check'ten ÖNCE çağrılmalı (Rules of Hooks).
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+
+  // Hover-driven 3D tilt — hook'lar her zaman çağrılmalı (mounted'tan bağımsız)
   const containerRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
   const mouseX = useMotionValue(0)
@@ -177,6 +182,15 @@ export default function HeroDashboard() {
     const id = setInterval(() => setBumpKey((k) => k + 1), isHovered ? 1500 : 4500)
     return () => clearInterval(id)
   }, [isHovered])
+
+  // 🔧 SSR'da placeholder dön — hidration tamamlanınca gerçek dashboard mount olsun
+  if (!mounted) {
+    return (
+      <div className="aspect-[16/9] bg-gradient-to-br from-gray-50 to-purple-50 flex items-center justify-center">
+        <div className="text-purple-600/40 text-sm font-medium animate-pulse">kooza dashboard...</div>
+      </div>
+    )
+  }
 
   return (
     <motion.div

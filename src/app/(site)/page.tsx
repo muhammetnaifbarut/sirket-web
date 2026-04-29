@@ -1,7 +1,6 @@
-import dynamic from 'next/dynamic'
 import { getSettings } from '@/lib/settings'
 import prisma from '@/lib/db'
-// Server section'lar (statik render OK)
+import HeroSection from '@/components/site/sections/HeroSection'
 import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
 import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
@@ -10,6 +9,7 @@ import TryProductsBand from '@/components/site/sections/TryProductsBand'
 import PressMentions from '@/components/site/sections/PressMentions'
 import WallOfLove from '@/components/site/sections/WallOfLove'
 import MiniCalculator from '@/components/site/sections/MiniCalculator'
+import ProductsSection from '@/components/site/sections/ProductsSection'
 import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
 import ClientsSection from '@/components/site/sections/ClientsSection'
@@ -18,16 +18,6 @@ import DemoCtaSection from '@/components/site/sections/DemoCtaSection'
 import VideoShowcaseSection from '@/components/site/sections/VideoShowcaseSection'
 import FAQSection from '@/components/site/sections/FAQSection'
 import type { Metadata } from 'next'
-
-// Client-only section'lar (framer-motion + interactive — hidration mismatch'i önlemek için)
-const HeroSection = dynamic(() => import('@/components/site/sections/HeroSection'), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: '60vh', background: '#fafafa' }} />,
-})
-const ProductsSection = dynamic(() => import('@/components/site/sections/ProductsSection'), {
-  ssr: false,
-  loading: () => <div style={{ minHeight: '40vh', background: '#fafafa' }} />,
-})
 
 export const dynamic = 'force-dynamic'
 
