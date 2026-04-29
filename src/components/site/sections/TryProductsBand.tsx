@@ -10,6 +10,18 @@ import { ArrowRight, Calendar, GraduationCap, Home, Users, ShoppingCart } from '
  */
 const PRODUCTS = [
   {
+    title: 'kooza Servis',
+    subtitle: 'Restoran · Kafe · Bar · Lokanta',
+    description: 'POS, masa yönetimi, mutfak ekranı, QR menü, çoklu ödeme — 14 gün ücretsiz.',
+    href: 'https://servis.kooza.tr/register',
+    detailHref: '/urunler/servis',
+    label: 'Hemen Dene',
+    icon: ShoppingCart,
+    color: 'from-[#714B67] to-[#875A7B]',
+    badge: '🦋 CANLI',
+    available: true,
+  },
+  {
     title: 'kooza Randevu',
     subtitle: 'Klinik · Salon · Kuaför · 12 Sektör',
     description: 'AI Asistan, WhatsApp hatırlatma, no-show önleme, müşteri portalı — 14 gün ücretsiz.',
