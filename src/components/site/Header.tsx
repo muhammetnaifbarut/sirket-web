@@ -178,34 +178,46 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 overflow-hidden"
                   >
-                    <a href="https://servis.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🍽️</span>
-                      <div>
-                        <div className="font-semibold">kooza Servis</div>
-                        <div className="text-xs text-gray-400">servis.kooza.tr</div>
-                      </div>
-                    </a>
                     <a href="https://randevu.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">📅</span>
-                      <div>
-                        <div className="font-semibold">kooza Randevu</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Randevu</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
+                        </div>
                         <div className="text-xs text-gray-400">randevu.kooza.tr</div>
                       </div>
                     </a>
-                    <a href="https://egitim.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                      <span className="text-base">🍽️</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Servis</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                        </div>
+                        <div className="text-xs text-gray-400">restoran · kafe POS</div>
+                      </div>
+                    </Link>
+                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
                       <span className="text-base">🎓</span>
-                      <div>
-                        <div className="font-semibold">kooza Eğitim</div>
-                        <div className="text-xs text-gray-400">egitim.kooza.tr</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Eğitim</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                        </div>
+                        <div className="text-xs text-gray-400">kreş · kurs · dershane</div>
                       </div>
-                    </a>
-                    <a href="https://emlak.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                    </Link>
+                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
                       <span className="text-base">🏠</span>
-                      <div>
-                        <div className="font-semibold">kooza Emlak</div>
-                        <div className="text-xs text-gray-400">emlak.kooza.tr</div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Emlak</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                        </div>
+                        <div className="text-xs text-gray-400">gayrimenkul · ilan</div>
                       </div>
-                    </a>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -261,41 +273,39 @@ export default function Header({ settings, menuItems }: HeaderProps) {
               {/* Ürün girişleri — mobile */}
               <div className="grid grid-cols-2 gap-2 mb-2">
                 <a
-                  href="https://servis.kooza.tr/login"
-                  target="_blank"
-                  rel="noopener"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
-                >
-                  <span className="text-base">🍽️</span>
-                  <span className="font-semibold text-xs mt-1">Servis</span>
-                </a>
-                <a
                   href="https://randevu.kooza.tr/login"
                   target="_blank"
                   rel="noopener"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">📅</span>
                   <span className="font-semibold text-xs mt-1">Randevu</span>
                 </a>
-                <a
-                  href="https://egitim.kooza.tr/login"
-                  target="_blank"
-                  rel="noopener"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
+                <Link
+                  href="/demo"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
                 >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="text-base">🍽️</span>
+                  <span className="font-semibold text-xs mt-1">Servis</span>
+                </Link>
+                <Link
+                  href="/demo"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
                   <span className="text-base">🎓</span>
                   <span className="font-semibold text-xs mt-1">Eğitim</span>
-                </a>
-                <a
-                  href="https://emlak.kooza.tr/login"
-                  target="_blank"
-                  rel="noopener"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-[#714B67]/5 text-[#714B67] border border-[#714B67]/20"
+                </Link>
+                <Link
+                  href="/demo"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
                 >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
                   <span className="text-base">🏠</span>
                   <span className="font-semibold text-xs mt-1">Emlak</span>
-                </a>
+                </Link>
               </div>
 
               {menuItems.map((item) => (
