@@ -134,14 +134,9 @@ export default function HeroDashboard() {
   const mouseY = useMotionValue(0)
   const tiltX = useSpring(useTransform(mouseY, [-1, 1], [3, -3]), { stiffness: 150, damping: 20 })
   const tiltY = useSpring(useTransform(mouseX, [-1, 1], [-3, 3]), { stiffness: 150, damping: 20 })
-  const glowX = useTransform(mouseX, [-1, 1], ['0%', '100%'])
-  const glowY = useTransform(mouseY, [-1, 1], ['0%', '100%'])
-  // 🔧 React #310 fix: useTransform JSX içinde çağrılmıştı, fonksiyon başına aldık
-  const glowBackground = useTransform(
-    [glowX, glowY] as any,
-    ([x, y]: any) =>
-      `radial-gradient(circle 240px at ${x} ${y}, rgba(113, 75, 103, 0.12), transparent 70%)`,
-  )
+  // 🔧 React #310 fix: glow spotlight efekti kaldırıldı
+  // Önceden useTransform([glowX, glowY], ...) array pattern'i Next.js production'da
+  // hooks count tutarsızlığına yol açıyordu. Glow yerine basit CSS hover yeterli.
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!containerRef.current) return
@@ -197,13 +192,14 @@ export default function HeroDashboard() {
       }}
       className="aspect-[16/9] bg-white flex overflow-hidden text-gray-700 relative"
     >
-      {/* Hover spotlight */}
-      <motion.div
+      {/* Hover spotlight — basit CSS gradient (Hook bağımlılığı yok) */}
+      <div
         aria-hidden
         className="absolute inset-0 pointer-events-none z-30 transition-opacity duration-300"
         style={{
           opacity: isHovered ? 1 : 0,
-          background: glowBackground,
+          background:
+            'radial-gradient(circle 320px at center, rgba(113, 75, 103, 0.10), transparent 70%)',
         }}
       />
       {/* Sidebar */}
