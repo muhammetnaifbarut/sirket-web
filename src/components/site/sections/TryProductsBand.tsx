@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Calendar, GraduationCap, Home, Users, ShoppingCart } from 'lucide-react'
+import { ArrowRight, Calendar, GraduationCap, Home, Users, ShoppingCart, Building2 } from 'lucide-react'
 
 /**
  * "Şimdi Dene" bandı — kooza ekosistemindeki canlı ürünlere
@@ -56,6 +56,18 @@ const PRODUCTS = [
     color: 'from-[#4a3144] to-[#714B67]',
     badge: '🦋 CANLI',
     available: true,
+  },
+  {
+    title: 'kooza Mesken',
+    subtitle: 'Site · Apartman · Aidat · Yönetim',
+    description: 'Aidat, sakin, talep, muhasebe — tek panelde. Kapıcı defterleri ve Excel\'e veda.',
+    href: '/demo',
+    detailHref: '/urunler/mesken',
+    label: 'Demo İste',
+    icon: Building2,
+    color: 'from-[#3a2436] to-[#5d3e55]',
+    badge: '⏳ YAKINDA',
+    available: false,
   },
   {
     title: 'kooza E-Ticaret',

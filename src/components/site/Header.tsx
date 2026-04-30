@@ -218,6 +218,16 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         <div className="text-xs text-gray-400">gayrimenkul · ilan</div>
                       </div>
                     </Link>
+                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                      <span className="text-base">🏘️</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Mesken</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                        </div>
+                        <div className="text-xs text-gray-400">site · apartman yönetimi</div>
+                      </div>
+                    </Link>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -305,6 +315,14 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
                   <span className="text-base">🏠</span>
                   <span className="font-semibold text-xs mt-1">Emlak</span>
+                </Link>
+                <Link
+                  href="/demo"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="text-base">🏘️</span>
+                  <span className="font-semibold text-xs mt-1">Mesken</span>
                 </Link>
               </div>
 
