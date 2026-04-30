@@ -1,6 +1,6 @@
 import { getSettings } from '@/lib/settings'
 import prisma from '@/lib/db'
-import HeroSection from '@/components/site/sections/HeroSection'
+import HeroSection from '@/components/site/sections/HeroSectionDynamic'
 import QuickCallbackBand from '@/components/site/sections/QuickCallbackBand'
 import WhyKoozaSection from '@/components/site/sections/WhyKoozaSection'
 import LeadMagnetTrio from '@/components/site/sections/LeadMagnetTrio'
