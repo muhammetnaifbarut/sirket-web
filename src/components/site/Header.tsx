@@ -258,6 +258,26 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         <div className="text-xs text-gray-400">insaat.kooza.tr</div>
                       </div>
                     </a>
+                    <a href="https://muhasebe.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                      <span className="text-base">💰</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza Muhasebe</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
+                        </div>
+                        <div className="text-xs text-gray-400">muhasebe.kooza.tr</div>
+                      </div>
+                    </a>
+                    <a href="https://ik.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                      <span className="text-base">👥</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza İK</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
+                        </div>
+                        <div className="text-xs text-gray-400">ik.kooza.tr</div>
+                      </div>
+                    </a>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -391,6 +411,26 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🏗️</span>
                   <span className="font-semibold text-xs mt-1">İnşaat</span>
+                </a>
+                <a
+                  href="https://muhasebe.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
+                >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
+                  <span className="text-base">💰</span>
+                  <span className="font-semibold text-xs mt-1">Muhasebe</span>
+                </a>
+                <a
+                  href="https://ik.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
+                >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
+                  <span className="text-base">👥</span>
+                  <span className="font-semibold text-xs mt-1">İK</span>
                 </a>
               </div>
 
