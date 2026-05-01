@@ -188,7 +188,7 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         <div className="text-xs text-gray-400">randevu.kooza.tr</div>
                       </div>
                     </a>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    <a href="https://servis.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🍽️</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
@@ -197,7 +197,7 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         </div>
                         <div className="text-xs text-gray-400">restoran · kafe POS</div>
                       </div>
-                    </Link>
+                    </a>
                     <a href="https://egitim.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🎓</span>
                       <div className="flex-1">
@@ -208,46 +208,56 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         <div className="text-xs text-gray-400">egitim.kooza.tr</div>
                       </div>
                     </a>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    <a href="https://emlak.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🏠</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">kooza Emlak</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
                         </div>
-                        <div className="text-xs text-gray-400">gayrimenkul · ilan</div>
+                        <div className="text-xs text-gray-400">emlak.kooza.tr</div>
                       </div>
-                    </Link>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    </a>
+                    <a href="https://mesken.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🏘️</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">kooza Mesken</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
                         </div>
-                        <div className="text-xs text-gray-400">site · apartman yönetimi</div>
+                        <div className="text-xs text-gray-400">mesken.kooza.tr</div>
                       </div>
-                    </Link>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    </a>
+                    <a href="https://tamir.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🔧</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">kooza Tamir</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
                         </div>
-                        <div className="text-xs text-gray-400">teknik servis · saha hizmet</div>
+                        <div className="text-xs text-gray-400">tamir.kooza.tr</div>
                       </div>
-                    </Link>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    </a>
+                    <a href="https://hukuk.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">⚖️</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">kooza Hukuk</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
                         </div>
-                        <div className="text-xs text-gray-400">avukat · dava · duruşma</div>
+                        <div className="text-xs text-gray-400">hukuk.kooza.tr</div>
                       </div>
-                    </Link>
+                    </a>
+                    <a href="https://insaat.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
+                      <span className="text-base">🏗️</span>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold">kooza İnşaat</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
+                        </div>
+                        <div className="text-xs text-gray-400">insaat.kooza.tr</div>
+                      </div>
+                    </a>
                   </motion.div>
                 )}
               </AnimatePresence>
