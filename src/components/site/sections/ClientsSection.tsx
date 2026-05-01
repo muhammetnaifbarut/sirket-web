@@ -81,7 +81,7 @@ export default function ClientsSection({ clients }: { clients?: Client[] }) {
           <p className="text-gray-600 max-w-xl mx-auto">
             {hasRealClients
               ? 'Türkiye\'nin önde gelen şirketleri dijital dönüşüm için bize güveniyor.'
-              : '9 farklı sektör için özel paket. Sizinkini hemen seçin, demo isteyin.'}
+              : 'tüm sektörler için özel paket. Sizinkini hemen seçin, demo isteyin.'}
           </p>
         </motion.div>
       </div>

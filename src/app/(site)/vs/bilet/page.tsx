@@ -12,9 +12,9 @@ export default function Page() {
       competitor="Bilet"
       competitorTagline="Restoran ve perakende odaklı POS"
       emoji="🎫"
-      oneLineSummary="Bilet sadece restoran/perakende için. kooza ise 9 sektör için tam paket — bütünleşik CRM + İK + muhasebe ile."
+      oneLineSummary="Bilet sadece restoran/perakende için. kooza ise tüm sektörler için tam paket — bütünleşik CRM + İK + muhasebe ile."
       rows={[
-        { feature: 'Sektör çeşitliliği', kooza: '9 sektör', competitor: '2 (Restoran/Perakende)' },
+        { feature: 'Sektör çeşitliliği', kooza: 'tüm sektörler', competitor: '2 (Restoran/Perakende)' },
         { feature: 'Aylık başlangıç ücreti', kooza: '₺499', competitor: '₺790+' },
         { feature: 'Klinik / İK / Eğitim modülleri', kooza: true, competitor: false },
         { feature: 'Yemeksepeti/Trendyol/Getir entegrasyonu', kooza: true, competitor: true, highlight: true },

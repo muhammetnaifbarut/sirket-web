@@ -28,7 +28,7 @@ const COMPARISON = [
   },
   {
     feature: '🏥 Klinik / 🍽️ Restoran / 💄 Salon UI',
-    kooza: { val: '9 sektör hazır', good: true },
+    kooza: { val: 'tüm sektörler için hazır', good: true },
     foreign: { val: 'Genel', good: false },
     legacy: { val: 'Modül satın alarak', good: 'mid' },
   },

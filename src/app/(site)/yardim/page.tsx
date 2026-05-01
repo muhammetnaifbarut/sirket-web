@@ -92,7 +92,7 @@ const CATEGORIES = [
 ]
 
 const QUICK_ANSWERS = [
-  { q: 'kooza\'ya hangi sektörler uyumlu?', a: 'Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner, İK — 9 sektör için özel paket. Sektörünüz yoksa /iletisim üzerinden bize yazın.' },
+  { q: 'kooza\'ya hangi sektörler uyumlu?', a: 'Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner, İK — tüm sektörler için özel paket. Sektörünüz yoksa /iletisim üzerinden bize yazın.' },
   { q: '14 gün ücretsiz deneme nasıl başlatılır?', a: '/demo sayfasından form doldurun, ekibimiz sizi arayıp hesabınızı kuruyor. Kredi kartı bilgisi istemiyoruz.' },
   { q: 'Mevcut yazılımdan veri nasıl taşırım?', a: 'Excel veya CSV dosyalarınızdan otomatik taşıma. Ekibimiz sizin yerinize yapıyor (Pro & Enterprise paketler ücretsiz).' },
   { q: 'Aylık plan iptal edilebilir mi?', a: 'Evet, istediğiniz an iptal edebilirsiniz. Yıllık paketlerde dönem sonunda otomatik iptal olur.' },

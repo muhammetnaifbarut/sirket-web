@@ -7,7 +7,6 @@ import CookieConsent from '@/components/site/CookieConsent'
 import StructuredData from '@/components/site/StructuredData'
 import StickyMobileCTA from '@/components/site/StickyMobileCTA'
 import ExitIntentPopup from '@/components/site/ExitIntentPopup'
-import LiveActivityFeed from '@/components/site/LiveActivityFeed'
 import { getSettings, getMenuItems } from '@/lib/settings'
 
 // Tüm site rotalarını dinamik render — build sırasında DB'ye gitme
@@ -40,7 +39,6 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
       />
       <StickyMobileCTA />
       <ExitIntentPopup />
-      <LiveActivityFeed />
     </div>
   )
 }

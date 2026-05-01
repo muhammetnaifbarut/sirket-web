@@ -117,7 +117,7 @@ export default function StructuredData({ settings }: StructuredDataProps) {
       {
         '@type': 'Question',
         name: 'Hangi sektörlere uygun?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner, İK ve daha fazlası — 9 sektörel paket mevcut.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner, İK ve daha fazlası — tüm sektörlerel paket mevcut.' },
       },
       {
         '@type': 'Question',

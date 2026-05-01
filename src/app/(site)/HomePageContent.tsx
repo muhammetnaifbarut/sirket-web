@@ -18,7 +18,6 @@ import PressMentions from '@/components/site/sections/PressMentions'
 import WallOfLove from '@/components/site/sections/WallOfLove'
 import MiniCalculator from '@/components/site/sections/MiniCalculator'
 import ProductsSection from '@/components/site/sections/ProductsSection'
-import ModulesShowcase from '@/components/site/sections/ModulesShowcase'
 import SectorsSection from '@/components/site/sections/SectorsSection'
 import ClientsSection from '@/components/site/sections/ClientsSection'
 import TestimonialsSection from '@/components/site/sections/TestimonialsSection'
@@ -63,7 +62,6 @@ export default function HomePageContent({
       <QuickCallbackBand />
       {isVisible(settings, 'section_clients_visible') && <ClientsSection clients={clients} />}
       <PressMentions />
-      {isVisible(settings, 'section_modules_visible') && <ModulesShowcase modules={modules} />}
       {isVisible(settings, 'section_products_visible') && <ProductsSection products={products} />}
       {isVisible(settings, 'section_sectors_visible') && <SectorsSection sectors={sectors} />}
       {settings.section_video_visible !== 'false' && <VideoShowcaseSection settings={settings} />}

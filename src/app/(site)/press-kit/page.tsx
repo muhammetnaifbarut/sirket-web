@@ -11,7 +11,7 @@ const FACTS = [
   { label: 'Kuruluş', value: '2018' },
   { label: 'Resmi Lansman', value: '27 Nisan 2026' },
   { label: 'Merkez', value: 'İstanbul, Türkiye' },
-  { label: 'Sektörel Paket', value: '9 sektör' },
+  { label: 'Sektörel Paket', value: 'tüm sektörler' },
   { label: 'Modül Sayısı', value: '12+' },
   { label: 'Aktif Müşteri', value: '500+' },
 ]
@@ -78,7 +78,7 @@ export default function PressKitPage() {
             </p>
             <p>
               Klinik, restoran, market, eğitim, güzellik salonu, e-ticaret, diş hekimi, veteriner ve
-              insan kaynakları gibi 9 farklı sektör için özelleştirilmiş paketler sunan kooza,
+              insan kaynakları gibi tüm sektörler için özelleştirilmiş paketler sunan kooza,
               randevu, kasa, stok, CRM, muhasebe ve dijital dönüşüm danışmanlığını tek platformda toplar.
             </p>
             <p>
