@@ -60,6 +60,32 @@ async function sendWelcomeEmail(sub: any) {
     </p>
   </div>
 
+  <!-- Mobil ana ekrana ekleme rehberi -->
+  <div style="background: linear-gradient(135deg, #f3e8ff, #fce7f3); padding: 24px; border-radius: 16px; margin-bottom: 16px; border: 1px solid #e9d5ff;">
+    <h2 style="font-size: 18px; margin: 0 0 12px; color: #6b21a8; display: flex; align-items: center; gap: 8px;">📱 Telefonuna kur — uygulama gibi!</h2>
+    <p style="margin: 0 0 14px; color: #6b21a8; font-size: 13px; line-height: 1.5;">
+      ${sub.productName} bir <strong>web uygulamasıdır (PWA)</strong>. Telefon ana ekranına eklersen native uygulama gibi açılır — adres çubuğu görünmez, splash screen var, çok daha hızlı.
+    </p>
+    <div style="display: block; background: white; padding: 14px; border-radius: 12px; margin-bottom: 8px; font-size: 13px;">
+      <strong style="color: #714B67;">🍎 iPhone (Safari)</strong><br>
+      <span style="color: #4b5563; line-height: 1.7;">
+        1. Safari ile <strong>${productUrl}</strong>'a git<br>
+        2. Alt menüden <strong>paylaş ikonu</strong> (kutu + yukarı ok)<br>
+        3. <strong>"Ana Ekrana Ekle"</strong> seç<br>
+        4. ${emoji} ikonu ana ekranında belirir
+      </span>
+    </div>
+    <div style="display: block; background: white; padding: 14px; border-radius: 12px; font-size: 13px;">
+      <strong style="color: #714B67;">🤖 Android (Chrome)</strong><br>
+      <span style="color: #4b5563; line-height: 1.7;">
+        1. Chrome ile <strong>${productUrl}</strong>'a git<br>
+        2. Sağ üstte <strong>üç nokta menüsü</strong><br>
+        3. <strong>"Ana ekrana ekle"</strong> veya <strong>"Uygulamayı yükle"</strong><br>
+        4. ${emoji} ikonu ana ekranında belirir
+      </span>
+    </div>
+  </div>
+
   <div style="background: white; padding: 20px; border-radius: 16px; margin-bottom: 16px; font-size: 13px; color: #6b7280;">
     <p style="margin: 0 0 8px;"><strong style="color: #714B67;">🦋 kooza ekosistemi</strong></p>
     <p style="margin: 0; line-height: 1.6;">
