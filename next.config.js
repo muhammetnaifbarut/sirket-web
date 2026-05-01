@@ -12,7 +12,7 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   experimental: {
-    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs'],
+    serverComponentsExternalPackages: ['@prisma/client', 'bcryptjs', 'iyzipay'],
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   async redirects() {
