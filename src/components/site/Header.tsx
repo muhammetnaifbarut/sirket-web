@@ -322,14 +322,16 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   <span className="text-base">📅</span>
                   <span className="font-semibold text-xs mt-1">Randevu</span>
                 </a>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                <a
+                  href="https://servis.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🍽️</span>
                   <span className="font-semibold text-xs mt-1">Servis</span>
-                </Link>
+                </a>
                 <a
                   href="https://egitim.kooza.tr/login"
                   target="_blank"
@@ -340,38 +342,56 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   <span className="text-base">🎓</span>
                   <span className="font-semibold text-xs mt-1">Eğitim</span>
                 </a>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                <a
+                  href="https://emlak.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🏠</span>
                   <span className="font-semibold text-xs mt-1">Emlak</span>
-                </Link>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                </a>
+                <a
+                  href="https://mesken.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🏘️</span>
                   <span className="font-semibold text-xs mt-1">Mesken</span>
-                </Link>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                </a>
+                <a
+                  href="https://tamir.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🔧</span>
                   <span className="font-semibold text-xs mt-1">Tamir</span>
-                </Link>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                </a>
+                <a
+                  href="https://hukuk.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">⚖️</span>
                   <span className="font-semibold text-xs mt-1">Hukuk</span>
-                </Link>
+                </a>
+                <a
+                  href="https://insaat.kooza.tr"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
+                >
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
+                  <span className="text-base">🏗️</span>
+                  <span className="font-semibold text-xs mt-1">İnşaat</span>
+                </a>
               </div>
 
               {menuItems.map((item) => (
