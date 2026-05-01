@@ -299,9 +299,21 @@ export default async function Footer({ settings }: FooterProps) {
           <p className="text-sm text-gray-600 text-center sm:text-left">
             {settings.footer_text || `© ${year} ${siteName}. Tüm hakları saklıdır.`}
           </p>
-          <div className="flex items-center gap-6 flex-wrap justify-center">
+          <div className="flex items-center gap-x-5 gap-y-2 flex-wrap justify-center">
+            <Link href="/kvkk" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
+              KVKK
+            </Link>
             <Link href="/gizlilik-politikasi" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
-              Gizlilik Politikası
+              Gizlilik
+            </Link>
+            <Link href="/uyelik-sozlesmesi" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
+              Üyelik Sözleşmesi
+            </Link>
+            <Link href="/mesafeli-satis" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
+              Mesafeli Satış
+            </Link>
+            <Link href="/cerez-politikasi" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
+              Çerez
             </Link>
             <Link href="/kullanim-kosullari" className="text-sm text-gray-600 hover:text-gray-400 transition-colors">
               Kullanım Koşulları
