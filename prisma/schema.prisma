@@ -810,3 +810,52 @@ model Integration {
 
   @@map("integrations")
 }
+
+// ─── SUBSCRIPTIONS (ödeme + abonelik takip) ─────────────────────────────────
+
+model Subscription {
+  id              String              @id @default(cuid())
+  email           String
+  name            String
+  phone           String?
+  company         String?
+  taxId           String?
+
+  productId       String              // mesken, hukuk, randevu vb.
+  productName     String              // "kooza Mesken"
+  planSlug        String              // "baslangic", "pro", "kurumsal"
+  planName        String              // "Başlangıç"
+
+  amount          Decimal             @db.Decimal(10, 2)
+  currency        String              @default("TRY")
+  status          SubscriptionStatus  @default(PENDING)
+
+  // iyzico fields
+  conversationId  String?             @unique
+  paymentId       String?
+  paymentStatus   String?
+  errorMessage    String?             @db.Text
+
+  // Lifecycle
+  startDate       DateTime?
+  endDate         DateTime?
+  cancelledAt     DateTime?
+
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  @@index([email])
+  @@index([productId])
+  @@index([status])
+  @@map("subscriptions")
+}
+
+enum SubscriptionStatus {
+  PENDING
+  ACTIVE
+  PAID
+  TRIAL
+  CANCELLED
+  EXPIRED
+  FAILED
+}

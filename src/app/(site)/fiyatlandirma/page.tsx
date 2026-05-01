@@ -32,7 +32,7 @@ const PLANS = [
     ],
     isPopular: false,
     ctaLabel: 'Başla',
-    ctaUrl: '/demo?plan=starter',
+    ctaUrl: '/kayit?product=mesken&plan=baslangic',
   },
   {
     id: 'pro',
@@ -58,7 +58,7 @@ const PLANS = [
     ],
     isPopular: true,
     ctaLabel: 'En çok tercih edilen',
-    ctaUrl: '/demo?plan=pro',
+    ctaUrl: '/kayit?product=mesken&plan=pro',
   },
   {
     id: 'enterprise',
