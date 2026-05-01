@@ -7,14 +7,24 @@ const ADMIN_KEY = process.env.ADMIN_KEY || 'kooza-admin-2026'
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
+const CORS_HEADERS = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type, x-admin-key',
+}
+
 function checkAuth(req: NextRequest): boolean {
   const key = req.headers.get('x-admin-key') || req.nextUrl.searchParams.get('key')
   return key === ADMIN_KEY
 }
 
+export async function OPTIONS() {
+  return new NextResponse(null, { status: 200, headers: CORS_HEADERS })
+}
+
 export async function GET(request: NextRequest) {
   if (!checkAuth(request)) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401, headers: CORS_HEADERS })
   }
 
   try {
@@ -38,9 +48,9 @@ export async function GET(request: NextRequest) {
         ...s,
         amount: Number(s.amount),
       })),
-    })
+    }, { headers: CORS_HEADERS })
   } catch (e: any) {
     console.error('Admin subscriptions error:', e)
-    return NextResponse.json({ error: e.message || 'Hata' }, { status: 500 })
+    return NextResponse.json({ error: e.message || 'Hata' }, { status: 500, headers: CORS_HEADERS })
   }
 }
