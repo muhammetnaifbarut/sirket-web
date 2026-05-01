@@ -198,16 +198,16 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                         <div className="text-xs text-gray-400">restoran · kafe POS</div>
                       </div>
                     </Link>
-                    <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
+                    <a href="https://egitim.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
                       <span className="text-base">🎓</span>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <span className="font-semibold">kooza Eğitim</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
+                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
                         </div>
-                        <div className="text-xs text-gray-400">kreş · kurs · dershane</div>
+                        <div className="text-xs text-gray-400">egitim.kooza.tr</div>
                       </div>
-                    </Link>
+                    </a>
                     <Link href="/demo" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-500 hover:bg-[#714B67]/5 transition-colors">
                       <span className="text-base">🏠</span>
                       <div className="flex-1">
@@ -320,14 +320,16 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                   <span className="text-base">🍽️</span>
                   <span className="font-semibold text-xs mt-1">Servis</span>
                 </Link>
-                <Link
-                  href="/demo"
-                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
+                <a
+                  href="https://egitim.kooza.tr/login"
+                  target="_blank"
+                  rel="noopener"
+                  className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-emerald-50 text-emerald-700 border border-emerald-200 relative"
                 >
-                  <span className="absolute top-1 right-2 text-[8px] font-bold text-amber-600">YAKINDA</span>
+                  <span className="absolute top-1 right-2 text-[8px] font-bold text-emerald-600">CANLI</span>
                   <span className="text-base">🎓</span>
                   <span className="font-semibold text-xs mt-1">Eğitim</span>
-                </Link>
+                </a>
                 <Link
                   href="/demo"
                   className="flex flex-col items-start px-3 py-2.5 rounded-xl text-sm bg-gray-50 text-gray-600 border border-gray-200 relative"
