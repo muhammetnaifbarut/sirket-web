@@ -158,6 +158,12 @@ export default function Header({ settings, menuItems }: HeaderProps) {
 
           {/* Right side: Sign in to products + Demo CTA */}
           <div className="hidden lg:flex ml-auto items-center gap-2 shrink-0">
+            <Link
+              href="/hesabim"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-medium text-gray-700 hover:text-[#714B67] hover:bg-[#714B67]/5 transition-all"
+            >
+              👤 Hesabım
+            </Link>
             {/* Ürün giriş dropdown */}
             <div
               className="relative group"
