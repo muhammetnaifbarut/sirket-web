@@ -167,7 +167,6 @@ export default async function Footer({ settings }: FooterProps) {
                 { label: 'Karşılaştırma', href: '/karsilastir' },
                 { label: 'Marka Kılavuzu', href: '/marka' },
                 { label: 'Danışmanlık', href: '/danismanlik' },
-                { label: 'Modüller', href: '/yazilimlar' },
               ].map((s) => (
                 <li key={s.href}>
                   <Link href={s.href} className="text-sm text-gray-500 hover:text-white transition-colors flex items-center gap-2 group">

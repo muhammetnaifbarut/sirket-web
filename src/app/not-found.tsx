@@ -72,7 +72,6 @@ export default function NotFound() {
           {[
             { l: 'Fiyatlandırma', h: '/fiyatlandirma' },
             { l: 'Çözümler', h: '/cozumler' },
-            { l: 'Modüller', h: '/yazilimlar' },
             { l: 'Hakkımızda', h: '/hakkimizda' },
             { l: 'Olgunluk Testi', h: '/dijital-olgunluk-testi' },
             { l: 'İletişim', h: '/iletisim' },
