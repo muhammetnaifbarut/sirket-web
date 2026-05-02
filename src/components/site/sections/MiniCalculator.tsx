@@ -49,6 +49,17 @@ export default function MiniCalculator() {
           {tab === 'fatura' && <FaturaCalc />}
         </div>
 
+        {/* CTA - More calculators */}
+        <div className="mt-6 text-center">
+          <a
+            href="/hesaplayicilar"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-700 to-pink-600 text-white font-bold rounded-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+          >
+            🧮 10 Profesyonel Hesaplayıcıya Aç (Kıdem, Aidat, Hakediş, Komisyon, MRR…)
+            <span className="ml-1">→</span>
+          </a>
+        </div>
+
         <p className="text-center text-xs text-gray-500 mt-4">
           ⚠️ Bu hesaplayıcılar tahminîdir. Resmi hesaplama için mali müşaviriniz veya kooza Pro paketi kullanın.
         </p>
