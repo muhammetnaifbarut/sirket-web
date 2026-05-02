@@ -83,7 +83,7 @@ export default function EcosystemGrid() {
               10 ürünü tek pakette al
             </h3>
             <p className="text-purple-100 mb-5 leading-relaxed">
-              Ayrı ayrı 7000 ₺ değerinde · Bundle ile sadece <strong className="text-pink-200 text-2xl">1999 ₺/ay</strong>
+              Ayrı ayrı 7.000 ₺ değerinde · Bundle ile sadece <strong className="text-pink-200 text-2xl">1.499 ₺/ay</strong>
               <br />
               <span className="text-sm">14 gün ücretsiz · Kredi kartı yok · İstediğin zaman iptal</span>
             </p>

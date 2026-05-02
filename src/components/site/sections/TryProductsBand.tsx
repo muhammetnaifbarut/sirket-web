@@ -205,8 +205,8 @@ export default function TryProductsBand() {
             <span className="text-2xl">🎁</span>
             <div>
               <strong className="text-base">10 ürünün hepsini</strong> tek pakette al →
-              <span className="text-pink-200 font-black ml-1">1999 ₺/ay</span>
-              <span className="text-xs ml-2 opacity-80">(7000 ₺ değerinde)</span>
+              <span className="text-pink-200 font-black ml-1">1.499 ₺/ay</span>
+              <span className="text-xs ml-2 opacity-80">(7.000 ₺ değerinde · %78 indirim)</span>
             </div>
             <Link
               href="/kayit?product=bundle&plan=pro"

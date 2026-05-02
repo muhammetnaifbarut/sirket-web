@@ -62,8 +62,8 @@ export default async function FiyatlandirmaPage() {
                   10 ürünün <span className="text-pink-200">hepsi</span> tek pakette
                 </h2>
                 <p className="text-purple-100 mb-6 leading-relaxed">
-                  Ayrı ayrı 7000 ₺ değerinde olan kooza ekosisteminin tamamına <strong>tek aboneliğe</strong> erişim.
-                  Çoklu sektörde iş yapan firmalar için ideal.
+                  Ayrı ayrı 7.000 ₺ değerinde olan kooza ekosisteminin tamamına <strong>tek aboneliğe</strong> erişim.
+                  Sadece <strong className="text-pink-200">1.499 ₺/ay</strong>. Çoklu sektörde iş yapan firmalar için ideal.
                 </p>
                 <div className="flex flex-wrap gap-2 text-xs mb-6">
                   {['📅 Randevu', '🎓 Eğitim', '🏘️ Mesken', '🔧 Tamir', '⚖️ Hukuk', '🏗️ İnşaat', '🏠 Emlak', '🍽️ Servis', '💰 Muhasebe', '👥 İK'].map(p => (
@@ -74,14 +74,14 @@ export default async function FiyatlandirmaPage() {
 
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                 <div className="flex items-baseline gap-2 mb-1">
-                  <span className="text-5xl font-black">1999</span>
+                  <span className="text-5xl font-black">1.499</span>
                   <span className="text-2xl">₺/ay</span>
                 </div>
                 <div className="text-sm text-purple-100 line-through mb-1">
                   Tek tek alırsan: 7.000 ₺/ay
                 </div>
                 <div className="inline-block bg-emerald-500 text-white px-2.5 py-0.5 rounded-full text-xs font-bold mb-4">
-                  💰 %72 tasarruf
+                  💰 %78 tasarruf · 5.500 ₺/ay daha az
                 </div>
                 <ul className="space-y-2 mb-6 text-sm">
                   <li className="flex items-center gap-2">✓ <span>10 ürün, sınırsız erişim</span></li>
