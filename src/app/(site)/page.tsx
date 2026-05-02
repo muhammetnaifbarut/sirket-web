@@ -49,7 +49,7 @@ export default async function HomePage() {
         prisma.product.findMany({
           where: { status: 'ACTIVE' },
           orderBy: { order: 'asc' },
-          take: 6,
+          take: 10,
           select: {
             id: true,
             name: true,

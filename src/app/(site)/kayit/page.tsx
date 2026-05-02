@@ -77,6 +77,14 @@ const PRODUCTS: Record<string, { name: string; emoji: string; plans: Record<stri
       kurumsal: { name: 'Kurumsal', price: 1999 },
     },
   },
+  bundle: {
+    name: 'Pro Bundle (10 ürün)', emoji: '🎁',
+    plans: {
+      baslangic: { name: 'Bundle', price: 1999 },
+      pro: { name: 'Pro Bundle', price: 1999 },
+      kurumsal: { name: 'Enterprise Bundle', price: 4999 },
+    },
+  },
 }
 
 function KayitForm() {

@@ -18,6 +18,7 @@ import PressMentions from '@/components/site/sections/PressMentions'
 import WallOfLove from '@/components/site/sections/WallOfLove'
 import MiniCalculator from '@/components/site/sections/MiniCalculator'
 import ProductsSection from '@/components/site/sections/ProductsSection'
+import EcosystemGrid from '@/components/site/sections/EcosystemGrid'
 import SectorsSection from '@/components/site/sections/SectorsSection'
 import ClientsSection from '@/components/site/sections/ClientsSection'
 import TestimonialsSection from '@/components/site/sections/TestimonialsSection'
@@ -56,6 +57,7 @@ export default function HomePageContent({
     <>
       <UrgencyBanner />
       <HeroSection settings={settings} ticker={tickerItems} stats={statItems} />
+      <EcosystemGrid />
       <WhyKoozaSection />
       <TryProductsBand />
       <LeadMagnetTrio />
