@@ -182,107 +182,62 @@ export default function Header({ settings, menuItems }: HeaderProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full right-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50 overflow-hidden"
+                    className="absolute top-full right-0 mt-2 w-[480px] bg-white rounded-2xl shadow-2xl border border-gray-100 p-3 z-50 overflow-hidden"
                   >
-                    <a href="https://randevu.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">📅</span>
+                    <div className="px-2 pb-2 mb-2 border-b border-gray-100">
+                      <div className="text-[10px] font-bold text-purple-700 uppercase tracking-wider">10 ÜRÜN · GİRİŞ</div>
+                      <div className="text-xs text-gray-500">Aboneliğin yoksa <a href="/fiyatlandirma" className="text-purple-700 font-semibold hover:underline">fiyatlandırma</a></div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-1">
+                      {[
+                        { url: 'https://randevu.kooza.tr/login', emoji: '📅', name: 'Randevu', sub: 'Klinik · Kuaför', live: true },
+                        { url: 'https://egitim.kooza.tr/login', emoji: '🎓', name: 'Eğitim', sub: 'Kurs · Dershane', live: true },
+                        { url: 'https://mesken.kooza.tr/login', emoji: '🏘️', name: 'Mesken', sub: 'Site · Apartman', live: true },
+                        { url: 'https://tamir.kooza.tr/login', emoji: '🔧', name: 'Tamir', sub: 'Teknik servis', live: true },
+                        { url: 'https://hukuk.kooza.tr/login', emoji: '⚖️', name: 'Hukuk', sub: 'Avukat · Dava', live: true },
+                        { url: 'https://insaat.kooza.tr/login', emoji: '🏗️', name: 'İnşaat', sub: 'Müteahhit', live: true },
+                        { url: 'https://emlak.kooza.tr', emoji: '🏠', name: 'Emlak', sub: 'Gayrimenkul', live: true },
+                        { url: 'https://servis.kooza.tr/demo', emoji: '🍽️', name: 'Servis', sub: 'Restoran POS', beta: true },
+                        { url: 'https://muhasebe.kooza.tr', emoji: '💰', name: 'Muhasebe', sub: 'e-Fatura · Cari', live: true },
+                        { url: 'https://ik.kooza.tr', emoji: '👥', name: 'İK', sub: 'Personel · Bordro', beta: true },
+                      ].map((p) => (
+                        <a
+                          key={p.url}
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener"
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-sm hover:bg-[#714B67]/5 hover:scale-[1.02] transition-all group"
+                        >
+                          <span className="text-2xl group-hover:scale-110 transition-transform shrink-0">{p.emoji}</span>
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-1">
+                              <span className="font-bold text-sm text-gray-900 group-hover:text-[#714B67]">kooza {p.name}</span>
+                              <span className={`text-[8px] font-black px-1.5 rounded-full ${
+                                p.live
+                                  ? 'bg-emerald-100 text-emerald-700'
+                                  : 'bg-amber-100 text-amber-700'
+                              }`}>
+                                {p.live ? 'CANLI' : 'BETA'}
+                              </span>
+                            </div>
+                            <div className="text-[10px] text-gray-500 truncate">{p.sub}</div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                    {/* KOM hub link */}
+                    <a
+                      href="https://kom.kooza.tr"
+                      target="_blank"
+                      rel="noopener"
+                      className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-xl bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-100 text-sm hover:shadow-md transition-all"
+                    >
+                      <span className="text-xl">🦋</span>
                       <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Randevu</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">randevu.kooza.tr</div>
+                        <div className="font-bold text-purple-900">KOM — Operasyon Merkezi</div>
+                        <div className="text-[10px] text-purple-700">Tüm ürünlere tek panel</div>
                       </div>
-                    </a>
-                    <a href="https://servis.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🍽️</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Servis</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">YAKINDA</span>
-                        </div>
-                        <div className="text-xs text-gray-400">restoran · kafe POS</div>
-                      </div>
-                    </a>
-                    <a href="https://egitim.kooza.tr/login" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🎓</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Eğitim</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">egitim.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://emlak.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🏠</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Emlak</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">emlak.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://mesken.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🏘️</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Mesken</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">mesken.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://tamir.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🔧</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Tamir</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">tamir.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://hukuk.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">⚖️</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Hukuk</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">hukuk.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://insaat.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">🏗️</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza İnşaat</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">insaat.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://muhasebe.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">💰</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza Muhasebe</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">muhasebe.kooza.tr</div>
-                      </div>
-                    </a>
-                    <a href="https://ik.kooza.tr" target="_blank" rel="noopener" className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-[#714B67]/5 hover:text-[#714B67] transition-colors">
-                      <span className="text-base">👥</span>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold">kooza İK</span>
-                          <span className="text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">CANLI</span>
-                        </div>
-                        <div className="text-xs text-gray-400">ik.kooza.tr</div>
-                      </div>
+                      <span className="text-purple-700 font-bold">→</span>
                     </a>
                   </motion.div>
                 )}

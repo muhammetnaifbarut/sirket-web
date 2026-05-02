@@ -9,12 +9,13 @@ export default function WhyKoozaSection() {
             🦋 Neden kooza?
           </span>
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-            Tek platform, tüm işletmen.
+            Sektörüne özel 10 yazılım, tek çatı altında
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Defter, Excel ve dağınık WhatsApp gruplarıyla vedalaş.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Klinik, kuaför, kafe, hukuk bürosu, site yönetimi, müteahhit, emlak ofisi, eğitim merkezi,
+            muhasebe ve İK — hangi sektördesen, kooza&apos;da sana özel ürün var.
             <br className="hidden sm:block" />
-            kooza ile randevu, stok, finans ve müşteri — hepsi tek panelde.
+            <strong className="text-purple-700">Tek hesap, tek ödeme, tüm sektörel çözümler.</strong>
           </p>
         </div>
 

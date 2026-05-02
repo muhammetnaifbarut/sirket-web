@@ -43,10 +43,10 @@ const FALLBACK_STATS: StatItem[] = [
 export default function HeroSection({ settings, ticker, stats }: HeroProps) {
   const tickerItems = ticker && ticker.length > 0 ? ticker : FALLBACK_TICKER
   const statItems = stats && stats.length > 0 ? stats : FALLBACK_STATS
-  const title = settings.hero_title || 'İşletmenin tüm yazılımları,\ntek platformda'
+  const title = settings.hero_title || 'Sektörüne özel\ntüm yazılımlar'
   const subtitle =
     settings.hero_subtitle ||
-    'Randevu, stok, CRM, finans ve İK için ayrı ayrı yazılım kullanmayı bırakın.'
+    'Klinik, kuaför, kafe, hukuk bürosu, site yönetimi, müteahhit, emlak, eğitim, muhasebe ve İK — 10 sektör, tek panelde.'
   const btn1Label = settings.hero_cta_label || 'Ücretsiz Başla'
   const btn1Url = settings.hero_cta_url || '/demo'
   const btn2Label = settings.hero_secondary_label || 'Ürünleri İncele'
