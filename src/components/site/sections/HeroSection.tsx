@@ -43,10 +43,10 @@ const FALLBACK_STATS: StatItem[] = [
 export default function HeroSection({ settings, ticker, stats }: HeroProps) {
   const tickerItems = ticker && ticker.length > 0 ? ticker : FALLBACK_TICKER
   const statItems = stats && stats.length > 0 ? stats : FALLBACK_STATS
-  const title = settings.hero_title || 'Sektörüne özel\ntüm yazılımlar'
+  const title = settings.hero_title || 'Sektörünüze özel tüm yazılımlar,\ntek platformda'
   const subtitle =
     settings.hero_subtitle ||
-    'Klinik, kuaför, kafe, hukuk bürosu, site yönetimi, müteahhit, emlak, eğitim, muhasebe ve İK — 10 sektör, tek panelde.'
+    '10 farklı sektör için kurulmuş 10 hazır yazılım. Klinik, kafe, kuaför, hukuk bürosu, site yönetimi, emlak ofisi, müteahhit, eğitim merkezi, muhasebe ve İK — hepsi tek çatı altında. Türkçe, KVKK uyumlu, mobilde uygulama gibi.'
   const btn1Label = settings.hero_cta_label || 'Ücretsiz Başla'
   const btn1Url = settings.hero_cta_url || '/demo'
   const btn2Label = settings.hero_secondary_label || 'Ürünleri İncele'
