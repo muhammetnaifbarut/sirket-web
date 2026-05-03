@@ -17,6 +17,158 @@ const PROFILES: Record<string, {
   feedTitle: string
   feedItems: { time: string; text: string }[]
 }> = {
+  randevu: {
+    title: 'Bugünün randevuları',
+    metrics: [
+      { label: 'Bugün', value: '32' },
+      { label: 'Onaylı', value: '28' },
+      { label: 'No-show Risk', value: '2', color: 'red' },
+    ],
+    rows: [
+      { left: 'Ayşe K.', mid: '14:00 · Saç Kesim', right: 'Berra Hanım', status: 'Onaylı', statusColor: 'text-emerald-600 bg-emerald-50' },
+      { left: 'Mehmet D.', mid: '14:30 · Sakal', right: 'Cem Bey', status: 'Geliyor', statusColor: 'text-blue-600 bg-blue-50' },
+      { left: 'Zeynep A.', mid: '15:00 · Boya + Fön', right: 'Berra Hanım', status: 'Hatırlatıldı', statusColor: 'text-amber-600 bg-amber-50' },
+    ],
+    feedTitle: 'WhatsApp & Ödeme',
+    feedItems: [
+      { time: '2 dk', text: 'WhatsApp · Ayşe K. randevusunu onayladı' },
+      { time: '8 dk', text: 'Online ödeme · ₺450 alındı' },
+      { time: '15 dk', text: 'Yeni online rezervasyon · 17:00' },
+    ],
+  },
+  mesken: {
+    title: 'Site Yönetim Paneli',
+    metrics: [
+      { label: 'Daire', value: '142' },
+      { label: 'Bu Ay Tahsilat', value: '%87' },
+      { label: 'Açık Talep', value: '6', color: 'orange' },
+    ],
+    rows: [
+      { left: 'A Blok / 12', mid: 'Mart aidatı · ₺1.200', right: 'Ödendi', status: 'Tamam', statusColor: 'text-emerald-600 bg-emerald-50' },
+      { left: 'B Blok / 7', mid: 'Asansör arızası', right: '2 gündür', status: 'Açık', statusColor: 'text-red-600 bg-red-50' },
+      { left: 'C Blok / 3', mid: 'Mart aidatı · ₺1.200', right: 'Hatırlatıldı', status: 'Bekliyor', statusColor: 'text-amber-600 bg-amber-50' },
+    ],
+    feedTitle: 'Yönetim Aktivitesi',
+    feedItems: [
+      { time: '5 dk', text: 'Online aidat · A-12 · ₺1.200' },
+      { time: '20 dk', text: 'Yeni talep · B-7 asansör' },
+      { time: '1 sa', text: 'WhatsApp duyuru · 142 sakine gitti' },
+    ],
+  },
+  tamir: {
+    title: 'Servis Yönetim Paneli',
+    metrics: [
+      { label: 'Açık İş', value: '18' },
+      { label: 'Bugün Tamamlanan', value: '12' },
+      { label: 'Stok Uyarı', value: '4', color: 'red' },
+    ],
+    rows: [
+      { left: '#3421 · Bosch Bulaşık', mid: 'Mehmet Y. · Pompa', right: 'Teknisyen yolda', status: 'Aktif', statusColor: 'text-blue-600 bg-blue-50' },
+      { left: '#3420 · iPhone 14', mid: 'Ekran değişimi', right: 'Parça bekliyor', status: 'Bekliyor', statusColor: 'text-amber-600 bg-amber-50' },
+      { left: '#3419 · Klima', mid: 'Gaz dolumu', right: 'Tamamlandı', status: 'Bitti', statusColor: 'text-emerald-600 bg-emerald-50' },
+    ],
+    feedTitle: 'WhatsApp & Stok',
+    feedItems: [
+      { time: '3 dk', text: 'Müşteri WhatsApp · "iş bitti mi?"' },
+      { time: '12 dk', text: 'Yedek parça siparişi · Pompa x4' },
+      { time: '25 dk', text: 'Garanti kontrolü · seri 9821' },
+    ],
+  },
+  hukuk: {
+    title: 'Hukuk Bürosu Paneli',
+    metrics: [
+      { label: 'Aktif Dosya', value: '247' },
+      { label: 'Bu Hafta Duruşma', value: '14' },
+      { label: 'Bekleyen Tahsilat', value: '₺34K', color: 'orange' },
+    ],
+    rows: [
+      { left: '2024/4521 E.', mid: 'İcra · Ali Y. vs ABC Ltd.', right: 'Yarın 10:30', status: 'Duruşma', statusColor: 'text-red-600 bg-red-50' },
+      { left: '2024/3187 E.', mid: 'Boşanma · Demir Aile', right: '3 gün sonra', status: 'Hazır', statusColor: 'text-amber-600 bg-amber-50' },
+      { left: '2024/2904 E.', mid: 'Ticari · XYZ A.Ş.', right: 'UYAP güncel', status: 'Takipte', statusColor: 'text-emerald-600 bg-emerald-50' },
+    ],
+    feedTitle: 'UYAP & Müvekkil',
+    feedItems: [
+      { time: '15 dk', text: 'UYAP · 2024/4521 yeni karar' },
+      { time: '1 sa', text: 'Müvekkil ödemesi · ₺8.500' },
+      { time: '2 sa', text: 'Vekalet imzalandı · YK Ltd.' },
+    ],
+  },
+  insaat: {
+    title: 'Şantiye Yönetim Paneli',
+    metrics: [
+      { label: 'Aktif Şantiye', value: '7' },
+      { label: 'Hakediş Beklen.', value: '₺1.2M' },
+      { label: 'Stok Uyarı', value: '3', color: 'orange' },
+    ],
+    rows: [
+      { left: 'Şantiye-A · Çekmeköy', mid: 'Kaba inşaat · 3. kat', right: '%62 ilerleme', status: 'Aktif', statusColor: 'text-blue-600 bg-blue-50' },
+      { left: 'Taşeron #07', mid: 'Mart hakediş · ₺245K', right: 'Onaya bekliyor', status: 'Bekliyor', statusColor: 'text-amber-600 bg-amber-50' },
+      { left: 'Yap-Sat · D-12', mid: 'Daire satıldı · Kaya A.', right: '%30 kapora', status: 'Satıldı', statusColor: 'text-emerald-600 bg-emerald-50' },
+    ],
+    feedTitle: 'Saha Aktivitesi',
+    feedItems: [
+      { time: '20 dk', text: 'Şantiye-A · 47 fotoğraf yüklendi' },
+      { time: '1 sa', text: 'Beton dökümü tamamlandı · 145 m³' },
+      { time: '2 sa', text: 'EKAP · yeni ihale · Ankara MEB' },
+    ],
+  },
+  emlak: {
+    title: 'Emlak Ofis Paneli',
+    metrics: [
+      { label: 'Aktif İlan', value: '184' },
+      { label: 'Bu Ay Satış', value: '12' },
+      { label: 'Tur Randevu', value: '8' },
+    ],
+    rows: [
+      { left: 'Levent Daire · 3+1', mid: '125 m² · ₺6.5M', right: 'Sahibinden+Hepsiemlak', status: 'Aktif', statusColor: 'text-blue-600 bg-blue-50' },
+      { left: 'Beşiktaş Ofis · 80 m²', mid: 'Kiralık · ₺28K/ay', right: '14 görüntülenme', status: 'Yeni', statusColor: 'text-emerald-600 bg-emerald-50' },
+      { left: 'Müşteri · A. Yılmaz', mid: 'Üsküdar 2+1 · 4M altı', right: '3 mülk eşleşti', status: 'Eşleşti', statusColor: 'text-amber-600 bg-amber-50' },
+    ],
+    feedTitle: 'WhatsApp & Tur',
+    feedItems: [
+      { time: '8 dk', text: 'WhatsApp · 5 müşteriye yeni mülk' },
+      { time: '30 dk', text: 'Tur randevusu · Etiler · 16:00' },
+      { time: '1 sa', text: 'Sahibinden ilan onaylandı' },
+    ],
+  },
+  servis: {
+    title: 'Saha Servis Paneli',
+    metrics: [
+      { label: 'Aktif Sözleşme', value: '142' },
+      { label: 'Bugün Çağrı', value: '23' },
+      { label: 'SLA Uyarı', value: '2', color: 'red' },
+    ],
+    rows: [
+      { left: 'ABC Ltd. · Asansör', mid: 'Periyodik bakım · Mart', right: 'Yarın 09:00', status: 'Planlı', statusColor: 'text-blue-600 bg-blue-50' },
+      { left: 'XYZ A.Ş. · IT desteği', mid: 'Sunucu arızası', right: 'SLA: 1 sa kaldı', status: 'Acil', statusColor: 'text-red-600 bg-red-50' },
+      { left: 'DEF San. · Klima', mid: 'Gaz dolumu', right: 'Tamamlandı', status: 'Bitti', statusColor: 'text-emerald-600 bg-emerald-50' },
+    ],
+    feedTitle: 'GPS & Müşteri Portalı',
+    feedItems: [
+      { time: '5 dk', text: 'Teknisyen Cem · XYZ ofise vardı' },
+      { time: '15 dk', text: 'Müşteri portalı · yeni talep' },
+      { time: '40 dk', text: 'Sözleşme yenileme · GHI Ltd.' },
+    ],
+  },
+  muhasebe: {
+    title: 'Muhasebe Paneli',
+    metrics: [
+      { label: 'Bu Ay Gelir', value: '₺487K' },
+      { label: 'Bekleyen Tahsilat', value: '₺94K' },
+      { label: 'KDV Beyannamesi', value: '4 gün', color: 'orange' },
+    ],
+    rows: [
+      { left: 'ABC Ltd.', mid: 'e-Fatura · ₺28.500', right: 'Ödendi', status: 'Tamam', statusColor: 'text-emerald-600 bg-emerald-50' },
+      { left: 'XYZ A.Ş.', mid: 'Vadeli · 32 gün geçmiş', right: '₺47.200', status: 'Gecikmiş', statusColor: 'text-red-600 bg-red-50' },
+      { left: 'DEF San.', mid: 'Yeni e-Arşiv', right: '₺12.300', status: 'Kesildi', statusColor: 'text-blue-600 bg-blue-50' },
+    ],
+    feedTitle: 'GİB & Banka',
+    feedItems: [
+      { time: '10 dk', text: 'e-Fatura kesildi · ABC · ₺28.5K' },
+      { time: '35 dk', text: 'Banka mutabakatı · 47 hareket' },
+      { time: '2 sa', text: 'KDV beyannamesi hazırlandı' },
+    ],
+  },
   klinik: {
     title: 'Bugünün randevuları',
     metrics: [
