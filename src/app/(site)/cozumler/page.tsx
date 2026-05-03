@@ -174,43 +174,6 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* SECTOR GRID */}
-      <section className="pb-24 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {sectors.length === 0 ? (
-            <div className="text-center py-20 text-gray-500">Henüz sektör çözümü yayınlanmadı.</div>
-          ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {sectors.map((s) => (
-                <Link
-                  key={s.id}
-                  href={`/cozumler/${s.slug}`}
-                  className="group rounded-2xl bg-white border border-gray-100 hover:border-purple-200 hover:shadow-cardHover transition overflow-hidden flex flex-col"
-                >
-                  <div
-                    className="p-8 pb-6"
-                    style={{ background: `linear-gradient(135deg, ${s.bgColor} 0%, transparent 100%)` }}
-                  >
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center mb-5 shadow-sm"
-                      style={{ background: 'white' }}
-                    >
-                      <Icon name={s.icon} className="w-6 h-6" color={s.iconColor} />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-purple-700 transition">{s.name}</h3>
-                    <p className="text-sm text-gray-600 leading-relaxed">{s.tagline}</p>
-                  </div>
-                  <div className="px-8 py-5 mt-auto border-t border-gray-100 flex items-center justify-between text-sm font-semibold" style={{ color: s.iconColor }}>
-                    <span>Detayları İncele</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-                  </div>
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="pb-24 lg:pb-32">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
