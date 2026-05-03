@@ -1,17 +1,17 @@
-import { getSettings } from '@/lib/settings'
+﻿import { getSettings } from '@/lib/settings'
 import prisma from '@/lib/db'
 import type { Metadata } from 'next'
 import HomePageShell from './HomePageShell'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings()
   return {
-    title: settings.site_name || 'kooza - Tek Platform, Tüm İş Yazılımları',
+    title: settings.site_name || 'kooza - Tek Platform, TÃ¼m Ä°ÅŸ YazÄ±lÄ±mlarÄ±',
     description:
       settings.site_description ||
-      'Randevu, stok, CRM, finans ve İK için ayrı yazılım kullanmayı bırakın. kooza ile her şey bir platformda.',
+      'Randevu, stok, CRM, finans ve Ä°K iÃ§in ayrÄ± yazÄ±lÄ±m kullanmayÄ± bÄ±rakÄ±n. kooza ile her ÅŸey bir platformda.',
     keywords: settings.site_keywords,
     openGraph: {
       title: settings.site_name || 'kooza',
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-// DB hata toleranslı çağrı — hata olursa boş döndür
+// DB hata toleranslÄ± Ã§aÄŸrÄ± â€” hata olursa boÅŸ dÃ¶ndÃ¼r
 async function safe<T>(fn: () => Promise<T>, fallback: T): Promise<T> {
   try {
     return await fn()
