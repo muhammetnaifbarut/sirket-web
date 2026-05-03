@@ -13,9 +13,21 @@ import { getSettings, getMenuItems } from '@/lib/settings'
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
+// Fallback menü — DB'de menuItem yoksa veya boş dönerse bunu kullan
+const FALLBACK_MENU = [
+  { id: 'fb-home', label: 'Ana Sayfa', url: '/', children: [] },
+  { id: 'fb-cozumler', label: 'Çözümler', url: '/cozumler', children: [] },
+  { id: 'fb-fiyat', label: 'Fiyatlandırma', url: '/fiyatlandirma', children: [] },
+  { id: 'fb-araclar', label: 'Araçlar', url: '/araclar', children: [] },
+  { id: 'fb-blog', label: 'Blog', url: '/blog', children: [] },
+  { id: 'fb-hakk', label: 'Hakkımızda', url: '/hakkimizda', children: [] },
+  { id: 'fb-iletisim', label: 'İletişim', url: '/iletisim', children: [] },
+]
+
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
   const settings = await getSettings()
-  const menuItems = await getMenuItems('header')
+  const dbMenu = await getMenuItems('header')
+  const menuItems = dbMenu && dbMenu.length > 0 ? dbMenu : FALLBACK_MENU
 
   return (
     <div className="flex flex-col min-h-screen">
