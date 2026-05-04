@@ -9,9 +9,9 @@ import StickyMobileCTA from '@/components/site/StickyMobileCTA'
 import ExitIntentPopup from '@/components/site/ExitIntentPopup'
 import { getSettings, getMenuItems } from '@/lib/settings'
 
-// Tüm site rotalarını dinamik render — build sırasında DB'ye gitme
-export const dynamic = 'force-dynamic'
-export const revalidate = 0
+// ISR — sayfalar 60sn cache'lenir, cold start ortadan kalkar
+// Build sırasında DB'ye gidilmez, ilk istekte üretilir + cache'lenir
+export const revalidate = 60
 
 // Fallback menü — DB'de menuItem yoksa veya boş dönerse bunu kullan
 const FALLBACK_MENU = [
